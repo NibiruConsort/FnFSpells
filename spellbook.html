@@ -387,6 +387,7 @@ fetch('spells.json')
     allSchools = [...new Set(SPELLS.map(s=>s.school))].sort();
     allClasses = [...new Set(SPELLS.flatMap(s=>s.classes))].sort();
     buildFilters();
+    loadFromURL();
     renderAll();
     syncKnownCount();
   })
@@ -430,6 +431,26 @@ function switchTab(tab) {
   if (tab==='known') renderKnown();
 }
 
+// ── URL PERSISTENCE ──
+function updateURL() {
+  if (knownSpells.size === 0) {
+    history.replaceState(null, '', location.pathname + location.search);
+  } else {
+    const encoded = [...knownSpells].map(n => encodeURIComponent(n)).join(',');
+    history.replaceState(null, '', '#known=' + encoded);
+  }
+}
+function loadFromURL() {
+  const hash = window.location.hash;
+  if (!hash.startsWith('#known=')) return;
+  const raw = hash.slice(7);
+  if (!raw) return;
+  raw.split(',').forEach(n => {
+    const name = decodeURIComponent(n);
+    if (SPELLS.some(s => s.name === name)) knownSpells.add(name);
+  });
+}
+
 // ── KNOWN SPELLS ──
 function toggleKnown(name, e) {
   if (e) e.stopPropagation();
@@ -440,6 +461,7 @@ function toggleKnown(name, e) {
     tc.style.transform = 'scale(1.5)';
     setTimeout(()=>tc.style.transform='', 220);
   }
+  updateURL();
   syncKnownCount();
   renderAll();
   if (currentTab==='known') renderKnown();

@@ -10,7 +10,7 @@
     "description": "Until the end of your next turn gain resistance to physical damage.",
     "classes": [
       "Bard",
-      "Sorceror",
+      "Sorcerer",
       "Warlock",
       "Wizard"
     ]
@@ -25,7 +25,7 @@
     "concentration": false,
     "description": "Give an ally 1d4 to their next saving throw",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -39,7 +39,7 @@
     "concentration": false,
     "description": "Create a cloud of insects on target creature you can see within range. That creature makes a Con saving throw, on a failed save it takes 2d4 poison damage and moves in a random dirction.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -86,7 +86,7 @@
     "concentration": false,
     "description": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.",
     "classes": [
-      "Sorceror",
+      "Sorcerer",
       "Wizard"
     ]
   },
@@ -100,9 +100,9 @@
     "concentration": false,
     "description": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again. You can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d10 fire damage.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman",
-      "Sorceror"
+      "Sorcerer"
     ]
   },
   {
@@ -132,7 +132,7 @@
     "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -178,7 +178,7 @@
     "description": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Wizard"
     ]
   },
@@ -236,7 +236,7 @@
     "concentration": false,
     "description": "You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends.",
     "classes": [
-      "Sorceror",
+      "Sorcerer",
       "Warlock"
     ]
   },
@@ -291,7 +291,7 @@
     "concentration": false,
     "description": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -332,7 +332,7 @@
     "concentration": false,
     "description": "You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Warlock"
     ]
   },
@@ -346,7 +346,7 @@
     "concentration": false,
     "description": "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -402,7 +402,7 @@
     "concentration": false,
     "description": "You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range: Your voice booms up to three times as loud as normal for 1 minute. You cause flames to flicker, brighten, dim, or change color for 1 minute. You cause harmless tremors in the ground for 1 minute. You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers. You instantaneously cause an unlocked door or window to fly open or slam shut. You alter the appearance of your eyes for 1 minute. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect at any time during your turn.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -431,7 +431,7 @@
     "description": "This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage. This spell can physically repair a magic item or construct, but the spell can’t restore magic to such an object.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman",
       "Wizard"
     ]
@@ -447,7 +447,7 @@
     "description": "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear. You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn’t have to follow a straight line and can travel freely around corners or through openings.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Sorcerer",
       "Wizard"
     ]
@@ -532,7 +532,7 @@
     "concentration": false,
     "description": "You either create or destroy water. Create Water. You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area. Destroy Water. You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -606,7 +606,7 @@
     "concentration": false,
     "description": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman",
       "Paladin"
     ]
@@ -726,7 +726,7 @@
     "description": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains the effect until the spell ends. Bear’s Endurance. The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends. Bull’s Strength. The target has advantage on Strength checks, and their carrying capacity doubles. Cat’s Grace. The target has advantage on Dexterity checks. It also doesn’t take damage from falling 20 feet or less if it isn’t incapacitated. Eagle’s Splendor. The target has advantage on Charisma checks. Fox’s Cunning. The target has advantage on Intelligence checks. Owl’s Wisdom. The target has advantage on Wisdom checks.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman",
       "Ranger",
       "Sorcerer",
@@ -930,7 +930,7 @@
     "concentration": false,
     "description": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 1d12 necrotic damage and gains 2 levels of decayed",
     "classes": [
-      "Cleric",
+      "Priest",
       "Warlock"
     ]
   },
@@ -945,7 +945,7 @@
     "description": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Sorcerer",
       "Wizard"
     ]
@@ -960,7 +960,7 @@
     "concentration": false,
     "description": "You touch a corpse or other remains. For the duration, the target is protected from decay and can’t become undead. The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don’t count against the time limit of spells such as raise dead.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin",
       "Wizard"
     ]
@@ -1112,7 +1112,7 @@
     "description": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Ranger"
     ]
   },
@@ -1168,7 +1168,7 @@
     "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman",
       "Paladin",
       "Ranger"
@@ -1227,7 +1227,7 @@
     "concentration": false,
     "description": "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -1254,7 +1254,7 @@
     "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman"
     ]
   },
@@ -1381,7 +1381,7 @@
     "concentration": false,
     "description": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Wizard"
     ]
   },
@@ -1453,7 +1453,7 @@
     "concentration": false,
     "description": "Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -1509,9 +1509,9 @@
     "range": "60 feet",
     "duration": "Instantaneous",
     "concentration": false,
-    "description": "You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier. As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. The weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell’s effect resemble that weapon.",
+    "description": "You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier. As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. The weapon can take whatever form you choose. Priests of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell’s effect resemble that weapon.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -1551,7 +1551,7 @@
     "concentration": false,
     "description": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn’t protect the warded creature from area effects, such as the explosion of a fireball. If the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -1578,7 +1578,7 @@
     "concentration": true,
     "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -1608,7 +1608,7 @@
     "description": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target’s hit point maximum and current hit points increase by 5 for the duration",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman",
       "Paladin"
     ]
@@ -1637,7 +1637,7 @@
     "description": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Shaman",
       "Paladin",
       "Ranger"
@@ -1667,7 +1667,7 @@
     "concentration": false,
     "description": "This spell wards a willing creature you touch and creates a mystic connection between you and the target until the spell ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage. The spell ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the spell is cast again on either of the connected creatures. You can also dismiss the spell as an action.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -1712,7 +1712,7 @@
     "description": "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Warlock"
     ]
   },
@@ -1726,7 +1726,7 @@
     "concentration": true,
     "description": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -1741,7 +1741,7 @@
     "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn’t understand your language, or if your command is directly harmful to it. Some typical commands and their effects follow. You might issue a command other than one described here. If you do so, the DM determines how the target behaves. If the target can’t follow your command, the spell ends. Approach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you. Drop. The target drops whatever it is holding and then ends its turn. Flee. The target spends its turn moving away from you by the fastest available means. Grovel. The target falls prone and then ends its turn. Halt. The target doesn’t move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -2083,7 +2083,7 @@
     "description": "You launch a psychic assualt on a creature you can see within range. It make an Intelligence saving throw, on a fail it takes 4d4 damage, is confused until the end of your next turn, and cannot remember it's name or recognize itself. On a succesful save it takes half as much damage.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Warlock",
       "Wizard"
     ]
@@ -2145,7 +2145,7 @@
     "concentration": true,
     "description": "Create an energy field in a 10 foot radius around you. Creatures inside the field have their level of cover against creatures outside the field increased by 1. Creatures inside the field have resistance to damage from ranged attack rolls and all non-physical damage. If you move while concentrating on this spell, it ends.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin",
       "Sorcerer",
       "Wizard"
@@ -2162,7 +2162,7 @@
     "description": "Envelope yourself in a cloak of blue flames. For the duration of the spell, at the end fo your turn deal 1d12 fire damage to creatures within 5 feet and 1d6 radiant damage to yourself (does trigger concentration save). The flames provide bright light within 20 feet and dim light for 20 feet, but cannot ignite the environment.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Sorcerer"
     ]
   },
@@ -2232,8 +2232,8 @@
     "concentration": true,
     "description": "The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn’t provoke opportunity attacks. When you move within 5 feet of a creature or an object that isn’t being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.",
     "classes": [
-      "Ranger,",
-      "Sorcerer,",
+      "Ranger",
+      "Sorcerer",
       "Wizard"
     ]
   },
@@ -2247,7 +2247,7 @@
     "concentration": true,
     "description": "Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. When you cast this spell and as a bonus action you can cause one creature in the aura (including you) to gain 2d6 temporary hit points.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman",
       "Paladin"
     ]
@@ -2262,7 +2262,7 @@
     "concentration": true,
     "description": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
     "classes": [
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -2276,7 +2276,7 @@
     "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options: Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score. While cursed, the target has disadvantage on attack rolls against you. While cursed, the target must make a Wisdom saving throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing. While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target. A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Wizard"
     ]
   },
@@ -2318,7 +2318,7 @@
     "description": "You create an invisible sensor within range in a location familiar to you (a place you have visited or seen before) or in an obvious location that is unfamiliar to you (such as behind a door, around a corner, or in a grove of trees). The sensor remains in place for the duration, and it can’t be attacked or otherwise interacted with. When you cast the spell, you choose seeing or hearing. You can use the chosen sense through the sensor as if you were in its space. As your action, you can switch between seeing and hearing. A creature that can see the sensor (such as a creature benefitting from see invisibility or truesight) sees a luminous, intangible orb about the size of your fist.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Sorcerer",
       "Wizard"
     ]
@@ -2349,7 +2349,7 @@
     "concentration": true,
     "description": "You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn’t go bad.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -2473,7 +2473,7 @@
       "Shaman",
       "Sorcerer",
       "Wizard",
-      "Cleric"
+      "Priest"
     ]
   },
   {
@@ -2487,7 +2487,7 @@
     "description": "You create a gleaming lasso in your hands. When you cast this spell and as an action on each of your turns for the duration, you may make a melee spell attack against a creature within range, on a hit the creature takes 2d10 force damage and is grappled. To escape the grapple a creature must use its action to make an acrobatics or athletics check and beat your spell save DC. As an action you can also lasso objects that are large or smaller and weigh less than 200 pounds. You grapple any amount of objects or creatures this way, if an object or creature leaves the spells range they are immediately no longer grappled As a bonus action you can pull a grappled object or creature up to 15 feet towards you and you may deal 1d10 force damage to the creature or object. When you pull an object in this way, if you have a container it would fit in on your person; you may instead have it teleport into the container.",
     "classes": [
       "Bard",
-      "Cleric",
+      "Priest",
       "Paladin",
       "Wizard"
     ]
@@ -2561,7 +2561,7 @@
     "concentration": true,
     "description": "You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creatureâ€™s speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage. On a successful save, the creature takes half as much damage.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Paladin"
     ]
   },
@@ -2575,7 +2575,7 @@
     "concentration": true,
     "description": "Choose an unnocupied space to summon a gleaming obelisk from Celestia. The obelisk is a construct and takes up one 5 foot space and grows as tall as it can up to 50 feet. The top of the obelisk ends in a point and cannot be stood on. The obelisk has an AC equal to your spell save DC and an amount of HP equal to the spell's level times the spell's level times 3. If the obelisk is reduced to 0 hit points it dissapears and the spell ends. When you cast this spell all enemy creatures within 30 feet of the obelisk gain 1 level of exhaustion for the duration of the spell and must make a constituition saving throw, taking 2d8 radiant damage on a fail and half as much on a success. Whenever an enemy creature starts it's turn within 30 feet of the obelisk or enters that space for the first time on it's turn it must make a constituition saving throw, gaining 1 level of exhaustion for the duration of the spell on a failure. Enemy creatures moving away from the obelisk while within 30 feet of it, must use 10 feet of movement for every 5 feet of distance they cover.",
     "classes": [
-      "Cleric",
+      "Priest",
       "Shaman",
       "Warlock",
       "Wizard"
