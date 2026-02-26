@@ -2732,5 +2732,36 @@
       "Warlock",
       "Wizard"
     ]
+  },
+  {
+    "name": "Summon Shambling Mound",
+    "level": "Level 3",
+    "school": "Conjuration",
+    "castTime": "1 action",
+    "range": "40 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "description": "Choose an unoccupied 10 by 10 foot area within the spells area. Morph the local fauna into a heap of animated vines. This creature takes its turn immediately after yours and is controlled by you. It’s statblock is as follows:
+
+Shambling Mound
+Large Plant
+-
+AC	10+the spells level
+HP	15 times the spell’s level
+Str:  16   Dex:  8   Con:  14   Int:  4   Wis:  10   Cha:  6
+Speed: 25 feet
+-
+False Appearance - If this creature has not moved it is indistinguishable from a normal plant.
+-
+Actions
+Multiattack - This creature can make 2 Grasping Vine attacks when it takes the attack action
+
+Grasping Vine Attack - +to hit equal to your spellcasting modifier, (10 feet of reach), On a hit this attack deals [1d4+your spellcasting modifier] impact damage and if the target is medium or smaller and it was the first attack this creature has made this turn it can forgo any other attacks this turn to grapple the target. While the target is grappled it can use its action to attempt to escape the grapple, it must make an acrobatics or athletics check against your spell save DC.
+",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Shaman"
+    ]
   }
 ]
