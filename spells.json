@@ -2374,7 +2374,7 @@
     "range": "30 feet",
     "duration": "Concentration, up to 10 minutes",
     "concentration": true,
-    "description": "When you cast this spell, magical cloth covers your eyes allowing you to see the strands of magic in the world around you. As part of the action to cast this spell you may tug on these strands around a creature of your choice wihtin the spell's range, that creature must make a wisdom saving throw, taking 1d10 necrotic + 1d10 force damage on a successful save or half as much on a failed save. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell’s level. You can make an arcana check to identify extra traits about the spell. Use the table below to determine what you learn about the spell. (creatures with spellcasting or proficiency in arcana can help you on this check) DC Effect 5 + the spell’s level You learn the spell’s duration and school 10 + the spell’s level You learn the spell’s effect 15 + the spell’s level You learn the spell’s name and identify the magical signature of the caster, if you ever see any other spells cast by the same creature you can immediately identify it as such. If the magical effect is not a spell, you learn the spell's range and the DM determines any other information you are able to learn.",
+    "description": "When you cast this spell, magical cloth covers your eyes allowing you to see the strands of magic in the world around you. As part of the action to cast this spell you may tug on these strands around a creature of your choice within the spell’s range; that creature must make a Wisdom saving throw, taking 1d10 necrotic + 1d10 force damage on a failed save or half as much on a successful save. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell’s level. You can make an Arcana check to identify extra traits about the spell (creatures with spellcasting or proficiency in Arcana can help on this check).<table class=\"spell-table\"><thead><tr><th>DC</th><th>Effect</th></tr></thead><tbody><tr><td>5 + spell level</td><td>You learn the spell’s duration and school.</td></tr><tr><td>10 + spell level</td><td>You learn the spell’s effect.</td></tr><tr><td>15 + spell level</td><td>You learn the spell’s name and identify the magical signature of the caster. If you ever see any other spells cast by the same creature you can immediately identify it as such.</td></tr></tbody></table>If the magical effect is not a spell, you learn the spell’s range and the DM determines any other information you are able to learn.",
     "classes": [
       "Wizard",
       "Sorcerer",
@@ -2389,7 +2389,7 @@
     "range": "Self",
     "duration": "Concentration, up to 10 minutes",
     "concentration": true,
-    "description": "Attune to the natural magic around you. As part of the bonus action to cast this spell you can dodge, dash, disengage, or hide. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell's level. You can make an arcana check to identify extra traits about the spell. Use the table below to determine what you learn about the spell. (creatures with spellcasting or proficiency in arcana can help you on this check) DC Effect 5 + the spell’s level You learn the spell’s duration and school 10 + the spell’s level You learn the spell’s effect 15 + the spell’s level You learn the spell’s name and know the type of creature that cast the spell, if they are humanoid you know their species. If the magical effect is not a spell, you learn the spell's range and the DM determines any other information you are able to learn.",
+    "description": "Attune to the natural magic around you. As part of the bonus action to cast this spell you can dodge, dash, disengage, or hide. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell’s level. You can make an Arcana check to identify extra traits about the spell (creatures with spellcasting or proficiency in Arcana can help on this check).<table class=\"spell-table\"><thead><tr><th>DC</th><th>Effect</th></tr></thead><tbody><tr><td>5 + spell level</td><td>You learn the spell’s duration and school.</td></tr><tr><td>10 + spell level</td><td>You learn the spell’s effect.</td></tr><tr><td>15 + spell level</td><td>You learn the spell’s name and know the type of creature that cast the spell. If they are humanoid, you know their species.</td></tr></tbody></table>If the magical effect is not a spell, you learn the spell’s range and the DM determines any other information you are able to learn.",
     "classes": [
       "Shaman",
       "Priest",
@@ -2746,6 +2746,34 @@
       "Bard",
       "Sorcerer",
       "Shaman"
+    ]
+  },
+  {
+    "name": "Summon Graceful Construct",
+    "level": "Level 3",
+    "school": "Conjuration",
+    "castTime": "1 action",
+    "range": "10 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "description": "Choose an unoccupied space within this spell's range. Create a Clockwork Dancer on this space. This creature takes its turn immediately after yours and is controlled by you.<div class=\"statblock\"><div class=\"sb-header\"><div class=\"sb-name\">Clockwork Dancer</div><div class=\"sb-type\">Medium Humanoid Construct</div></div><div class=\"sb-body\"><div class=\"sb-core\"><div class=\"sb-row\"><span class=\"sb-label\">AC</span> 10 + spell level</div><div class=\"sb-row\"><span class=\"sb-label\">HP</span> 8 \u00d7 spell level</div><div class=\"sb-row\"><span class=\"sb-label\">Speed</span> 35 ft.</div></div><div class=\"sb-scores\"><div class=\"sb-score\"><div class=\"sb-score-label\">STR</div><div class=\"sb-score-val\">8 (\u22121)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">DEX</div><div class=\"sb-score-val\">16 (+3)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CON</div><div class=\"sb-score-val\">12 (+1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">INT</div><div class=\"sb-score-val\">14 (+2)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">WIS</div><div class=\"sb-score-val\">4 (\u22123)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CHA</div><div class=\"sb-score-val\">12 (+1)</div></div></div><div class=\"sb-divider\"></div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Deft Footwork.</span> If this creature has attacked this turn its movement does not provoke attacks of opportunity.</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Wind-up Motion.</span> This creature has \u22124 to hit against a creature it has already hit this turn.</div><div class=\"sb-divider\"></div><div class=\"sb-actions-header\">Actions</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Multiattack.</span> This creature can make 2 Blade Dance attacks when it takes the Attack action.</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Blade Dance.</span> <em>Melee Attack:</em> +[spellcasting modifier] to hit, reach 5 ft., one target. <em>Hit:</em> 1d8 + [spellcasting modifier] slashing damage. This creature gains 15 feet of movement this turn.</div></div></div><div class=\"spell-upcast\"><span class=\"spell-upcast-label\">At Higher Levels.</span> When you cast this spell at a higher level, the Clockwork Dancer can make one additional Blade Dance attack each turn for each spell level above 3rd.</div>",
+    "classes": [
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Animate Dead",
+    "level": "Level 3",
+    "school": "Necromancy",
+    "castTime": "1 action, or 1 reaction which you take in response to a non-construct humanoid creature within range dying",
+    "range": "60 feet",
+    "duration": "Concentration, up to your next short rest",
+    "concentration": true,
+    "description": "Choose an unoccupied space within 5 feet of you. If you cast this spell as a reaction you instead choose a space the dead creature was occupying. Create a Zombie on this space. This creature takes its turn immediately after yours and is controlled by you.<div class=\"statblock\"><div class=\"sb-header\"><div class=\"sb-name\">Zombie</div><div class=\"sb-type\">Medium Undead</div></div><div class=\"sb-body\"><div class=\"sb-core\"><div class=\"sb-row\"><span class=\"sb-label\">AC</span> 8 + spell level</div><div class=\"sb-row\"><span class=\"sb-label\">HP</span> 20 \u00d7 spell level</div><div class=\"sb-row\"><span class=\"sb-label\">Speed</span> 25 ft.</div></div><div class=\"sb-scores\"><div class=\"sb-score\"><div class=\"sb-score-label\">STR</div><div class=\"sb-score-val\">16 (+3)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">DEX</div><div class=\"sb-score-val\">8 (\u22121)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CON</div><div class=\"sb-score-val\">14 (+2)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">INT</div><div class=\"sb-score-val\">4 (\u22123)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">WIS</div><div class=\"sb-score-val\">12 (+1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CHA</div><div class=\"sb-score-val\">6 (\u22122)</div></div></div><div class=\"sb-divider\"></div><div class=\"sb-actions-header\">Actions</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Multiattack.</span> This creature can make 1 Slam Attack and 1 Bite Attack when it takes the Attack action.</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Slam.</span> <em>Melee Attack:</em> +[spellcasting modifier] to hit, reach 5 ft., one target. <em>Hit:</em> 1d4 + [spellcasting modifier] impact damage.</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Bite.</span> <em>Melee Attack:</em> +[spellcasting modifier] to hit, reach 5 ft., one target. <em>Hit:</em> Xd4 + [spellcasting modifier] necrotic damage, where X is this spell's level \u2212 2. The zombie heals for half the damage dealt.</div></div></div>",
+    "classes": [
+      "Warlock",
+      "Wizard"
     ]
   }
 ]
