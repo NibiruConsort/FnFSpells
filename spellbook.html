@@ -222,6 +222,24 @@
   .modal-meta-val { font-size: 0.92rem; font-weight: 500; }
   .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
+  /* ── STAT BLOCK ── */
+  .statblock { margin-top: 14px; border: 1px solid #c9a96a; border-radius: 6px; overflow: hidden; font-size: 0.85rem; }
+  .sb-header { background: #3d2b0f; color: #f5e6cc; padding: 10px 14px 8px; }
+  .sb-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; line-height: 1.2; }
+  .sb-type { font-size: 0.78rem; opacity: 0.8; font-style: italic; }
+  .sb-body { padding: 12px 14px; background: #fdf8f0; display: flex; flex-direction: column; gap: 0; }
+  .sb-divider { height: 1px; background: #c9a96a; margin: 10px 0; }
+  .sb-core { display: flex; flex-direction: column; gap: 3px; }
+  .sb-row { font-size: 0.82rem; color: #3a3830; }
+  .sb-label { font-weight: 700; color: #5a3218; }
+  .sb-scores { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; gap: 6px; margin: 10px 0 0; }
+  .sb-score-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #5a3218; }
+  .sb-score-val { font-size: 0.82rem; font-weight: 500; }
+  .sb-trait { font-size: 0.82rem; line-height: 1.5; margin-bottom: 5px; color: #3a3830; }
+  .sb-trait:last-child { margin-bottom: 0; }
+  .sb-trait-name { font-weight: 700; font-style: italic; }
+  .sb-actions-header { font-family: 'DM Serif Display', serif; font-size: 1rem; color: #5a3218; border-bottom: 1px solid #c9a96a; margin-bottom: 8px; padding-bottom: 3px; }
+
   @media (max-width: 768px) {
     .layout { grid-template-columns: 1fr; }
     aside { height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
@@ -362,7 +380,7 @@
       </div>
       <button class="modal-known-btn" id="modal-known-btn" onclick="toggleKnownFromModal()">+ Add to Known</button>
     </div>
-    <p class="modal-desc" id="m-desc"></p>
+    <div class="modal-desc" id="m-desc"></div>
     <div class="modal-grid">
       <div class="modal-meta-item"><span class="modal-meta-key">Cast Time</span><span class="modal-meta-val" id="m-cast"></span></div>
       <div class="modal-meta-item"><span class="modal-meta-key">Range</span><span class="modal-meta-val" id="m-range"></span></div>
@@ -627,7 +645,7 @@ function renderExpanded(list, container) {
         </div>
         ${actionBtnHTML(known)}
       </div>
-      <p class="card-desc">${spell.description}</p>
+      <div class="card-desc">${spell.description}</div>
       <div class="card-meta">
         <div class="meta-item"><span class="meta-key">Cast Time</span><span class="meta-val">${spell.castTime}</span></div>
         <div class="meta-item"><span class="meta-key">Range</span><span class="meta-val">${spell.range}</span></div>
@@ -690,7 +708,7 @@ function openModal(spell) {
   document.getElementById('m-level').textContent    = spell.level;
   document.getElementById('m-name').textContent     = spell.name;
   document.getElementById('m-school').textContent   = spell.school;
-  document.getElementById('m-desc').textContent     = spell.description;
+  document.getElementById('m-desc').innerHTML        = spell.description;
   document.getElementById('m-cast').textContent     = spell.castTime;
   document.getElementById('m-range').textContent    = spell.range;
   document.getElementById('m-duration').textContent = spell.duration;

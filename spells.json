@@ -2741,23 +2741,7 @@
     "range": "40 feet",
     "duration": "Concentration, up to 1 minute",
     "concentration": true,
-    "description": "Choose an unoccupied 10 by 10 foot area within the spells area. Morph the local fauna into a heap of animated vines. This creature takes its turn immediately after yours and is controlled by you. It’s statblock is as follows:
-
-Shambling Mound
-Large Plant
--
-AC	10+the spells level
-HP	15 times the spell’s level
-Str:  16   Dex:  8   Con:  14   Int:  4   Wis:  10   Cha:  6
-Speed: 25 feet
--
-False Appearance - If this creature has not moved it is indistinguishable from a normal plant.
--
-Actions
-Multiattack - This creature can make 2 Grasping Vine attacks when it takes the attack action
-
-Grasping Vine Attack - +to hit equal to your spellcasting modifier, (10 feet of reach), On a hit this attack deals [1d4+your spellcasting modifier] impact damage and if the target is medium or smaller and it was the first attack this creature has made this turn it can forgo any other attacks this turn to grapple the target. While the target is grappled it can use its action to attempt to escape the grapple, it must make an acrobatics or athletics check against your spell save DC.
-",
+    "description": "Choose an unoccupied 10-by-10-foot area within the spell’s range. Morph the local fauna into a heap of animated vines. This creature takes its turn immediately after yours and is controlled by you.<div class=\"statblock\"><div class=\"sb-header\"><div class=\"sb-name\">Shambling Mound</div><div class=\"sb-type\">Large Plant</div></div><div class=\"sb-body\"><div class=\"sb-core\"><div class=\"sb-row\"><span class=\"sb-label\">AC</span> 10 + spell level</div><div class=\"sb-row\"><span class=\"sb-label\">HP</span> 15 \u00d7 spell level</div><div class=\"sb-row\"><span class=\"sb-label\">Speed</span> 25 ft.</div></div><div class=\"sb-scores\"><div class=\"sb-score\"><div class=\"sb-score-label\">STR</div><div class=\"sb-score-val\">16 (+3)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">DEX</div><div class=\"sb-score-val\">8 (\u22121)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CON</div><div class=\"sb-score-val\">14 (+2)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">INT</div><div class=\"sb-score-val\">4 (\u22123)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">WIS</div><div class=\"sb-score-val\">10 (+0)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CHA</div><div class=\"sb-score-val\">6 (\u22122)</div></div></div><div class=\"sb-divider\"></div><div class=\"sb-trait\"><span class=\"sb-trait-name\">False Appearance.</span> If this creature has not moved it is indistinguishable from a normal plant.</div><div class=\"sb-divider\"></div><div class=\"sb-actions-header\">Actions</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Multiattack.</span> This creature can make 2 Grasping Vine attacks when it takes the Attack action.</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Grasping Vine.</span> <em>Melee Attack:</em> +[spellcasting modifier] to hit, reach 10 ft., one target. <em>Hit:</em> 1d4 + [spellcasting modifier] impact damage. If the target is Medium or smaller and this is the first attack the creature has made this turn, it can forgo its remaining attacks to grapple the target. While grappled, the target can use its action to escape (Acrobatics or Athletics vs. your spell save DC).</div></div></div>",
     "classes": [
       "Bard",
       "Sorcerer",
