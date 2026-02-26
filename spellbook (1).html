@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spellbook</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --border: #e4e2da;
+    --text: #1a1916;
+    --muted: #8a8780;
+    --accent: #2d6a4f;
+    --accent-light: #e8f5ef;
+    --tag-bg: #f0ede6;
+    --tag-text: #5a5750;
+    --known-accent: #b45309;
+    --known-light: #fdf3e7;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
+  }
+
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 0 32px; display: flex; align-items: stretch;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .header-title { display: flex; align-items: center; gap: 12px; padding: 16px 0; margin-right: 32px; }
+  header h1 { font-family: 'DM Serif Display', serif; font-size: 1.7rem; letter-spacing: -0.02em; }
+  header .subtitle { font-size: 0.82rem; color: var(--muted); font-weight: 400; }
+  .header-tabs { display: flex; align-items: flex-end; }
+  .tab-btn {
+    padding: 14px 20px; border: none; background: none; cursor: pointer;
+    font-family: inherit; font-size: 0.875rem; font-weight: 500; color: var(--muted);
+    border-bottom: 2.5px solid transparent; transition: color 0.15s, border-color 0.15s;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+  .tab-btn.known-tab.active { border-bottom-color: var(--known-accent); color: var(--known-accent); }
+  .tab-count {
+    font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 20px;
+    background: var(--tag-bg); color: var(--muted);
+    transition: background 0.15s, color 0.15s, transform 0.2s; display: inline-block;
+  }
+  .tab-btn.active .tab-count { background: var(--accent-light); color: var(--accent); }
+  .tab-btn.known-tab.active .tab-count { background: var(--known-light); color: var(--known-accent); }
+
+  /* ── LAYOUT ── */
+  .layout { display: grid; grid-template-columns: 260px 1fr; max-width: 1400px; margin: 0 auto; min-height: calc(100vh - 57px); }
+
+  /* ── SIDEBAR ── */
+  aside {
+    border-right: 1px solid var(--border); padding: 24px 20px; background: var(--surface);
+    position: sticky; top: 57px; height: calc(100vh - 57px); overflow-y: auto;
+  }
+  .filter-group { margin-bottom: 28px; }
+  .filter-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+  .search-wrap { position: relative; margin-bottom: 28px; }
+  .search-wrap input {
+    width: 100%; padding: 9px 12px 9px 36px; border: 1px solid var(--border); border-radius: var(--radius);
+    font-family: inherit; font-size: 0.9rem; background: var(--bg); color: var(--text); outline: none; transition: border-color 0.15s;
+  }
+  .search-wrap input:focus { border-color: var(--accent); }
+  .search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+  .check-list { display: flex; flex-direction: column; gap: 6px; }
+  .check-item { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; font-size: 0.875rem; padding: 4px 6px; border-radius: 6px; transition: background 0.1s; }
+  .check-item:hover { background: var(--tag-bg); }
+  .check-item input[type=checkbox] { display: none; }
+  .check-box { width: 16px; height: 16px; border: 1.5px solid var(--border); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .check-item input:checked + .check-box { background: var(--accent); border-color: var(--accent); }
+  .check-item input:checked + .check-box::after { content: ''; width: 9px; height: 5px; border-left: 2px solid white; border-bottom: 2px solid white; transform: rotate(-45deg) translateY(-1px); display: block; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-left: auto; }
+  .clear-btn { background: none; border: none; cursor: pointer; font-size: 0.78rem; color: var(--muted); font-family: inherit; padding: 0; margin-top: 4px; text-decoration: underline; text-underline-offset: 2px; transition: color 0.1s; }
+  .clear-btn:hover { color: var(--text); }
+
+  /* ── MAIN ── */
+  main { padding: 24px 28px; }
+  .view { display: none; }
+  .view.active { display: block; }
+  .results-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 12px; }
+  .results-bar-left { display: flex; align-items: center; gap: 10px; }
+  .results-count { font-size: 0.85rem; color: var(--muted); }
+  .results-count strong { color: var(--text); font-weight: 600; }
+  .results-bar-right { display: flex; align-items: center; gap: 8px; }
+  .sort-select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 7px; font-family: inherit; font-size: 0.85rem; background: var(--surface); color: var(--text); cursor: pointer; outline: none; }
+
+  /* ── VIEW TOGGLE ── */
+  .view-toggle { display: flex; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; }
+  .view-toggle-btn {
+    padding: 5px 10px; border: none; background: none; cursor: pointer;
+    font-family: inherit; font-size: 0.78rem; font-weight: 500; color: var(--muted);
+    transition: background 0.12s, color 0.12s; display: flex; align-items: center; gap: 5px;
+  }
+  .view-toggle-btn + .view-toggle-btn { border-left: 1px solid var(--border); }
+  .view-toggle-btn.active { background: var(--text); color: #fff; }
+  .view-toggle-btn:not(.active):hover { background: var(--tag-bg); color: var(--text); }
+
+  /* ── COMPACT LIST ── */
+  .compact-list { display: flex; flex-direction: column; gap: 4px; }
+  .compact-row {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 9px 14px;
+    display: flex; align-items: center; gap: 10px;
+    animation: fadeUp 0.2s ease both;
+    transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
+    cursor: pointer;
+  }
+  .compact-row:hover { box-shadow: var(--shadow); border-color: #ccc9c0; background: #fefefe; }
+  .compact-row.is-known { border-color: #d4a96a; }
+  .compact-school-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .compact-name { font-family: 'DM Serif Display', serif; font-size: 1rem; flex: 0 0 auto; min-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .compact-divider { width: 1px; height: 14px; background: var(--border); flex-shrink: 0; }
+  .compact-tags { display: flex; flex-wrap: nowrap; gap: 4px; align-items: center; flex: 1; min-width: 0; overflow: hidden; }
+  .compact-known-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--known-accent); background: var(--known-light); padding: 2px 6px; border-radius: 20px; flex-shrink: 0; display: none; }
+  .compact-row.is-known .compact-known-badge { display: inline-block; }
+  .compact-action { margin-left: auto; flex-shrink: 0; }
+  .compact-row .tag { font-size: 0.7rem; padding: 2px 7px; white-space: nowrap; }
+
+  /* ── HOVER TOOLTIP ── */
+  #spell-tooltip {
+    position: fixed; z-index: 9999;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    width: 270px; pointer-events: none;
+    opacity: 0; transition: opacity 0.15s ease;
+    display: none;
+  }
+  #spell-tooltip.visible { opacity: 1; display: block; }
+  .tt-desc {
+    font-size: 0.8rem; color: var(--muted); line-height: 1.55; margin-bottom: 12px;
+    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .tt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .tt-item { display: flex; flex-direction: column; gap: 1px; }
+  .tt-key { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+  .tt-val { font-size: 0.8rem; font-weight: 500; }
+  .tt-hint { font-size: 0.7rem; color: var(--muted); padding-top: 8px; border-top: 1px solid var(--border); }
+
+  /* ── EXPANDED CARD GRID ── */
+  .spell-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .spell-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    animation: fadeUp 0.25s ease both;
+  }
+  .spell-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .spell-card.is-known { border-color: #d4a96a; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+  .card-header-left { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .card-name { font-family: 'DM Serif Display', serif; font-size: 1.15rem; line-height: 1.2; cursor: pointer; }
+  .card-level { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 3px 8px; border-radius: 20px; white-space: nowrap; align-self: flex-start; }
+  .known-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--known-accent); background: var(--known-light); padding: 2px 7px; border-radius: 20px; align-self: flex-start; display: none; }
+  .spell-card.is-known .known-badge { display: inline-block; }
+
+  .card-action-btn {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: var(--surface); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; color: var(--muted);
+    transition: background 0.15s, border-color 0.15s, transform 0.15s, color 0.15s;
+  }
+  .card-action-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); transform: scale(1.12); }
+  .spell-card.is-known .card-action-btn,
+  .compact-row.is-known .card-action-btn { border-color: #d4a96a; color: var(--known-accent); background: var(--known-light); }
+  .spell-card.is-known .card-action-btn:hover,
+  .compact-row.is-known .card-action-btn:hover { background: #fce9cd; border-color: var(--known-accent); }
+  .btn-add { display: flex; } .btn-remove { display: none; }
+  .spell-card.is-known .btn-add,
+  .compact-row.is-known .btn-add { display: none; }
+  .spell-card.is-known .btn-remove,
+  .compact-row.is-known .btn-remove { display: flex; }
+
+  .card-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+  .card-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; font-size: 0.8rem; cursor: pointer; }
+  .meta-item { display: flex; flex-direction: column; gap: 1px; }
+  .meta-key { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .meta-val { font-weight: 500; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; cursor: pointer; }
+  .tag { font-size: 0.73rem; padding: 2px 8px; border-radius: 20px; background: var(--tag-bg); color: var(--tag-text); font-weight: 500; }
+  .tag.school { background: #eef2fb; color: #3a5bc7; }
+  .tag.class  { background: #fdf3e7; color: #b45309; }
+  .tag.conc   { background: #f3e8ff; color: #7c3aed; }
+
+  /* ── EMPTY STATES ── */
+  .empty { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--muted); }
+  .empty-solo { text-align: center; padding: 80px 20px; color: var(--muted); }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .empty h3, .empty-solo h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 6px; color: var(--text); }
+  .empty p, .empty-solo p { font-size: 0.9rem; }
+
+  /* ── MODAL ── */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,25,22,0.5); backdrop-filter: blur(3px); z-index: 100; padding: 40px 20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--surface); border-radius: 14px; padding: 36px; max-width: 560px; width: 100%; margin: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: modalIn 0.2s ease; position: relative; }
+  @keyframes modalIn { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  .modal-close { position: absolute; top: 18px; right: 18px; background: var(--tag-bg); border: none; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background 0.1s, color 0.1s; }
+  .modal-close:hover { background: var(--border); color: var(--text); }
+  .modal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+  .modal-top-left { flex: 1; }
+  .modal-level { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; display: block; }
+  .modal-name { font-family: 'DM Serif Display', serif; font-size: 1.9rem; line-height: 1.15; margin-bottom: 4px; }
+  .modal-school { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+  .modal-known-btn { margin-top: 8px; padding: 8px 16px; border-radius: 8px; border: 1.5px solid var(--border); cursor: pointer; font-family: inherit; font-size: 0.85rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; background: var(--surface); color: var(--text); transition: all 0.15s; }
+  .modal-known-btn:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+  .modal-known-btn.is-known { background: var(--known-light); border-color: #d4a96a; color: var(--known-accent); }
+  .modal-known-btn.is-known:hover { background: #fce9cd; }
+  .modal-desc { font-size: 0.93rem; line-height: 1.7; color: #3a3830; margin-bottom: 24px; }
+  .modal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 24px; padding: 20px; background: var(--bg); border-radius: var(--radius); }
+  .modal-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .modal-meta-key { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .modal-meta-val { font-size: 0.92rem; font-weight: 500; }
+  .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  @media (max-width: 768px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+    header { padding: 0 16px; flex-wrap: wrap; }
+    .header-title { padding: 12px 0; }
+    main { padding: 16px; }
+    .modal-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">
+    <h1>Spellbook</h1>
+    <span class="subtitle" id="total-count">— spells</span>
+  </div>
+  <div class="header-tabs">
+    <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">
+      All Spells <span class="tab-count" id="tab-all-count">0</span>
+    </button>
+    <button class="tab-btn known-tab" id="tab-known" onclick="switchTab('known')">
+      Known Spells <span class="tab-count" id="tab-known-count">0</span>
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="search-wrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search" placeholder="Search spells…" autocomplete="off" />
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Level / Tier</span>
+      <div class="check-list" id="level-filters"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">School / Type</span>
+      <div class="check-list" id="school-filters"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Class</span>
+      <div class="check-list" id="class-filters"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Properties</span>
+      <div class="check-list">
+        <label class="check-item">
+          <input type="checkbox" id="filter-conc" />
+          <span class="check-box"></span>
+          <span>Concentration</span>
+        </label>
+      </div>
+    </div>
+    <button class="clear-btn" onclick="clearFilters()">Clear all filters</button>
+  </aside>
+
+  <main>
+    <!-- ALL SPELLS VIEW -->
+    <div class="view active" id="view-all">
+      <div class="results-bar">
+        <div class="results-bar-left">
+          <p class="results-count"><strong id="shown-count">0</strong> spells shown</p>
+        </div>
+        <div class="results-bar-right">
+          <div class="view-toggle" id="view-toggle-all">
+            <button class="view-toggle-btn active" id="btn-compact-all" onclick="setViewMode('compact')" title="Compact view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              Compact
+            </button>
+            <button class="view-toggle-btn" id="btn-expanded-all" onclick="setViewMode('expanded')" title="Expanded view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              Expanded
+            </button>
+          </div>
+          <select class="sort-select" id="sort-select" onchange="renderAll()">
+            <option value="name">Sort: Name A–Z</option>
+            <option value="level">Sort: Level (low → high)</option>
+            <option value="level-desc">Sort: Level (high → low)</option>
+            <option value="school">Sort: School</option>
+          </select>
+        </div>
+      </div>
+      <div id="all-spells-container"></div>
+    </div>
+
+    <!-- KNOWN SPELLS VIEW -->
+    <div class="view" id="view-known">
+      <div class="results-bar">
+        <div class="results-bar-left">
+          <p class="results-count"><strong id="known-shown-count">0</strong> spells known</p>
+        </div>
+        <div class="results-bar-right">
+          <div class="view-toggle">
+            <button class="view-toggle-btn active" id="btn-compact-known" onclick="setViewMode('compact')" title="Compact view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              Compact
+            </button>
+            <button class="view-toggle-btn" id="btn-expanded-known" onclick="setViewMode('expanded')" title="Expanded view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              Expanded
+            </button>
+          </div>
+          <select class="sort-select" id="known-sort-select" onchange="renderKnown()">
+            <option value="name">Sort: Name A–Z</option>
+            <option value="level">Sort: Level (low → high)</option>
+            <option value="level-desc">Sort: Level (high → low)</option>
+            <option value="school">Sort: School</option>
+          </select>
+        </div>
+      </div>
+      <div id="known-spells-container"></div>
+    </div>
+  </main>
+</div>
+
+<!-- HOVER TOOLTIP — follows cursor -->
+<div id="spell-tooltip">
+  <div class="tt-desc" id="tt-desc"></div>
+  <div class="tt-grid">
+    <div class="tt-item"><span class="tt-key">Cast Time</span><span class="tt-val" id="tt-cast"></span></div>
+    <div class="tt-item"><span class="tt-key">Range</span><span class="tt-val" id="tt-range"></span></div>
+    <div class="tt-item"><span class="tt-key">Duration</span><span class="tt-val" id="tt-duration"></span></div>
+  </div>
+  <div class="tt-hint">Click to view full details</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-top">
+      <div class="modal-top-left">
+        <span class="modal-level" id="m-level"></span>
+        <h2 class="modal-name" id="m-name"></h2>
+        <p class="modal-school" id="m-school"></p>
+      </div>
+      <button class="modal-known-btn" id="modal-known-btn" onclick="toggleKnownFromModal()">+ Add to Known</button>
+    </div>
+    <p class="modal-desc" id="m-desc"></p>
+    <div class="modal-grid">
+      <div class="modal-meta-item"><span class="modal-meta-key">Cast Time</span><span class="modal-meta-val" id="m-cast"></span></div>
+      <div class="modal-meta-item"><span class="modal-meta-key">Range</span><span class="modal-meta-val" id="m-range"></span></div>
+      <div class="modal-meta-item"><span class="modal-meta-key">Duration</span><span class="modal-meta-val" id="m-duration"></span></div>
+    </div>
+    <div class="modal-tags" id="m-tags"></div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// YOUR SPELL DATA — Edit this array to add/remove spells.
+// ─────────────────────────────────────────────────────────────
+let SPELLS = [];
+let allLevels = [], allSchools = [], allClasses = [];
+
+fetch('spells.json')
+  .then(r => r.json())
+  .then(data => {
+    SPELLS = data;
+    allLevels  = [...new Set(SPELLS.map(s=>s.level))].sort((a,b)=>levelOrder(a)-levelOrder(b));
+    allSchools = [...new Set(SPELLS.map(s=>s.school))].sort();
+    allClasses = [...new Set(SPELLS.flatMap(s=>s.classes))].sort();
+    buildFilters();
+    renderAll();
+    syncKnownCount();
+  })
+  .catch(err => console.error('Failed to load spells.json:', err));
+// ─────────────────────────────────────────────────────────────
+
+const schoolColors = { Evocation:'#ef4444', Conjuration:'#8b5cf6', Illusion:'#3b82f6', Transmutation:'#f59e0b', Divination:'#06b6d4', Abjuration:'#10b981', Necromancy:'#6b7280', Enchantment:'#ec4899', Restoration:'#84cc16' };
+
+const filters  = { search:'', levels:new Set(), schools:new Set(), classes:new Set(), concentrationOnly: false };
+const knownSpells = new Set();
+let currentTab = 'all';
+let viewMode   = 'compact'; // shared across both tabs
+let modalSpell = null;
+
+// Mouse position tracking for tooltip
+let mouseX = 0, mouseY = 0;
+document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+function levelOrder(l) { if(l==='Cantrip')return 0; const m=l.match(/\d+/); return m?parseInt(m[0]):99; }
+
+// ── VIEW MODE ──
+function setViewMode(mode) {
+  viewMode = mode;
+  // Sync all four toggle buttons
+  ['all','known'].forEach(tab => {
+    document.getElementById(`btn-compact-${tab}`).classList.toggle('active', mode==='compact');
+    document.getElementById(`btn-expanded-${tab}`).classList.toggle('active', mode==='expanded');
+  });
+  renderAll();
+  if (currentTab === 'known') renderKnown();
+}
+
+// ── TAB SWITCHING ──
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('view-all').classList.toggle('active', tab==='all');
+  document.getElementById('view-known').classList.toggle('active', tab==='known');
+  document.getElementById('tab-all').classList.toggle('active', tab==='all');
+  document.getElementById('tab-known').classList.toggle('active', tab==='known');
+  hideTooltip();
+  if (tab==='known') renderKnown();
+}
+
+// ── KNOWN SPELLS ──
+function toggleKnown(name, e) {
+  if (e) e.stopPropagation();
+  if (knownSpells.has(name)) { knownSpells.delete(name); }
+  else {
+    knownSpells.add(name);
+    const tc = document.getElementById('tab-known-count');
+    tc.style.transform = 'scale(1.5)';
+    setTimeout(()=>tc.style.transform='', 220);
+  }
+  syncKnownCount();
+  renderAll();
+  if (currentTab==='known') renderKnown();
+  if (modalSpell && modalSpell.name===name) syncModalBtn();
+}
+function syncKnownCount() { document.getElementById('tab-known-count').textContent = knownSpells.size; }
+
+// ── FILTERS ──
+function passesFilters(s) {
+  if (filters.search && !s.name.toLowerCase().includes(filters.search) && !s.description.toLowerCase().includes(filters.search)) return false;
+  if (filters.levels.size  && !filters.levels.has(s.level))  return false;
+  if (filters.schools.size && !filters.schools.has(s.school)) return false;
+  if (filters.classes.size && !s.classes.some(c=>filters.classes.has(c))) return false;
+  if (filters.concentrationOnly && !s.concentration) return false;
+  return true;
+}
+function sorted(arr, selectId) {
+  const v = document.getElementById(selectId).value;
+  return [...arr].sort((a,b) => {
+    if(v==='name') return a.name.localeCompare(b.name);
+    if(v==='level') return levelOrder(a.level)-levelOrder(b.level);
+    if(v==='level-desc') return levelOrder(b.level)-levelOrder(a.level);
+    if(v==='school') return a.school.localeCompare(b.school);
+    return 0;
+  });
+}
+function buildFilters() {
+  buildCheckList('level-filters', allLevels, 'levels');
+  buildCheckList('school-filters', allSchools, 'schools');
+  buildCheckList('class-filters', allClasses, 'classes');
+  document.getElementById('filter-conc').addEventListener('change', e => {
+    filters.concentrationOnly = e.target.checked;
+    renderAll(); if(currentTab==='known')renderKnown();
+  });
+  document.getElementById('search').addEventListener('input', e => {
+    filters.search=e.target.value.toLowerCase(); renderAll(); if(currentTab==='known')renderKnown();
+  });
+  document.getElementById('total-count').textContent = `${SPELLS.length} spells`;
+  document.getElementById('tab-all-count').textContent = SPELLS.length;
+}
+function buildCheckList(id, items, key) {
+  const el = document.getElementById(id);
+  items.forEach(item => {
+    const lbl = document.createElement('label'); lbl.className='check-item';
+    const color = key==='schools'?(schoolColors[item]||'#94a3b8'):null;
+    lbl.innerHTML = `<input type="checkbox" value="${item}"/><span class="check-box"></span><span>${item}</span>${color?`<span class="dot" style="background:${color}22;border:1.5px solid ${color}88"></span>`:''}`;
+    lbl.querySelector('input').addEventListener('change', e => {
+      e.target.checked ? filters[key].add(item) : filters[key].delete(item);
+      renderAll(); if(currentTab==='known')renderKnown();
+    });
+    el.appendChild(lbl);
+  });
+}
+function clearFilters() {
+  filters.search=''; filters.levels.clear(); filters.schools.clear(); filters.classes.clear(); filters.concentrationOnly=false;
+  document.getElementById('search').value='';
+  document.getElementById('filter-conc').checked = false;
+  document.querySelectorAll('.check-item input').forEach(cb=>cb.checked=false);
+  renderAll(); if(currentTab==='known')renderKnown();
+}
+
+// ── TOOLTIP ──
+const tooltip = document.getElementById('spell-tooltip');
+let tooltipHideTimer = null;
+
+function showTooltip(spell) {
+  clearTimeout(tooltipHideTimer);
+  document.getElementById('tt-desc').textContent     = spell.description;
+  document.getElementById('tt-cast').textContent     = spell.castTime;
+  document.getElementById('tt-range').textContent    = spell.range;
+  document.getElementById('tt-duration').textContent = spell.duration;
+  positionTooltip();
+  tooltip.style.display = 'block';
+  // Small delay so display:block renders before opacity transitions
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { tooltip.classList.add('visible'); });
+  });
+}
+
+function positionTooltip() {
+  const ttW = 270, margin = 16;
+  let left = mouseX + margin;
+  let top  = mouseY + margin;
+  // Flip left if it would go off screen right
+  if (left + ttW > window.innerWidth - 8) left = mouseX - ttW - margin;
+  if (left < 8) left = 8;
+  // Clamp vertically
+  const ttH = tooltip.offsetHeight || 160;
+  if (top + ttH > window.innerHeight - 8) top = mouseY - ttH - margin;
+  if (top < 8) top = 8;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top  = top  + 'px';
+}
+
+// Keep tooltip repositioning as cursor moves over active row
+document.addEventListener('mousemove', () => {
+  if (tooltip.classList.contains('visible')) positionTooltip();
+});
+
+function hideTooltip() {
+  clearTimeout(tooltipHideTimer);
+  tooltipHideTimer = setTimeout(() => {
+    tooltip.classList.remove('visible');
+    tooltipHideTimer = setTimeout(() => { tooltip.style.display = 'none'; }, 150);
+  }, 60);
+}
+
+// ── ACTION BUTTON HTML ──
+function actionBtnHTML(known) {
+  return `<button class="card-action-btn" title="${known?'Remove from Known Spells':'Add to Known Spells'}">
+    <svg class="btn-add" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    <svg class="btn-remove" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg>
+  </button>`;
+}
+
+// ── RENDER HELPERS ──
+function renderCompact(list, container, sortId) {
+  const wrap = document.createElement('div'); wrap.className='compact-list';
+  list.forEach((spell, i) => {
+    const known = knownSpells.has(spell.name);
+    const color = schoolColors[spell.school]||'#94a3b8';
+    const row = document.createElement('div');
+    row.className = `compact-row${known?' is-known':''}`;
+    row.style.animationDelay = `${i*0.02}s`;
+    row.innerHTML = `
+      <span class="compact-school-dot" style="background:${color}"></span>
+      <span class="compact-name">${spell.name}</span>
+      <span class="compact-divider"></span>
+      <div class="compact-tags">
+        <span class="tag" style="background:${color}18;color:${color};font-size:0.68rem">${spell.level}</span>
+        <span class="tag school" style="background:${color}18;color:${color}">${spell.school}</span>
+        ${spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')}
+        ${spell.concentration ? '<span class="tag conc">Concentration</span>' : ''}
+        <span class="compact-known-badge">✦ Known</span>
+      </div>
+      <div class="compact-action">${actionBtnHTML(known)}</div>
+    `;
+    // Tooltip on hover (entire row except action button)
+    row.addEventListener('mouseenter', () => showTooltip(spell));
+    row.addEventListener('mouseleave', () => hideTooltip());
+    // Click row → open modal; action button → toggle known
+    row.addEventListener('click', () => openModal(spell));
+    row.querySelector('.card-action-btn').addEventListener('click', e => toggleKnown(spell.name, e));
+    wrap.appendChild(row);
+  });
+  container.appendChild(wrap);
+}
+
+function renderExpanded(list, container) {
+  const grid = document.createElement('div'); grid.className='spell-grid';
+  list.forEach((spell, i) => {
+    const known = knownSpells.has(spell.name);
+    const color = schoolColors[spell.school]||'#94a3b8';
+    const card = document.createElement('div');
+    card.className = `spell-card${known?' is-known':''}`;
+    card.style.animationDelay = `${i*0.03}s`;
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="card-name">${spell.name}</span>
+          <span class="card-level">${spell.level}</span>
+          <span class="known-badge">✦ Known</span>
+        </div>
+        ${actionBtnHTML(known)}
+      </div>
+      <p class="card-desc">${spell.description}</p>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-key">Cast Time</span><span class="meta-val">${spell.castTime}</span></div>
+        <div class="meta-item"><span class="meta-key">Range</span><span class="meta-val">${spell.range}</span></div>
+        <div class="meta-item"><span class="meta-key">Duration</span><span class="meta-val">${spell.duration}</span></div>
+      </div>
+      <div class="card-tags">
+        <span class="tag school" style="background:${color}18;color:${color}">${spell.school}</span>
+        ${spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')}
+        ${spell.concentration ? '<span class="tag conc">Concentration</span>' : ''}
+      </div>`;
+    card.querySelector('.card-action-btn').addEventListener('click', e=>toggleKnown(spell.name,e));
+    ['.card-desc','.card-meta','.card-tags','.card-name'].forEach(sel=>
+      card.querySelector(sel).addEventListener('click',()=>openModal(spell)));
+    grid.appendChild(card);
+  });
+  container.appendChild(grid);
+}
+
+// ── RENDER ALL SPELLS ──
+function renderAll() {
+  const list = sorted(SPELLS.filter(passesFilters), 'sort-select');
+  document.getElementById('shown-count').textContent = list.length;
+  const container = document.getElementById('all-spells-container');
+  container.innerHTML = '';
+  if (!list.length) {
+    container.innerHTML = `<div class="empty" style="display:block;padding:80px 20px;text-align:center;color:var(--muted)"><div class="empty-icon">✦</div><h3>No spells found</h3><p>Try adjusting your search or filters.</p></div>`;
+    return;
+  }
+  if (viewMode === 'compact') renderCompact(list, container, 'sort-select');
+  else renderExpanded(list, container);
+}
+
+// ── RENDER KNOWN SPELLS ──
+function renderKnown() {
+  const list = sorted(SPELLS.filter(s=>knownSpells.has(s.name)&&passesFilters(s)), 'known-sort-select');
+  document.getElementById('known-shown-count').textContent = list.length;
+  const container = document.getElementById('known-spells-container');
+  container.innerHTML = '';
+
+  if (knownSpells.size === 0) {
+    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>No spells learned yet</h3><p>Go to <strong>All Spells</strong> and press <strong>+</strong> on a spell to add it here.</p></div>`;
+    return;
+  }
+  if (list.length === 0) {
+    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>No matches</h3><p>None of your known spells match the current filters.</p></div>`;
+    return;
+  }
+
+  // Use the shared compact/expanded helpers — known spells will show ✦ Known badge
+  // and the action button will show the minus (remove) icon automatically via .is-known CSS
+  if (viewMode === 'compact') renderCompact(list, container, 'known-sort-select');
+  else renderExpanded(list, container);
+}
+
+// ── MODAL ──
+function openModal(spell) {
+  hideTooltip();
+  modalSpell = spell;
+  const color = schoolColors[spell.school]||'#94a3b8';
+  document.getElementById('m-level').textContent    = spell.level;
+  document.getElementById('m-name').textContent     = spell.name;
+  document.getElementById('m-school').textContent   = spell.school;
+  document.getElementById('m-desc').textContent     = spell.description;
+  document.getElementById('m-cast').textContent     = spell.castTime;
+  document.getElementById('m-range').textContent    = spell.range;
+  document.getElementById('m-duration').textContent = spell.duration;
+  document.getElementById('m-tags').innerHTML =
+    `<span class="tag school" style="background:${color}18;color:${color}">${spell.school}</span>`+
+    spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')+
+    (spell.concentration ? '<span class="tag conc">Concentration</span>' : '');
+  syncModalBtn();
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function syncModalBtn() {
+  if (!modalSpell) return;
+  const btn = document.getElementById('modal-known-btn');
+  const known = knownSpells.has(modalSpell.name);
+  btn.textContent = known ? '✦ Known — Remove' : '+ Add to Known';
+  btn.classList.toggle('is-known', known);
+}
+function toggleKnownFromModal() { if(modalSpell) toggleKnown(modalSpell.name); }
+function closeModal(e) { if(e.target===document.getElementById('modal-overlay'))closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
+
+</script>
+</body>
+</html>
