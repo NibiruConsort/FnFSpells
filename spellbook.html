@@ -300,7 +300,7 @@
           </div>
           <select class="sort-select" id="sort-select" onchange="renderAll()">
             <option value="name">Sort: Name A–Z</option>
-            <option value="level">Sort: Level (low → high)</option>
+            <option value="level" selected>Sort: Level (low → high)</option>
             <option value="level-desc">Sort: Level (high → low)</option>
             <option value="school">Sort: School</option>
           </select>
@@ -328,7 +328,7 @@
           </div>
           <select class="sort-select" id="known-sort-select" onchange="renderKnown()">
             <option value="name">Sort: Name A–Z</option>
-            <option value="level">Sort: Level (low → high)</option>
+            <option value="level" selected>Sort: Level (low → high)</option>
             <option value="level-desc">Sort: Level (high → low)</option>
             <option value="school">Sort: School</option>
           </select>
@@ -482,9 +482,9 @@ function sorted(arr, selectId) {
   const v = document.getElementById(selectId).value;
   return [...arr].sort((a,b) => {
     if(v==='name') return a.name.localeCompare(b.name);
-    if(v==='level') return levelOrder(a.level)-levelOrder(b.level);
-    if(v==='level-desc') return levelOrder(b.level)-levelOrder(a.level);
-    if(v==='school') return a.school.localeCompare(b.school);
+    if(v==='level') return levelOrder(a.level)-levelOrder(b.level) || a.name.localeCompare(b.name);
+    if(v==='level-desc') return levelOrder(b.level)-levelOrder(a.level) || a.name.localeCompare(b.name);
+    if(v==='school') return a.school.localeCompare(b.school) || a.name.localeCompare(b.name);
     return 0;
   });
 }
