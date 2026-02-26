@@ -394,6 +394,7 @@
       <div class="modal-meta-item"><span class="modal-meta-key">Duration</span><span class="modal-meta-val" id="m-duration"></span></div>
     </div>
     <div class="modal-tags" id="m-tags"></div>
+    <div class="spell-upcast" id="m-higher" style="display:none"><span class="spell-upcast-label" id="m-higher-label"></span> <span id="m-higher-text"></span></div>
   </div>
 </div>
 
@@ -662,7 +663,8 @@ function renderExpanded(list, container) {
         <span class="tag school" style="background:${color}18;color:${color}">${spell.school}</span>
         ${spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')}
         ${spell.concentration ? '<span class="tag conc">Concentration</span>' : ''}
-      </div>`;
+      </div>
+      ${spell.atHigherLevels ? `<div class="spell-upcast"><span class="spell-upcast-label">${spell.level === 'Cantrip' ? 'Cantrip Improvements.' : 'At Higher Levels.'}</span> ${spell.atHigherLevels}</div>` : ''}`;
     card.querySelector('.card-action-btn').addEventListener('click', e=>toggleKnown(spell.name,e));
     ['.card-desc','.card-meta','.card-tags','.card-name'].forEach(sel=>
       card.querySelector(sel).addEventListener('click',()=>openModal(spell)));
@@ -724,6 +726,14 @@ function openModal(spell) {
     spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')+
     (spell.concentration ? '<span class="tag conc">Concentration</span>' : '');
   syncModalBtn();
+  const higherDiv = document.getElementById('m-higher');
+  if (spell.atHigherLevels) {
+    document.getElementById('m-higher-label').textContent = spell.level === 'Cantrip' ? 'Cantrip Improvements.' : 'At Higher Levels.';
+    document.getElementById('m-higher-text').innerHTML = spell.atHigherLevels;
+    higherDiv.style.display = '';
+  } else {
+    higherDiv.style.display = 'none';
+  }
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
