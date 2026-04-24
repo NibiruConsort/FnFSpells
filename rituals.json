@@ -1,0 +1,281 @@
+[
+  {
+    "name": "Bestial Senses",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Speak with Animals",
+        "castTime": "1 minute",
+        "description": "For the next 10 minutes you can talk to and understand beasts."
+      },
+      {
+        "name": "ph_catEyes",
+        "castTime": "1 minute",
+        "description": "You gain 30 feet of darkvision. Whenever you make a perception or insight check using sight, increase the result by 2. These effects last until you finish a long rest."
+      },
+      {
+        "name": "Detect Poison and Disease",
+        "castTime": "1 minute",
+        "description": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case.\n\nThe spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
+      }
+    ]
+  },
+  {
+    "name": "Elementalist",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Create Flame",
+        "castTime": "1 action",
+        "description": "A flickering flame appears in your hand. The flame remains there and harms neither you nor your equipment until you choose to end this effect or the start of your next short rest. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. You can use your action to light flammable objects within 5 feet of you for the duration."
+      },
+      {
+        "name": "Gust",
+        "castTime": "1 minute",
+        "description": "You seize the air and compel it to create one of the following effects at a point you can see within range:\n- One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.\n- You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.\n- You create a harmless sensory affect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze."
+      },
+      {
+        "name": "Mold Earth",
+        "castTime": "1 minute",
+        "description": "You choose a portion of dirt or stone that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n- If you target an area of loose earth, you can instantaneously excavate it, move it along the ground, and deposit it up to 5 feet away. This movement doesn't have enough force to cause damage.\n- You cause shapes, colors, or both to appear on the dirt or stone, spelling out words, creating images, or shaping patterns.\n- The changes last for 1 hour. If the dirt or stone you target is on the ground, you cause it to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain. This change lasts for 1 hour.\nIf you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect at any time during your turn."
+      },
+      {
+        "name": "Shape Water",
+        "castTime": "1 minute",
+        "description": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n- You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn't have enough force to cause damage.\n- You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.\n- You change the water's color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.\n- You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.\nYou can dismiss any of these effects at any time during your turn."
+      }
+    ]
+  },
+  {
+    "name": "Animate Objects",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "ph_mule",
+        "castTime": "1 minute",
+        "description": "You animate a medium or large object you are touching. That object becomes a construct creature with the following statblock:\nIt can carry up to 200 pounds of objects and remains animated until you finish a long rest or it drops to 0 hit points."
+      },
+      {
+        "name": "ph_servants",
+        "castTime": "1 minute",
+        "description": "You animate up to 3 small objects you are touching. Those objects become construct creatures with the following statblock:\nThey can perform simple tasks and follow orders you give them.\nThey remain animated for 1 hour."
+      },
+      {
+        "name": "ph_puppet",
+        "castTime": "1 minute",
+        "description": "You animate a pair of gloves for the next 10 minutes. While you wear one of the gloves, the other floats in place and mimics the movements of your gloved hand. The mimicked actions do not impart the same force as the original and cannot be used to make attacks. While the gloves remain enchanted you can use your bonus action to have the floating glove move up to 30 feet. If the gloves are ever more than 60 feet apart the enchantment ends."
+      }
+    ]
+  },
+  {
+    "name": "ph_psionic",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Message",
+        "castTime": "1 action",
+        "description": "Message does not require verbal or somatic components. Choose a creature you can see or hear. You send a 50 word message to that creature. They can respond with up to 50 words."
+      },
+      {
+        "name": "Mental Link",
+        "castTime": "1 minute",
+        "description": "Choose any amount of willing creatures within 30 feet of you. For the next hour you can speak telepathically to each other as long as you remain on the same plane."
+      },
+      {
+        "name": "Manipulate",
+        "castTime": "1 minute",
+        "description": "It's mage hand but without fine control."
+      }
+    ]
+  },
+  {
+    "name": "Scholar's Ritual",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Comprehend Languages",
+        "castTime": "1 minute",
+        "description": "For the next 10 minutes you can read and understand any language."
+      },
+      {
+        "name": "Identify",
+        "castTime": "1 minute",
+        "description": "You handle a magical item, or examine a spell or magical effect for the duration of the ritual. At the end you learn its purpose, how to use it, roughly how it was made, and whether it is broken or missing parts."
+      },
+      {
+        "name": "Illusory Script",
+        "castTime": "1 minute to 10 minutes",
+        "description": "While performing this ritual, write text on any surface. To you and any creatures you designate while performing the ritual it appears normally as you wrote it. To any other creatures you may have the text be invisible or appear as different words of your choice."
+      }
+    ]
+  },
+  {
+    "name": "Tricks of the Trade",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Vanishing Dust",
+        "castTime": "1 action",
+        "description": "You and any creatures within 10 feet of you gain +5 to stealth checks for the next 1 minute."
+      },
+      {
+        "name": "Cloud Flower Seeds",
+        "castTime": "1 reaction to a creature within 30 feet of you falling at least 5 feet",
+        "description": "The target creature and any creatures within 20 feet of it do not take fall damage when they hit the floor."
+      },
+      {
+        "name": "Third Lung",
+        "castTime": "1 minute",
+        "description": "You take a large gulp of air. For the next hour you do not need to breathe."
+      }
+    ]
+  },
+  {
+    "name": "ph_thinkingWithPortals",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "ph_hammerSpace",
+        "castTime": "1 minute",
+        "description": "For the next minute you can use your bonus action to send objects you can hold in one hand to a harmless demiplane where it will remain until you use your bonus action to return it."
+      },
+      {
+        "name": "Swapsies",
+        "castTime": "1 action",
+        "description": "Choose an object within 60 feet you can see, that is not being held by a creature. If you are holding an object of a similar weight and size, magically swap the objects."
+      }
+    ]
+  },
+  {
+    "name": "ph_detectMagic",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Detect Magic",
+        "castTime": "1 minute",
+        "description": "For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell's level. You can make an Arcana check to identify extra traits about the spell (creatures with spellcasting or proficiency in arcana can help you with this check).<br><br><table style=\"width:100%;border-collapse:collapse;font-size:0.9em\"><thead><tr style=\"border-bottom:1px solid #c8b99a\"><th style=\"text-align:left;padding:4px 8px\">DC</th><th style=\"text-align:left;padding:4px 8px\">Effect</th></tr></thead><tbody><tr><td style=\"padding:4px 8px;white-space:nowrap\">5 + spell level</td><td style=\"padding:4px 8px\">You learn the spell's duration and school.</td></tr><tr style=\"background:rgba(0,0,0,0.04)\"><td style=\"padding:4px 8px;white-space:nowrap\">10 + spell level</td><td style=\"padding:4px 8px\">You learn the spell's effect.</td></tr><tr><td style=\"padding:4px 8px;white-space:nowrap\">15 + spell level</td><td style=\"padding:4px 8px\">You learn the spell's name and identify the magical signature of the caster. If you ever see any other spells cast by the same creature you can immediately identify it as such.</td></tr></tbody></table><br>If the magical effect is not a spell, you learn the spell's range and the DM determines any other information you are able to learn."
+      }
+    ]
+  },
+  {
+    "name": "Ceremony",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Kindle",
+        "castTime": "1 action",
+        "description": "You touch up to 3 objects. Each sheds bright light in a 20-foot radius. This effect lasts until your next short rest, or you dismiss it during your turn."
+      },
+      {
+        "name": "Gentle Repose",
+        "castTime": "1 minute",
+        "description": "You touch a corpse or other remains. For the next 10 days the remains are protected from decay and cannot be raised as undead."
+      },
+      {
+        "name": "Marriage",
+        "castTime": "1 minute",
+        "description": ""
+      },
+      {
+        "name": "Dedication",
+        "castTime": "1 minute",
+        "description": "Buff that can only be used on each creature once."
+      }
+    ]
+  },
+  {
+    "name": "Pathfinder's Rites",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Alarm",
+        "castTime": "1 minute",
+        "description": "You ward a doorway, window, or cube up to 20 feet in size within 5 feet of you, and choose a password. If a creature enters the area without speaking the password, you are mentally alerted. You may instead choose to have the alarm produce a loud audible sound. This effect lasts until you finish a long rest."
+      },
+      {
+        "name": "Light",
+        "castTime": "1 action",
+        "description": "You touch one object. Until you finish a long rest or choose to end the effect on your turn, it sheds bright light in a 60-foot radius."
+      },
+      {
+        "name": "Arcane Lock",
+        "castTime": "1 minute",
+        "description": "You touch a door, window, chest, or other closeable object. It becomes magically locked until you finish a long rest. Creatures you designate during the ritual can open it normally. Any other creature that attempts to force it open must break the item such that a normal lock would not keep it closed."
+      }
+    ]
+  },
+  {
+    "name": "Divine Sight",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Detect Extraplanar Entities",
+        "castTime": "1 action",
+        "description": "For the next 10 minutes you can sense the presence of celestials, fiends, undead, and elementals within 60 feet of you. You know their location but not their identity."
+      },
+      {
+        "name": "Divine Truth",
+        "castTime": "1 action",
+        "description": "For the next 10 minutes, when a creature within 30 feet of you makes a deception check you are aware of it and which creature did."
+      }
+    ]
+  },
+  {
+    "name": "Tinker",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Explain",
+        "castTime": "1 minute",
+        "description": "You handle a mundane or arcanatech object for the duration of the ritual. At the end you learn its purpose, how to use it, roughly how it was made, and whether it is broken or missing parts."
+      },
+      {
+        "name": "Mending",
+        "castTime": "1 minute",
+        "description": "You repair a single break or tear in an object you are touching. Magical items can be physically repaired this way but cannot have their magic restored."
+      },
+      {
+        "name": "Encode Thought",
+        "castTime": "1 minute",
+        "description": "You extract a thought, memory, or piece of knowledge and store it in a small object you are touching. Any creature that holds the object and concentrates for 1 minute receives the stored information as if they had experienced it themselves."
+      },
+      {
+        "name": "Record",
+        "castTime": "1 round to 10 minutes",
+        "description": "This ritual does not require verbal or somatic components other than holding the object. While performing this ritual, you may record either sounds or visuals around you onto an object. A creature can hold that object for 1 minute to receive that information as though they were there."
+      }
+    ]
+  },
+  {
+    "name": "Diviner's Ritual",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Arcane Eye",
+        "castTime": "1 minute",
+        "description": "You create an invisible magical sensor within 30 feet of you. You can see through the sensor as if you were standing there. As a bonus action you can move it up to 30 feet. It lasts for 1 hour."
+      },
+      {
+        "name": "Thought Shield",
+        "castTime": "1 minute",
+        "description": "For the next hour your thoughts cannot be read by telepathy or other magical means unless you choose to allow it. You also have resistance to psychic damage for the duration."
+      }
+    ]
+  },
+  {
+    "name": "Trickster Ritual",
+    "minCharacterLevel": null,
+    "features": [
+      {
+        "name": "Disguise Self",
+        "castTime": "1 minute",
+        "description": "For the next hour you may alter your appearance. You can change your height by up to 1 foot, your weight, facial features, hair, and clothing. Creatures can make an Investigation check against your spell save DC to see through the disguise."
+      },
+      {
+        "name": "Feign Death",
+        "castTime": "1 minute",
+        "description": "You enter a cataleptic state indistinguishable from death. While in this state you are fully aware of your surroundings and have resistance to all damage. The effect ends after 1 hour, when you choose to end it, or when you take an action."
+      }
+    ]
+  }
+]

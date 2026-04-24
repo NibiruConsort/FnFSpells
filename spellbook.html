@@ -202,7 +202,7 @@
   /* ── MODAL ── */
   .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,25,22,0.5); backdrop-filter: blur(3px); z-index: 100; padding: 40px 20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
   .modal-overlay.open { display: flex; }
-  .modal { background: var(--surface); border-radius: 14px; padding: 36px; max-width: 560px; width: 100%; margin: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: modalIn 0.2s ease; position: relative; }
+  .modal { background: var(--surface); border-radius: 14px; padding: 36px; max-width: clamp(560px, 75vw, 1000px); width: 100%; margin: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: modalIn 0.2s ease; position: relative; }
   @keyframes modalIn { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
   .modal-close { position: absolute; top: 18px; right: 18px; background: var(--tag-bg); border: none; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background 0.1s, color 0.1s; }
   .modal-close:hover { background: var(--border); color: var(--text); }
@@ -247,6 +247,33 @@
   .spell-table tr:last-child td { border-bottom: none; }
   .spell-table td:first-child { font-weight: 600; white-space: nowrap; color: var(--text); }
 
+  /* ── RITUALS ── */
+  .tab-btn.ritual-tab.active { border-bottom-color: #d97706; color: #d97706; }
+  .tab-btn.ritual-tab.active .tab-count { background: #fef3c7; color: #92400e; }
+
+  .ritual-card {
+    background: var(--surface); border: 1.5px solid #e8d8b0;
+    border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    animation: fadeUp 0.25s ease both; cursor: pointer;
+  }
+  .ritual-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .ritual-card.is-known { border-color: #d4a96a; }
+  .ritual-feature-list { margin: 10px 0 14px; display: flex; flex-direction: column; gap: 4px; }
+  .ritual-feature-item { font-size: 0.83rem; }
+  .ritual-feature-name { font-weight: 600; color: var(--text); }
+  .ritual-feature-cast { color: var(--muted); font-size: 0.78rem; }
+
+  .modal-features { margin-top: 4px; display: flex; flex-direction: column; gap: 0; }
+  .modal-feature { border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px; }
+  .modal-feature:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+  .modal-feature-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .modal-feature-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; }
+  .modal-feature-cast { font-size: 0.8rem; color: var(--muted); }
+  .modal-feature-desc { font-size: 0.9rem; line-height: 1.65; color: #3a3830; }
+
+  .filter-rituals-only { display: none; }
+
   @media (max-width: 768px) {
     .layout { grid-template-columns: 1fr; }
     aside { height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
@@ -271,6 +298,9 @@
     <button class="tab-btn known-tab" id="tab-known" onclick="switchTab('known')">
       Known Spells <span class="tab-count" id="tab-known-count">0</span>
     </button>
+    <button class="tab-btn ritual-tab" id="tab-rituals" onclick="switchTab('rituals')">
+      Rituals <span class="tab-count" id="tab-rituals-count">0</span>
+    </button>
   </div>
 </header>
 
@@ -280,26 +310,34 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="search" placeholder="Search spells…" autocomplete="off" />
     </div>
-    <div class="filter-group">
-      <span class="filter-label">Level / Tier</span>
-      <div class="check-list" id="level-filters"></div>
+    <div class="filter-spells-only">
+      <div class="filter-group">
+        <span class="filter-label">Level / Tier</span>
+        <div class="check-list" id="level-filters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">School / Type</span>
+        <div class="check-list" id="school-filters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Class</span>
+        <div class="check-list" id="class-filters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Properties</span>
+        <div class="check-list">
+          <label class="check-item">
+            <input type="checkbox" id="filter-conc" />
+            <span class="check-box"></span>
+            <span>Concentration</span>
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="filter-group">
-      <span class="filter-label">School / Type</span>
-      <div class="check-list" id="school-filters"></div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Class</span>
-      <div class="check-list" id="class-filters"></div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Properties</span>
-      <div class="check-list">
-        <label class="check-item">
-          <input type="checkbox" id="filter-conc" />
-          <span class="check-box"></span>
-          <span>Concentration</span>
-        </label>
+    <div class="filter-rituals-only">
+      <div class="filter-group">
+        <span class="filter-label">Character Level</span>
+        <div class="check-list" id="ritual-charlevel-filters"></div>
       </div>
     </div>
     <button class="clear-btn" onclick="clearFilters()">Clear all filters</button>
@@ -332,6 +370,32 @@
         </div>
       </div>
       <div id="all-spells-container"></div>
+    </div>
+
+    <!-- RITUALS VIEW -->
+    <div class="view" id="view-rituals">
+      <div class="results-bar">
+        <div class="results-bar-left">
+          <p class="results-count"><strong id="ritual-shown-count">0</strong> rituals shown</p>
+        </div>
+        <div class="results-bar-right">
+          <div class="view-toggle">
+            <button class="view-toggle-btn active" id="btn-compact-rituals" onclick="setViewMode('compact')" title="Compact view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              Compact
+            </button>
+            <button class="view-toggle-btn" id="btn-expanded-rituals" onclick="setViewMode('expanded')" title="Expanded view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              Expanded
+            </button>
+          </div>
+          <select class="sort-select" id="ritual-sort-select" onchange="renderRituals()">
+            <option value="name">Sort: Name A–Z</option>
+            <option value="level">Sort: Level Req (none first)</option>
+          </select>
+        </div>
+      </div>
+      <div id="rituals-container"></div>
     </div>
 
     <!-- KNOWN SPELLS VIEW -->
@@ -384,17 +448,19 @@
         <span class="modal-level" id="m-level"></span>
         <h2 class="modal-name" id="m-name"></h2>
         <p class="modal-school" id="m-school"></p>
+        <p class="modal-school" id="m-ritual-info" style="display:none"></p>
       </div>
       <button class="modal-known-btn" id="modal-known-btn" onclick="toggleKnownFromModal()">+ Add to Known</button>
     </div>
     <div class="modal-desc" id="m-desc"></div>
-    <div class="modal-grid">
+    <div class="modal-grid" id="m-grid">
       <div class="modal-meta-item"><span class="modal-meta-key">Cast Time</span><span class="modal-meta-val" id="m-cast"></span></div>
       <div class="modal-meta-item"><span class="modal-meta-key">Range</span><span class="modal-meta-val" id="m-range"></span></div>
       <div class="modal-meta-item"><span class="modal-meta-key">Duration</span><span class="modal-meta-val" id="m-duration"></span></div>
     </div>
     <div class="modal-tags" id="m-tags"></div>
     <div class="spell-upcast" id="m-higher" style="display:none"><span class="spell-upcast-label" id="m-higher-label"></span> <span id="m-higher-text"></span></div>
+    <div class="modal-features" id="m-features" style="display:none"></div>
   </div>
 </div>
 
@@ -404,6 +470,10 @@
 // ─────────────────────────────────────────────────────────────
 let SPELLS = [];
 let allLevels = [], allSchools = [], allClasses = [];
+let RITUALS = [];
+const ritualFilters = { charLevels: new Set() };
+const knownRituals = new Set();
+let modalRitual = null;
 
 fetch('spells.json')
   .then(r => r.json())
@@ -418,6 +488,17 @@ fetch('spells.json')
     syncKnownCount();
   })
   .catch(err => console.error('Failed to load spells.json:', err));
+
+fetch('rituals.json')
+  .then(r => r.json())
+  .then(data => {
+    RITUALS = data;
+    document.getElementById('tab-rituals-count').textContent = RITUALS.length;
+    buildRitualFilters();
+    loadRitualsFromURL();
+    syncKnownCount();
+  })
+  .catch(err => console.error('Failed to load rituals.json:', err));
 // ─────────────────────────────────────────────────────────────
 
 const schoolColors = { Evocation:'#ef4444', Conjuration:'#8b5cf6', Illusion:'#3b82f6', Transmutation:'#10b981', Divination:'#06b6d4', Abjuration:'#f59e0b', Necromancy:'#6b7280', Enchantment:'#ec4899', Restoration:'#84cc16' };
@@ -425,25 +506,26 @@ const schoolColors = { Evocation:'#ef4444', Conjuration:'#8b5cf6', Illusion:'#3b
 const filters  = { search:'', levels:new Set(), schools:new Set(), classes:new Set(), concentrationOnly: false };
 const knownSpells = new Set();
 let currentTab = 'all';
-let viewMode   = 'compact'; // shared across both tabs
+let viewMode   = 'compact';
 let modalSpell = null;
 
 // Mouse position tracking for tooltip
 let mouseX = 0, mouseY = 0;
 document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
 
-function levelOrder(l) { if(l==='Cantrip')return 0; const m=l.match(/\d+/); return m?parseInt(m[0]):99; }
+function levelOrder(l) { if(l==='Level 0')return 0; const m=l.match(/\d+/); return m?parseInt(m[0]):99; }
 
 // ── VIEW MODE ──
 function setViewMode(mode) {
   viewMode = mode;
   // Sync all four toggle buttons
-  ['all','known'].forEach(tab => {
+  ['all','known','rituals'].forEach(tab => {
     document.getElementById(`btn-compact-${tab}`).classList.toggle('active', mode==='compact');
     document.getElementById(`btn-expanded-${tab}`).classList.toggle('active', mode==='expanded');
   });
   renderAll();
   if (currentTab === 'known') renderKnown();
+  if (currentTab === 'rituals') renderRituals();
 }
 
 // ── TAB SWITCHING ──
@@ -451,30 +533,53 @@ function switchTab(tab) {
   currentTab = tab;
   document.getElementById('view-all').classList.toggle('active', tab==='all');
   document.getElementById('view-known').classList.toggle('active', tab==='known');
+  document.getElementById('view-rituals').classList.toggle('active', tab==='rituals');
   document.getElementById('tab-all').classList.toggle('active', tab==='all');
   document.getElementById('tab-known').classList.toggle('active', tab==='known');
+  document.getElementById('tab-rituals').classList.toggle('active', tab==='rituals');
+  const isRituals = tab === 'rituals';
+  document.querySelector('.filter-spells-only').style.display = isRituals ? 'none' : '';
+  document.querySelector('.filter-rituals-only').style.display = isRituals ? '' : 'none';
   hideTooltip();
   if (tab==='known') renderKnown();
+  if (tab==='rituals') renderRituals();
 }
 
 // ── URL PERSISTENCE ──
+function parseHashParams() {
+  const hash = window.location.hash.slice(1);
+  const params = {};
+  if (!hash) return params;
+  hash.split('&').forEach(part => {
+    const eq = part.indexOf('=');
+    if (eq > 0) params[part.slice(0, eq)] = part.slice(eq + 1);
+  });
+  return params;
+}
 function updateURL() {
-  if (knownSpells.size === 0) {
-    history.replaceState(null, '', location.pathname + location.search);
-  } else {
-    const encoded = [...knownSpells].map(n => encodeURIComponent(n)).join(',');
-    history.replaceState(null, '', '#known=' + encoded);
-  }
+  const parts = [];
+  if (knownSpells.size > 0) parts.push('known=' + [...knownSpells].map(n => encodeURIComponent(n)).join(','));
+  if (knownRituals.size > 0) parts.push('rituals=' + [...knownRituals].map(n => encodeURIComponent(n)).join(','));
+  if (parts.length === 0) history.replaceState(null, '', location.pathname + location.search);
+  else history.replaceState(null, '', '#' + parts.join('&'));
 }
 function loadFromURL() {
-  const hash = window.location.hash;
-  if (!hash.startsWith('#known=')) return;
-  const raw = hash.slice(7);
-  if (!raw) return;
-  raw.split(',').forEach(n => {
-    const name = decodeURIComponent(n);
-    if (SPELLS.some(s => s.name === name)) knownSpells.add(name);
-  });
+  const params = parseHashParams();
+  if (params.known) {
+    params.known.split(',').forEach(n => {
+      const name = decodeURIComponent(n);
+      if (SPELLS.some(s => s.name === name)) knownSpells.add(name);
+    });
+  }
+}
+function loadRitualsFromURL() {
+  const params = parseHashParams();
+  if (params.rituals) {
+    params.rituals.split(',').forEach(n => {
+      const name = decodeURIComponent(n);
+      if (RITUALS.some(r => r.name === name)) knownRituals.add(name);
+    });
+  }
 }
 
 // ── KNOWN SPELLS ──
@@ -493,7 +598,23 @@ function toggleKnown(name, e) {
   if (currentTab==='known') renderKnown();
   if (modalSpell && modalSpell.name===name) syncModalBtn();
 }
-function syncKnownCount() { document.getElementById('tab-known-count').textContent = knownSpells.size; }
+function syncKnownCount() { document.getElementById('tab-known-count').textContent = knownSpells.size + knownRituals.size; }
+
+function toggleKnownRitual(name, e) {
+  if (e) e.stopPropagation();
+  if (knownRituals.has(name)) { knownRituals.delete(name); }
+  else {
+    knownRituals.add(name);
+    const tc = document.getElementById('tab-known-count');
+    tc.style.transform = 'scale(1.5)';
+    setTimeout(() => tc.style.transform = '', 220);
+  }
+  updateURL();
+  syncKnownCount();
+  renderRituals();
+  if (currentTab === 'known') renderKnown();
+  if (modalRitual && modalRitual.name === name) syncRitualModalBtn();
+}
 
 // ── FILTERS ──
 function passesFilters(s) {
@@ -523,7 +644,7 @@ function buildFilters() {
     renderAll(); if(currentTab==='known')renderKnown();
   });
   document.getElementById('search').addEventListener('input', e => {
-    filters.search=e.target.value.toLowerCase(); renderAll(); if(currentTab==='known')renderKnown();
+    filters.search=e.target.value.toLowerCase(); renderAll(); if(currentTab==='known')renderKnown(); if(currentTab==='rituals')renderRituals();
   });
   document.getElementById('total-count').textContent = `${SPELLS.length} spells`;
   document.getElementById('tab-all-count').textContent = SPELLS.length;
@@ -543,10 +664,11 @@ function buildCheckList(id, items, key) {
 }
 function clearFilters() {
   filters.search=''; filters.levels.clear(); filters.schools.clear(); filters.classes.clear(); filters.concentrationOnly=false;
+  ritualFilters.charLevels.clear();
   document.getElementById('search').value='';
   document.getElementById('filter-conc').checked = false;
   document.querySelectorAll('.check-item input').forEach(cb=>cb.checked=false);
-  renderAll(); if(currentTab==='known')renderKnown();
+  renderAll(); if(currentTab==='known')renderKnown(); if(currentTab==='rituals')renderRituals();
 }
 
 // ── TOOLTIP ──
@@ -664,7 +786,7 @@ function renderExpanded(list, container) {
         ${spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')}
         ${spell.concentration ? '<span class="tag conc">Concentration</span>' : ''}
       </div>
-      ${spell.atHigherLevels ? `<div class="spell-upcast"><span class="spell-upcast-label">${spell.level === 'Cantrip' ? 'Cantrip Improvements.' : 'At Higher Levels.'}</span> ${spell.atHigherLevels}</div>` : ''}`;
+      ${spell.atHigherLevels ? `<div class="spell-upcast"><span class="spell-upcast-label">${spell.level === 'Level 0' ? 'Level 0 Improvements.' : 'At Higher Levels.'}</span> ${spell.atHigherLevels}</div>` : ''}`;
     card.querySelector('.card-action-btn').addEventListener('click', e=>toggleKnown(spell.name,e));
     ['.card-desc','.card-meta','.card-tags','.card-name'].forEach(sel=>
       card.querySelector(sel).addEventListener('click',()=>openModal(spell)));
@@ -689,30 +811,44 @@ function renderAll() {
 
 // ── RENDER KNOWN SPELLS ──
 function renderKnown() {
-  const list = sorted(SPELLS.filter(s=>knownSpells.has(s.name)&&passesFilters(s)), 'known-sort-select');
-  document.getElementById('known-shown-count').textContent = list.length;
+  const spellList = sorted(SPELLS.filter(s=>knownSpells.has(s.name)&&passesFilters(s)), 'known-sort-select');
+  const ritualList = [...RITUALS.filter(r=>knownRituals.has(r.name)&&passesRitualFilters(r))].sort((a,b)=>a.name.localeCompare(b.name));
+  document.getElementById('known-shown-count').textContent = spellList.length + ritualList.length;
   const container = document.getElementById('known-spells-container');
   container.innerHTML = '';
 
-  if (knownSpells.size === 0) {
-    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>No spells learned yet</h3><p>Go to <strong>All Spells</strong> and press <strong>+</strong> on a spell to add it here.</p></div>`;
+  if (knownSpells.size === 0 && knownRituals.size === 0) {
+    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>Nothing learned yet</h3><p>Press <strong>+</strong> on any spell or ritual to add it here.</p></div>`;
     return;
   }
-  if (list.length === 0) {
-    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>No matches</h3><p>None of your known spells match the current filters.</p></div>`;
+  if (spellList.length === 0 && ritualList.length === 0) {
+    container.innerHTML = `<div class="empty-solo"><div class="empty-icon">✦</div><h3>No matches</h3><p>None of your known spells or rituals match the current filters.</p></div>`;
     return;
   }
 
-  // Use the shared compact/expanded helpers — known spells will show ✦ Known badge
-  // and the action button will show the minus (remove) icon automatically via .is-known CSS
-  if (viewMode === 'compact') renderCompact(list, container, 'known-sort-select');
-  else renderExpanded(list, container);
+  if (spellList.length > 0) {
+    if (viewMode === 'compact') renderCompact(spellList, container, 'known-sort-select');
+    else renderExpanded(spellList, container);
+  }
+  if (ritualList.length > 0) {
+    if (viewMode === 'compact') renderCompactRituals(ritualList, container);
+    else renderExpandedRituals(ritualList, container);
+  }
 }
 
 // ── MODAL ──
 function openModal(spell) {
   hideTooltip();
   modalSpell = spell;
+  modalRitual = null;
+  // Ensure spell mode is active
+  document.getElementById('m-school').style.display = '';
+  document.getElementById('m-ritual-info').style.display = 'none';
+  document.getElementById('m-desc').style.display = '';
+  document.getElementById('m-grid').style.display = '';
+  document.getElementById('m-tags').style.display = '';
+  document.getElementById('modal-known-btn').style.display = '';
+  document.getElementById('m-features').style.display = 'none';
   const color = schoolColors[spell.school]||'#94a3b8';
   document.getElementById('m-level').textContent    = spell.level;
   document.getElementById('m-name').textContent     = spell.name;
@@ -728,7 +864,7 @@ function openModal(spell) {
   syncModalBtn();
   const higherDiv = document.getElementById('m-higher');
   if (spell.atHigherLevels) {
-    document.getElementById('m-higher-label').textContent = spell.level === 'Cantrip' ? 'Cantrip Improvements.' : 'At Higher Levels.';
+    document.getElementById('m-higher-label').textContent = spell.level === 'Level 0' ? 'Level 0 Improvements.' : 'At Higher Levels.';
     document.getElementById('m-higher-text').innerHTML = spell.atHigherLevels;
     higherDiv.style.display = '';
   } else {
@@ -744,10 +880,168 @@ function syncModalBtn() {
   btn.textContent = known ? '✦ Known — Remove' : '+ Add to Known';
   btn.classList.toggle('is-known', known);
 }
-function toggleKnownFromModal() { if(modalSpell) toggleKnown(modalSpell.name); }
+function syncRitualModalBtn() {
+  if (!modalRitual) return;
+  const btn = document.getElementById('modal-known-btn');
+  const known = knownRituals.has(modalRitual.name);
+  btn.textContent = known ? '✦ Known — Remove' : '+ Add to Known';
+  btn.classList.toggle('is-known', known);
+}
+function toggleKnownFromModal() {
+  if (modalSpell) toggleKnown(modalSpell.name);
+  if (modalRitual) toggleKnownRitual(modalRitual.name);
+}
 function closeModal(e) { if(e.target===document.getElementById('modal-overlay'))closeModalDirect(); }
 function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow=''; }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
+
+// ── RITUALS ──
+const RITUAL_COLOR = '#d97706';
+
+function passesRitualFilters(r) {
+  if (filters.search && !r.name.toLowerCase().includes(filters.search) &&
+      !r.features.some(f => f.name.toLowerCase().includes(filters.search) || f.description.toLowerCase().includes(filters.search))) return false;
+  if (ritualFilters.charLevels.size) {
+    const key = r.minCharacterLevel === null ? 'None' : `Level ${r.minCharacterLevel}`;
+    if (!ritualFilters.charLevels.has(key)) return false;
+  }
+  return true;
+}
+
+function buildRitualFilters() {
+  const levels = [...new Set(RITUALS.map(r => r.minCharacterLevel === null ? 'None' : `Level ${r.minCharacterLevel}`))].sort((a, b) => {
+    if (a === 'None') return -1; if (b === 'None') return 1;
+    return parseInt(a.match(/\d+/)) - parseInt(b.match(/\d+/));
+  });
+  const el = document.getElementById('ritual-charlevel-filters');
+  levels.forEach(item => {
+    const lbl = document.createElement('label'); lbl.className = 'check-item';
+    lbl.innerHTML = `<input type="checkbox" value="${item}"/><span class="check-box"></span><span>${item === 'None' ? 'No requirement' : item + ' required'}</span>`;
+    lbl.querySelector('input').addEventListener('change', e => {
+      e.target.checked ? ritualFilters.charLevels.add(item) : ritualFilters.charLevels.delete(item);
+      if (currentTab === 'rituals') renderRituals();
+    });
+    el.appendChild(lbl);
+  });
+}
+
+function sortedRituals(arr) {
+  const v = document.getElementById('ritual-sort-select').value;
+  return [...arr].sort((a, b) => {
+    if (v === 'name') return a.name.localeCompare(b.name);
+    const la = a.minCharacterLevel === null ? 0 : a.minCharacterLevel;
+    const lb = b.minCharacterLevel === null ? 0 : b.minCharacterLevel;
+    return la - lb || a.name.localeCompare(b.name);
+  });
+}
+
+function renderRituals() {
+  const list = sortedRituals(RITUALS.filter(passesRitualFilters));
+  document.getElementById('ritual-shown-count').textContent = list.length;
+  const container = document.getElementById('rituals-container');
+  container.innerHTML = '';
+  if (!list.length) {
+    container.innerHTML = `<div class="empty" style="display:block;padding:80px 20px;text-align:center;color:var(--muted)"><div class="empty-icon">✦</div><h3>No rituals found</h3><p>Try adjusting your search or filters.</p></div>`;
+    return;
+  }
+  if (viewMode === 'compact') renderCompactRituals(list, container);
+  else renderExpandedRituals(list, container);
+}
+
+function renderCompactRituals(list, container) {
+  const wrap = document.createElement('div'); wrap.className = 'compact-list';
+  list.forEach((ritual, i) => {
+    const known = knownRituals.has(ritual.name);
+    const row = document.createElement('div');
+    row.className = `compact-row${known ? ' is-known' : ''}`;
+    row.style.animationDelay = `${i * 0.02}s`;
+    const levelBadge = ritual.minCharacterLevel
+      ? `<span class="tag" style="background:#f3e8ff;color:#7c3aed;font-size:0.68rem">Level ${ritual.minCharacterLevel}+ required</span>` : '';
+    row.innerHTML = `
+      <span class="compact-school-dot" style="background:${RITUAL_COLOR}"></span>
+      <span class="compact-name">${ritual.name}</span>
+      <span class="compact-divider"></span>
+      <div class="compact-tags">
+        <span class="tag" style="background:${RITUAL_COLOR}18;color:${RITUAL_COLOR};font-size:0.68rem">Ritual</span>
+        <span class="tag" style="font-size:0.68rem">${ritual.features.length} feature${ritual.features.length !== 1 ? 's' : ''}</span>
+        ${levelBadge}
+        <span class="compact-known-badge">✦ Known</span>
+      </div>
+      <div class="compact-action">${actionBtnHTML(known)}</div>
+    `;
+    row.addEventListener('click', () => openRitualModal(ritual));
+    row.querySelector('.card-action-btn').addEventListener('click', e => toggleKnownRitual(ritual.name, e));
+    wrap.appendChild(row);
+  });
+  container.appendChild(wrap);
+}
+
+function renderExpandedRituals(list, container) {
+  const grid = document.createElement('div'); grid.className = 'spell-grid';
+  list.forEach((ritual, i) => {
+    const known = knownRituals.has(ritual.name);
+    const card = document.createElement('div');
+    card.className = `ritual-card${known ? ' is-known' : ''}`;
+    card.style.animationDelay = `${i * 0.03}s`;
+    const levelBadge = ritual.minCharacterLevel
+      ? `<span class="tag" style="background:#f3e8ff;color:#7c3aed">Level ${ritual.minCharacterLevel}+ required</span>` : '';
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="card-name">${ritual.name}</span>
+          <span class="card-level" style="background:${RITUAL_COLOR}18;color:${RITUAL_COLOR}">Ritual</span>
+          <span class="known-badge">✦ Known</span>
+        </div>
+        ${actionBtnHTML(known)}
+      </div>
+      <div class="ritual-feature-list">
+        ${ritual.features.map(f => `
+          <div class="ritual-feature-item">
+            <span class="ritual-feature-name">${f.name}</span>
+            <span class="ritual-feature-cast"> (${f.castTime})</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card-tags">${levelBadge}</div>
+    `;
+    card.querySelector('.card-action-btn').addEventListener('click', e => toggleKnownRitual(ritual.name, e));
+    card.addEventListener('click', e => { if (!e.target.closest('.card-action-btn')) openRitualModal(ritual); });
+    grid.appendChild(card);
+  });
+  container.appendChild(grid);
+}
+
+function openRitualModal(ritual) {
+  hideTooltip();
+  modalSpell = null;
+  modalRitual = ritual;
+  document.getElementById('m-level').textContent = 'Ritual';
+  document.getElementById('m-name').textContent = ritual.name;
+  document.getElementById('m-school').style.display = 'none';
+  document.getElementById('m-ritual-info').style.display = '';
+  document.getElementById('m-ritual-info').textContent = ritual.minCharacterLevel
+    ? `Requires character level ${ritual.minCharacterLevel} or higher`
+    : 'Available to all characters';
+  document.getElementById('m-desc').style.display = 'none';
+  document.getElementById('m-grid').style.display = 'none';
+  document.getElementById('m-tags').style.display = 'none';
+  document.getElementById('m-higher').style.display = 'none';
+  document.getElementById('modal-known-btn').style.display = '';
+  syncRitualModalBtn();
+  const featuresDiv = document.getElementById('m-features');
+  featuresDiv.style.display = '';
+  featuresDiv.innerHTML = ritual.features.map(f => `
+    <div class="modal-feature">
+      <div class="modal-feature-header">
+        <span class="modal-feature-name">${f.name}</span>
+        <span class="modal-feature-cast">${f.castTime}</span>
+      </div>
+      <div class="modal-feature-desc">${f.description}</div>
+    </div>
+  `).join('');
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
 </script>
 </body>

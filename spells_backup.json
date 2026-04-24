@@ -1,7 +1,7 @@
 [
   {
     "name": "Blade Ward",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Abjuration",
     "castTime": "1 Action",
     "range": "Self",
@@ -16,14 +16,28 @@
     ]
   },
   {
+    "name": "Resistance",
+    "level": "Cantrip",
+    "school": "Abjuration",
+    "castTime": "1 Bonus Action",
+    "range": "Touch",
+    "duration": "1 Round",
+    "concentration": false,
+    "description": "Give an ally 1d4 to their next saving throw",
+    "classes": [
+      "Priest",
+      "Shaman"
+    ]
+  },
+  {
     "name": "Infestation",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Conjuration",
     "castTime": "1 Action",
     "range": "30 ft",
     "duration": "Instantaneous",
     "concentration": false,
-    "description": "Create a cloud of insects on target creature you can see within range. That creature makes a constituition saving throw against your spell save DC, on a failed save it takes 2d4 poison damage and moves in a random dirction.",
+    "description": "Create a cloud of insects on target creature you can see within range. That creature makes a Con saving throw, on a failed save it takes 2d4 poison damage and moves in a random dirction.",
     "classes": [
       "Priest",
       "Shaman"
@@ -32,7 +46,7 @@
   },
   {
     "name": "Sword Burst",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Conjuration",
     "castTime": "1 Action",
     "range": "5 ft",
@@ -49,8 +63,24 @@
     "atHigherLevels": "This spell's damage increases by 1d6 when you reach 5th level."
   },
   {
+    "name": "Mage Hand",
+    "level": "Cantrip",
+    "school": "Conjuration",
+    "castTime": "1 Action",
+    "range": "30 ft",
+    "duration": "1 Minute",
+    "concentration": false,
+    "description": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again. You can use your bonus action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it. The hand can’t attack, activate magic items, or carry more than 10 pounds.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Acid Splash",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Conjuration",
     "castTime": "1 Action",
     "range": "60 ft",
@@ -65,7 +95,7 @@
   },
   {
     "name": "Produce Flame",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Conjuration",
     "castTime": "1 Action",
     "range": "Self",
@@ -81,7 +111,7 @@
   },
   {
     "name": "True Strike",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Divination",
     "castTime": "1 Action",
     "range": "30 feet",
@@ -97,8 +127,70 @@
     "atHigherLevels": "You can advantage on 1 additional attack when you reach 5th level."
   },
   {
+    "name": "Guidance",
+    "level": "Cantrip",
+    "school": "Divination",
+    "castTime": "1 Bonus Action",
+    "range": "touch",
+    "duration": "1 Minute",
+    "concentration": true,
+    "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+    "classes": [
+      "Bard",
+      "Priest",
+      "Shaman"
+    ]
+  },
+  {
+    "name": "Minor Illusion",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "1 Minute",
+    "concentration": false,
+    "description": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it at any time during your turn or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you reach 11th level you can create a sound and an image at the same time."
+  },
+  {
+    "name": "Dancing Lights",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "120 feet",
+    "duration": "1 Minute",
+    "concentration": true,
+    "description": "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius. As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell’s range.",
+    "classes": [
+      "Shaman",
+      "Bard",
+      "Sorcerer"
+    ]
+  },
+  {
+    "name": "Light",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "Touch",
+    "duration": "1 Minute",
+    "concentration": true,
+    "description": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
+    "classes": [
+      "Bard",
+      "Priest",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Friends",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Enchantment",
     "castTime": "1 Action",
     "range": "Touch",
@@ -114,7 +206,7 @@
   },
   {
     "name": "Mind Sliver",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Enchantment",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -130,7 +222,7 @@
   },
   {
     "name": "Vicious Mockery",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Enchantment",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -144,7 +236,7 @@
   },
   {
     "name": "Booming Blade",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "Self",
@@ -159,7 +251,7 @@
   },
   {
     "name": "Eldritch Blast",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "120 feet",
@@ -173,7 +265,7 @@
   },
   {
     "name": "Fire Bolt",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -188,7 +280,7 @@
   },
   {
     "name": "Frostbite",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -203,7 +295,7 @@
   },
   {
     "name": "Sacred Flame",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -217,7 +309,7 @@
   },
   {
     "name": "Lightning Snare",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "15 feet",
@@ -232,7 +324,7 @@
   },
   {
     "name": "Shocking Grasp",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Evocation",
     "castTime": "1 Action",
     "range": "Touch",
@@ -247,7 +339,7 @@
   },
   {
     "name": "Toll the Dead",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Necromancy",
     "castTime": "1 Action",
     "range": "60 feet",
@@ -261,8 +353,23 @@
     "atHigherLevels": "This spell’s damage increases by one die when you reach 5th level."
   },
   {
+    "name": "Spare the Dying",
+    "level": "Cantrip",
+    "school": "Necromancy",
+    "castTime": "1 Action",
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.",
+    "classes": [
+      "Priest",
+      "Shaman"
+    ],
+    "atHigherLevels": "At level 11, this spell's casting time becomes 1 Bonus Action"
+  },
+  {
     "name": "Primal Savagery",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Transmutation",
     "castTime": "1 Action",
     "range": "Self",
@@ -275,8 +382,112 @@
     "atHigherLevels": "This spell’s damage increases by 1d12 when you reach 5th level"
   },
   {
+    "name": "Prestigiditation",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "Self",
+    "duration": "Up to 1 hour",
+    "concentration": false,
+    "description": "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range: You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor. You instantaneously light or snuff out a candle, a torch, or a small campfire. You instantaneously clean or soil an object no larger than 1 cubic foot. You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour. You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. You create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect at any time during your turn",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Shamancraft",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Whispering to the spirits of nature, you create one of the following effects within range: You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round. You instantly make a flower blossom, a seed pod open, or a leaf bud bloom. You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint odor of skunk. The effect must fit in a 5-foot cube. You instantly light or snuff out a candle, a torch, or a small campfire",
+    "classes": [
+      "Shaman"
+    ]
+  },
+  {
+    "name": "Thaumaturgy",
+    "level": "Cantrip",
+    "school": "Illusion",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Up to 1 minute",
+    "concentration": false,
+    "description": "You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range: Your voice booms up to three times as loud as normal for 1 minute. You cause flames to flicker, brighten, dim, or change color for 1 minute. You cause harmless tremors in the ground for 1 minute. You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers. You instantaneously cause an unlocked door or window to fly open or slam shut. You alter the appearance of your eyes for 1 minute. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect at any time during your turn.",
+    "classes": [
+      "Priest"
+    ]
+  },
+  {
+    "name": "Gust",
+    "level": "Cantrip",
+    "school": "Transmutation",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "You seize the air and compel it to create one of the following effects at a point you can see within range: One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you. You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn’t pushed with enough force to cause damage. You create a harmless sensory affect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze.",
+    "classes": [
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Mend",
+    "level": "Cantrip",
+    "school": "Transmutation",
+    "castTime": "1 Minute",
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage. This spell can physically repair a magic item or construct, but the spell can’t restore magic to such an object.",
+    "classes": [
+      "Bard",
+      "Priest",
+      "Shaman",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Message",
+    "level": "Cantrip",
+    "school": "Enchantment",
+    "castTime": "1 Action",
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear. You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn’t have to follow a straight line and can travel freely around corners or through openings.",
+    "classes": [
+      "Bard",
+      "Priest",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Mold Earth",
+    "level": "Cantrip",
+    "school": "Transmutation",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Instantaneous or 1 hour",
+    "concentration": false,
+    "description": "You choose a portion of dirt or stone that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways: If you target an area of loose earth, you can instantaneously excavate it, move it along the ground, and deposit it up to 5 feet away. This movement doesn’t have enough force to cause damage. You cause shapes, colors, or both to appear on the dirt or stone, spelling out words, creating images, or shaping patterns. The changes last for 1 hour. If the dirt or stone you target is on the ground, you cause it to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain. This change lasts for 1 hour. If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect at any time during your turn.",
+    "classes": [
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Shape Water",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Transmutation",
     "castTime": "1 Action",
     "range": "30 feet",
@@ -291,7 +502,7 @@
   },
   {
     "name": "Shillelagh",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Transmutation",
     "castTime": "1 Bonus Action",
     "range": "Touch",
@@ -304,7 +515,7 @@
   },
   {
     "name": "Thorn Whip",
-    "level": "Level 0",
+    "level": "Cantrip",
     "school": "Transmutation",
     "castTime": "1 Action",
     "range": "30 feet",
@@ -363,6 +574,21 @@
     "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, gain an additional 10 feet of movement until the end of your turn, for each spell slot level above 1st."
   },
   {
+    "name": "Feather Fall",
+    "level": "Level 1",
+    "school": "Enchantment",
+    "castTime": "1 reaction, which you take when you or a creature within 60 feet of you falls",
+    "range": "60 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "description": "Choose up to five falling creatures within range. A falling creature’s rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet, and the spell ends for that creature.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Goodberry",
     "level": "Level 1",
     "school": "Transmutation",
@@ -393,6 +619,21 @@
       "Wizard"
     ],
     "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+  },
+  {
+    "name": "Purify",
+    "level": "Level 1",
+    "school": "Transmutation",
+    "castTime": "1 action",
+    "range": "Instantaneous",
+    "duration": "1 hour",
+    "concentration": false,
+    "description": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.",
+    "classes": [
+      "Priest",
+      "Shaman",
+      "Paladin"
+    ]
   },
   {
     "name": "Zephyr Strike",
@@ -568,6 +809,21 @@
     ]
   },
   {
+    "name": "Knock",
+    "level": "Level 2",
+    "school": "Transmutation",
+    "castTime": "1 action",
+    "range": "60 ft",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Choose an object that you can see within range. The object can be a door, a box, a chest, a set of manacles, a padlock, or another object that contains a mundane or magical means that prevents access. A target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked. If you choose a target that is held shut with Arcane Lock, that spell is suppressed for 10 minutes, during which time the target can be opened and shut normally. When you cast the spell, a loud knock, audible from as far away as 300 feet, emanates from the target object.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Levitate",
     "level": "Level 2",
     "school": "Transmutation",
@@ -731,6 +987,21 @@
     "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
   },
   {
+    "name": "Gentle Repose",
+    "level": "Level 2",
+    "school": "Necromancy",
+    "castTime": "1 action",
+    "range": "Touch",
+    "duration": "10 days",
+    "concentration": false,
+    "description": "You touch a corpse or other remains. For the duration, the target is protected from decay and can’t become undead. The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don’t count against the time limit of spells such as raise dead.",
+    "classes": [
+      "Priest",
+      "Paladin",
+      "Wizard"
+    ]
+  },
+  {
     "name": "Ray of Enfeeblement",
     "level": "Level 2",
     "school": "Necromancy",
@@ -775,6 +1046,21 @@
       "Wizard"
     ],
     "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st."
+  },
+  {
+    "name": "Disguise Self",
+    "level": "Level 1",
+    "school": "Illusion",
+    "castTime": "1 action",
+    "range": "Self",
+    "duration": "Until your next short rest",
+    "concentration": false,
+    "description": "You make yourself – including your clothing, armor, weapons, and other belongings on your person – look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can’t change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you. The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing or would feel your head and hair. If you use this spell to appear thinner than you are, the hand of someone who reaches out to touch you would bump into you while it was seemingly still in midair. To discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Wizard"
+    ]
   },
   {
     "name": "Silent Image",
@@ -1421,6 +1707,20 @@
     ]
   },
   {
+    "name": "Pass Without Trace",
+    "level": "Level 2",
+    "school": "Abjuration",
+    "castTime": "1 action",
+    "range": "Self",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "description": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can’t be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage.",
+    "classes": [
+      "Shaman",
+      "Ranger"
+    ]
+  },
+  {
     "name": "Warding Bond",
     "level": "Level 2",
     "school": "Abjuration",
@@ -1757,6 +2057,51 @@
     "concentration": false,
     "description": "This spell creates a circular, horizontal plane of force, 3 feet in diameter and 1 inch thick, that floats 3 feet above the ground in an unoccupied space of your choice that you can see within range. The disk remains for the duration, and can hold up to 500 pounds. If more weight is placed on it, the spell ends, and everything on the disk falls to the ground. The disk is immobile while you are within 20 feet of it. If you move more than 20 feet away from it, the disk follows you so that it remains within 20 feet of you. It can move across uneven terrain, up or down stairs, slopes, and the like, but it can’t cross an elevation change of 10 feet or more. For example, the disk can’t move across a 10-foot-deep pit, nor could it leave such a pit if it were created at the bottom. If you move more than 100 feet from the disk (typically because it can’t move around an obstacle to follow you), the spell ends.",
     "classes": [
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Unseen Servant",
+    "level": "Level 1",
+    "school": "Conjuration",
+    "castTime": "1 action",
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "description": "This spell creates an invisible, mindless, shapeless, Medium force that performs simple tasks at your command until the spell ends. The servant springs into existence in an unoccupied space on the ground within range. It has AC 10, 1 hit point, and a Strength of 2, and it can’t attack. If it drops to 0 hit points, the spell ends. Once on each of your turns as a bonus action, you can mentally command the servant to move up to 15 feet and interact with an object. The servant can perform simple tasks that a human servant could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring wine. Once you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command. If you command the servant to perform a task that would move it more than 60 feet away from you, the spell ends.",
+    "classes": [
+      "Bard",
+      "Warlock",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Comprehend Languages",
+    "level": "Level 1",
+    "school": "Divination",
+    "castTime": "1 action",
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "description": "For the duration, you understand the literal meaning of any spoken language that you hear. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text. This spell doesn’t decode secret messages in a text or glyph, such as an arcane sigil, that isn’t part of a written language.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Identify",
+    "level": "Level 1",
+    "school": "Divination",
+    "castTime": "1 minute",
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it. If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.",
+    "classes": [
+      "Bard",
       "Wizard"
     ]
   },
@@ -2117,6 +2462,38 @@
     "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, increase the radiant damage by 1d4 for every 2 slot levels above 3rd."
   },
   {
+    "name": "Nimagosa’s Arcane Weave",
+    "level": "Level 1",
+    "school": "Divination",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "description": "When you cast this spell, magical cloth covers your eyes allowing you to see the strands of magic in the world around you. As part of the action to cast this spell you may tug on these strands around a creature of your choice within the spell’s range; that creature must make a Wisdom saving throw, taking 1d10 necrotic + 1d10 force damage on a failed save or half as much on a successful save. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell’s level. You can make an Arcana check to identify extra traits about the spell (creatures with spellcasting or proficiency in Arcana can help on this check).<table class=\"spell-table\"><thead><tr><th>DC</th><th>Effect</th></tr></thead><tbody><tr><td>5 + spell level</td><td>You learn the spell’s duration and school.</td></tr><tr><td>10 + spell level</td><td>You learn the spell’s effect.</td></tr><tr><td>15 + spell level</td><td>You learn the spell’s name and identify the magical signature of the caster. If you ever see any other spells cast by the same creature you can immediately identify it as such.</td></tr></tbody></table>If the magical effect is not a spell, you learn the spell’s range and the DM determines any other information you are able to learn.",
+    "classes": [
+      "Wizard",
+      "Sorcerer",
+      "Warlock"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels increase the necrotic or force damage by 1d10 per spell level above 1st"
+  },
+  {
+    "name": "Leyline Attunement",
+    "level": "Level 1",
+    "school": "Transmutation",
+    "castTime": "1 Bonus Action",
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "description": "Attune to the natural magic around you. As part of the bonus action to cast this spell you can dodge, dash, disengage, or hide. For as long as you continue concentrating on this spell you can see magical effects within 30 feet of yourself. If these effects are a spell you automatically know the spell’s level. You can make an Arcana check to identify extra traits about the spell (creatures with spellcasting or proficiency in Arcana can help on this check).<table class=\"spell-table\"><thead><tr><th>DC</th><th>Effect</th></tr></thead><tbody><tr><td>5 + spell level</td><td>You learn the spell’s duration and school.</td></tr><tr><td>10 + spell level</td><td>You learn the spell’s effect.</td></tr><tr><td>15 + spell level</td><td>You learn the spell’s name and know the type of creature that cast the spell. If they are humanoid, you know their species.</td></tr></tbody></table>If the magical effect is not a spell, you learn the spell’s range and the DM determines any other information you are able to learn.",
+    "classes": [
+      "Shaman",
+      "Priest",
+      "Paladin",
+      "Bard"
+    ]
+  },
+  {
     "name": "Mannakar’s Gift of Tongues",
     "level": "Level 1",
     "school": "Divination",
@@ -2464,7 +2841,7 @@
     "range": "10 feet",
     "duration": "1 hour",
     "concentration": false,
-    "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface.<br><br>Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways:<ul><li>The creature can’t willingly enter the cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw.</li><li>The creature has disadvantage on attack rolls against targets within the cylinder.</li><li>Targets within the cylinder can’t be charmed, frightened, or possessed by the creature.</li></ul>When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.<br><br>When you cast this spell you can choose to create the circle without any of it’s effects activating. If you do, you can activate it’s effects at any time as a reaction to a creature you can see or hear entering the magic circle.",
+    "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface. Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways: The creature can’t willingly enter the cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw. The creature has disadvantage on attack rolls against targets within the cylinder. Targets within the cylinder can’t be charmed, frightened, or possessed by the creature. When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it. When you cast this spell you can choose to create the circle without any of it’s effects activating. If you do, you can activate it’s effects at any time as a reaction to a creature you can see or hear entering the magic circle.",
     "classes": [
       "Priest",
       "Paladin",
