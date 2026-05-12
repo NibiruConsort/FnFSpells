@@ -2515,5 +2515,246 @@
       "Warlock",
       "Wizard"
     ]
+  },
+  {
+    "name": "Alaragos' Electrifying Presence",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Action",
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Each enemy creature within 60 feet of you that can see you must make a dexterity saving throw. On a failure they take 5d8 lightning damage and half as much on a success.",
+    "classes": [
+      "Bard",
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels you can increase the damage by 2d8 for each level above 4th."
+  },
+  {
+    "name": "Banish",
+    "level": "Level 4",
+    "school": "Enchantment",
+    "castTime": "1 Action",
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "description": "Force a target creature within the spell's range to make a charisma saving throw. On a failure the creature is sent to a harmless demiplane until the spell ends. If the creature is a celestial, demon, or fey; it has disadvantage on the saving throw.",
+    "classes": [
+      "Paladin",
+      "Priest",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels you can target one additional creature for each spell level above 4th."
+  },
+  {
+    "name": "Blight",
+    "level": "Level 4",
+    "school": "Necromancy",
+    "castTime": "1 Action",
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Choose a creature within the spell's range. That creature must make a constitution saving throw, taking 8d10 damage on a failure or half as much on a success.",
+    "classes": [
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels you can increase the damage by 2d10 for each level above 4th."
+  },
+  {
+    "name": "Compulsion",
+    "level": "Level 4",
+    "school": "Enchantment",
+    "castTime": "1 Action",
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "description": "Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take its action before it moves. After moving in this way, it can make another Wisdom saving throw to try to end the effect.\n\nA target isn't compelled to move into an obviously deadly hazard, such as a fire pit, but it will provoke opportunity attacks to move in the designated direction.",
+    "classes": [
+      "Bard"
+    ]
+  },
+  {
+    "name": "Dimension Door",
+    "level": "Level 4",
+    "school": "Conjuration",
+    "castTime": "1 Action",
+    "range": "500 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "You and up to 1 willing creature within 5 feet of you teleport to a location within the spell's range. It can be a location you are familiar with, a location you can see, or a location you describe by its relative position to you.\n\nIf the space is occupied the teleport fails and you remain at your current location.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this at higher levels you may increase the spell's range by 500 feet for each spell level above 4th."
+  },
+  {
+    "name": "Entomb in Ice",
+    "level": "Level 4",
+    "school": "Conjuration",
+    "castTime": "1 Action",
+    "range": "60 feet",
+    "duration": "1 Minute",
+    "concentration": false,
+    "description": "Choose a creature within range, it makes a strength saving throw. On a failure it gains 30 barrier for the duration of the spell. For as long as it has this barrier it is stunned and its AC is equal to [8 + your spell attack bonus].",
+    "classes": [
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at a higher level increase the amount of barrier gained by 10 per spell level above 4th."
+  },
+  {
+    "name": "Fire Shield",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Reaction, which you take in response to a creature attempting to hit you with a melee attack or taking damage, or 1 Bonus Action",
+    "range": "Self",
+    "duration": "3 Rounds",
+    "concentration": false,
+    "description": "Flames wreathe your body protecting you from harm. Whenever you would take damage reduce it by an amount equal to [this spell's level + your spellcasting modifier]\n\nWhenever a creature makes a melee spell attack against you they gain 2 levels of burning.\n\nThis spell ends at the start of your turn after 2 rounds.",
+    "classes": [
+      "Bard",
+      "Shaman",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "Haunt",
+    "level": "Level 4",
+    "school": "Necromancy",
+    "castTime": "1 Action",
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "description": "Cut your hand and spill blood to summon a spirit. You take 2d8 slashing damage and a 60 foot radius sphere centered on a point within range becomes haunted for the duration of the spell. Each enemy creature that starts its turn in this area or moves into it for the first time on its turn, takes 1d6 cold damage.\n(Damage taken while casting a spell does not trigger concentration saving throws for that spell)\n\nFor the duration of the spell you can use your bonus action to force the spirit to target a specific creature within the spell's effect. When you do make a melee spell attack roll against that creature dealing 6d4 psychic damage on a hit.\n\nFor the duration of the spell you can use your action to move the haunt to another point within range.",
+    "classes": [
+      "Priest",
+      "Shaman",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels increase the cold damage dealt by 1d6 and the psychic damage dealt by 1d4 for each spell level above 4th."
+  },
+  {
+    "name": "Kinetic Redirection",
+    "level": "Level 4",
+    "school": "Transmutation",
+    "castTime": "1 Reaction, which you take when you would take damage",
+    "range": "Self",
+    "duration": "3 Rounds",
+    "concentration": false,
+    "description": "You become immune to physical damage and gain resistance to all non-physical damage.\n\nWhenever this effect prevents damage, note the amount prevented.\n\nWhen you deal damage during this spell's duration you may end the spell and deal an additional amount of impact damage equal to the damage noted.\n\nOtherwise the spell ends at the end of your third turn with the spell.",
+    "classes": [
+      "Bard",
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "ph_1000Cuts",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Action",
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Roll [2d4 + 2] and note the total. Force a creature within range to make a dexterity saving throw and take 1 level of bleeding on a failure, then repeat this an amount of times equal to the noted total.",
+    "classes": [
+      "Bard",
+      "Sorcerer",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels roll an additional d4 for each level higher than 4th."
+  },
+  {
+    "name": "ph_defensiveBurst",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Reaction to a creature making an attack roll against you",
+    "range": "10 feet",
+    "duration": "3 Rounds",
+    "concentration": false,
+    "description": "Each creature within range must make a constitution saving throw. On a failure they take 3d12 thunder damage and are moved back 10 feet, on a success they take half as much damage. Then if the triggering attack is no longer within range it misses, if the triggering attack was a ranged attack it misses.\n\nFor the duration of the spell you can repeat this effect as a reaction.",
+    "classes": [
+      "Bard",
+      "Shaman",
+      "Sorcerer",
+      "Wizard"
+    ]
+  },
+  {
+    "name": "ph_lance",
+    "level": "Level 4",
+    "school": "Conjuration",
+    "castTime": "1 Action",
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Choose a direction, each creature in a 200 foot line must make a dexterity saving throw, taking 7d10 piercing damage on a failure or half as much on a success, then reduce the damage dealt to the next creature in the line by 1d10. The spell's line is stopped by 20 consecutive feet of wood, 10 consecutive feet of stone, 5 feet of metal or 1 foot of lead.",
+    "classes": [
+      "Sorcerer",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels you can increase the damage by 2d10 for each level above 4th."
+  },
+  {
+    "name": "ph_spore",
+    "level": "Level 4",
+    "school": "Conjuration",
+    "castTime": "1 Action",
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "description": "Choose a point within range, each creature within 30 feet of that point must make a constitution saving throw, taking 6d12 poison damage on a failure or half as much on a success.",
+    "classes": [
+      "Sorcerer",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at a higher level deal an additional 2d12 damage for each level higher than 4th."
+  },
+  {
+    "name": "Sickening Radiance",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Action",
+    "range": "80 feet",
+    "duration": "1 Round",
+    "concentration": false,
+    "description": "Choose a point within range. Each creature within 15 feet of that point must make a constitution saving throw, taking 4d8 radiant damage and 1 level of exhaustion on a failure or half as much damage on a success. Repeat this effect from the same point at the start of your next turn.",
+    "classes": [
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels increase the damage dealt by 1d8 for each spell level above 4th."
+  },
+  {
+    "name": "Spatial Collapse",
+    "level": "Level 4",
+    "school": "Evocation",
+    "castTime": "1 Action",
+    "range": "90 feet",
+    "duration": "Until the start of your next turn",
+    "concentration": false,
+    "description": "Choose a space within the spell's range. Each creature within 15 feet of that point must make a strength saving throw, on a failure the creature takes 4d10 force damage and is pulled into the chosen space. If the creature's path is blocked by another creature or object it takes 1d12 impact damage. On a success the creature takes half damage.\n\nIf multiple creatures fail the saving throw the caster determines which order they are pulled in.\n\nFor the spell's duration any movement away from the chosen space while within 500 feet of it, uses twice as much movement.",
+    "classes": [
+      "Shaman",
+      "Sorcerer",
+      "Warlock",
+      "Wizard"
+    ],
+    "atHigherLevels": "When you cast this spell at higher levels you can increase the initial damage dealt by 2d10 for each spell level above 4th."
   }
 ]
