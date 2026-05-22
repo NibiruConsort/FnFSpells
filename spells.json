@@ -275,21 +275,6 @@
         "spellImprovements":  "This spell’s damage increases by 1d12 when you reach 5th level"
     },
     {
-        "name":  "Shape Water",
-        "level":  "Level 0",
-        "school":  "Transmutation",
-        "castTime":  "1 Action",
-        "range":  "30 feet",
-        "duration":  "Instantaneous or 1 hour",
-        "concentration":  false,
-        "description":  "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n\n• You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn’t have enough force to cause damage.\n• You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.\n• You change the water’s color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.\n• You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.\n\nIf you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect at any time during your turn.",
-        "classes":  [
-                        "Shaman",
-                        "Sorcerer",
-                        "Wizard"
-                    ]
-    },
-    {
         "name":  "Shillelagh",
         "level":  "Level 0",
         "school":  "Transmutation",
@@ -372,8 +357,7 @@
         "concentration":  false,
         "description":  "Up to three berries appear in your hand and are infused with magic for the duration. A creature can use its action to eat one berry. Eating a berry restores 1d4 hit points, and three berries provide enough nourishment to sustain a creature for one day. The berries lose their potency if they have not been consumed within 24 hours of the casting of this spell.",
         "classes":  [
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can create one additional berry for each slot level above 1st. When you cast this spell using a spell slot of 3rd level or higher, each berry restores an additional hit point for every 2 slot levels above 1st."
     },
@@ -389,7 +373,6 @@
         "classes":  [
                         "Bard",
                         "Shaman",
-                        "Ranger",
                         "Wizard"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
@@ -404,8 +387,7 @@
         "concentration":  true,
         "description":  "You move like the wind. For the duration, your movement doesn’t provoke opportunity attacks. Once before the spell ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
         "classes":  [
-                        "Bard",
-                        "Ranger"
+                        "Bard"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, increase the amount of force damage dealt by 1d8 for every spell level above first."
     },
@@ -434,8 +416,7 @@
         "concentration":  true,
         "description":  "You touch a willing creature. Until the spell ends, the target’s skin has a rough, bark-like appearance, and the target’s AC can’t be less than 16, regardless of what kind of armor it is wearing.",
         "classes":  [
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ]
     },
     {
@@ -463,7 +444,6 @@
         "description":  "You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.",
         "classes":  [
                         "Shaman",
-                        "Ranger",
                         "Sorcerer",
                         "Warlock",
                         "Wizard"
@@ -496,7 +476,6 @@
         "classes":  [
                         "Shaman",
                         "Sorcerer",
-                        "Ranger",
                         "Warlock",
                         "Wizard"
                     ],
@@ -515,7 +494,6 @@
                         "Bard",
                         "Priest",
                         "Shaman",
-                        "Ranger",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -664,8 +642,7 @@
         "concentration":  true,
         "description":  "The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it gains 1 level of bleeding for every 5 feet it travels. The transformation of the ground is camouflaged to look natural. Any creature that can’t see the area at the time the spell is cast must make a Wisdom (Perception) check against your spell save DC to recognize the terrain as hazardous before entering it.",
         "classes":  [
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ]
     },
     {
@@ -784,7 +761,7 @@
         "range":  "60 feet",
         "duration":  "Concentration, up to 10 minutes",
         "concentration":  true,
-        "description":  "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot cube. The image appears at a spot within range and lasts for the duration. The image is purely visual; it isn’t accompanied by sound, smell, or other sensory effects. You can use your action to cause the image to move to any spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image.",
+        "description":  "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot cube. The image appears at a spot within range and lasts for the duration. \n\nThe image is purely visual; it isn’t accompanied by sound, smell, or other sensory effects. You can use your action to cause the image to move to any spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. \n\nPhysical interaction with the image reveals it to be an illusion, because things can pass through it. \n\nA creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image.",
         "classes":  [
                         "Bard",
                         "Sorcerer",
@@ -866,8 +843,7 @@
         "description":  "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
         "classes":  [
                         "Bard",
-                        "Priest",
-                        "Ranger"
+                        "Priest"
                     ]
     },
     {
@@ -926,8 +902,7 @@
                         "Bard",
                         "Priest",
                         "Shaman",
-                        "Paladin",
-                        "Ranger"
+                        "Paladin"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st."
     },
@@ -1044,8 +1019,7 @@
         "concentration":  true,
         "description":  "The next time you hit a creature with a melee weapon attack during the spell’s duration, your weapon flares with white-hot intensity, and the attack deals an extra 1d6 fire damage to the target and causes the target to gain 1 stack of burning. Until the spell ends the traget cannot loses stacks of burning.",
         "classes":  [
-                        "Paladin",
-                        "Ranger"
+                        "Paladin"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the initial extra damage dealt by the attack increases by 1d6 for each slot."
     },
@@ -1134,8 +1108,7 @@
         "concentration":  true,
         "description":  "The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 3d8 radiant damage to the target, which becomes visible if it is invisible, and the target sheds dim light in a 5-foot radius and can’t become invisible until the spell ends.",
         "classes":  [
-                        "Paladin",
-                        "Ranger"
+                        "Paladin"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d8 for each slot level above 2nd."
     },
@@ -1194,7 +1167,6 @@
         "description":  "A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell’s duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line. Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you. The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them. As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.",
         "classes":  [
                         "Shaman",
-                        "Ranger",
                         "Sorcerer",
                         "Wizard"
                     ]
@@ -1369,7 +1341,6 @@
         "description":  "While you cast this spell, you use the cord or rope to create a circle with a 5-foot radius on a flat surface within your reach. When you finish casting, the cord or rope disappears to become a magical trap. The trap is nearly invisible and requires a successful Intelligence (Investigation) check against your spell save DC to be found. The trap triggers when a Small creature or larger moves into the area protected by the spell. The triggering creature must succeed on a Dexterity saving throw or fall prone and be hoisted into the air until it hangs upside down 3 feet above the protected surface, where it is restrained. The restrained creature can make a Dexterity saving throw with disadvantage at the end of each of its turns and ends the restrained effect on a success. Alternatively, another creature that can reach the restrained creature can use an action to make an Intelligence (Arcana) check against your spell save DC. On a success, the restrained effect also ends.",
         "classes":  [
                         "Shaman",
-                        "Ranger",
                         "Wizard"
                     ]
     },
@@ -1416,8 +1387,7 @@
                         "Bard",
                         "Priest",
                         "Shaman",
-                        "Paladin",
-                        "Ranger"
+                        "Paladin"
                     ]
     },
     {
@@ -1460,8 +1430,7 @@
         "description":  "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast’s Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell’s duration. If you or one of your companions harms the target, the spell ends.",
         "classes":  [
                         "Bard",
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st."
     },
@@ -1592,7 +1561,7 @@
         "range":  "90 feet",
         "duration":  "1 minute",
         "concentration":  false,
-        "description":  "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren’t affected by this spell.",
+        "description":  "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or another creature uses an action to wake the sleeper. Subtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren’t affected by this spell.",
         "classes":  [
                         "Bard",
                         "Sorcerer",
@@ -1611,25 +1580,10 @@
         "description":  "The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.",
         "classes":  [
                         "Shaman",
-                        "Ranger",
                         "Sorcerer",
                         "Wizard"
                     ],
         "atHigherLevels":  "When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st."
-    },
-    {
-        "name":  "Alarm",
-        "level":  "Level 1",
-        "school":  "Abjuration",
-        "castTime":  "1 minute",
-        "range":  "30 feet",
-        "duration":  "8 hours",
-        "concentration":  false,
-        "description":  "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
-        "classes":  [
-                        "Ranger",
-                        "Wizard"
-                    ]
     },
     {
         "name":  "Arms of Hadar",
@@ -1646,20 +1600,6 @@
         "atHigherLevels":  "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
     },
     {
-        "name":  "Ensnaring Strike",
-        "level":  "Level 1",
-        "school":  "Conjuration",
-        "castTime":  "1 bonus action",
-        "range":  "Self",
-        "duration":  "Concentration, up to 1 minute",
-        "concentration":  true,
-        "description":  "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away. While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.",
-        "classes":  [
-                        "Ranger"
-                    ],
-        "atHigherLevels":  "If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
-    },
-    {
         "name":  "Entangle",
         "level":  "Level 1",
         "school":  "Conjuration",
@@ -1669,8 +1609,7 @@
         "concentration":  true,
         "description":  "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. When the spell ends, the conjured plants wilt away.",
         "classes":  [
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ]
     },
     {
@@ -1697,7 +1636,6 @@
         "description":  "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
         "classes":  [
                         "Shaman",
-                        "Ranger",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -1771,8 +1709,7 @@
         "description":  "You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the DM’s discretion.",
         "classes":  [
                         "Bard",
-                        "Shaman",
-                        "Ranger"
+                        "Shaman"
                     ]
     },
     {
@@ -1786,7 +1723,6 @@
         "description":  "Make a melee spell attack against a creature within reach. On a hit, the target takes 2d10 Piercing damage and gains 2 levels of exposed",
         "classes":  [
                         "Bard",
-                        "Ranger",
                         "Sorcerer"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st. When you cast this spell using a spell slot of 3rd level or higher, the levels of exposed increase by 1 for every 2 slot levels above 1st."
@@ -1799,7 +1735,7 @@
         "range":  "Self",
         "duration":  "1 Minute",
         "concentration":  false,
-        "description":  "Your skin gains a brightly colored pattern and becomes wet to the touch. For the duration of the spell when you use your action to touch a creature within 5 feet or creature attempts a melee attack against you, the creature gains one level of poisoned. This spell ends if this effect has happened 3 times.",
+        "description":  "Your skin gains a brightly colored pattern and becomes wet to the touch. For the duration of the spell when you use your action to touch a creature within 5 feet or creature attempts a melee attack against you, the creature gains one level of poisoned. This spell ends after this effect has happened 3 times.",
         "classes":  [
                         "Shaman",
                         "Sorcerer",
@@ -1832,7 +1768,7 @@
         "range":  "40 feet",
         "duration":  "Concentration, up to 1 minute",
         "concentration":  false,
-        "description":  "Target creature makes a dexterity save. On a failed save the target takes 2d4 acid damage, gains 1 level of Corroded for the spell\u0027s duration, and at the start of your turn as long as you have a free hand the creature gains an additional level of Corroded for the spell’s duration. The spell ends if you are ever 40 feet away from the target or you lose line of sight of the target. On a successful save the creature takes no damage and the spell ends.",
+        "description":  "Target creature makes a dexterity save. On a failed save the target takes 2d4 acid damage, gains 1 level of Corroded for the spell\u0027s duration, and at the start of your turn as long as you have a free hand the creature gains an additional level of Corroded for the spell’s duration. On a successful save the creature takes no damage and the spell ends. \n\nThe spell ends if you are ever 40 feet away from the target or you lose line of sight of the target. ",
         "classes":  [
                         "Shaman",
                         "Sorcerer",
@@ -1852,7 +1788,6 @@
         "classes":  [
                         "Bard",
                         "Shaman",
-                        "Ranger",
                         "Wizard"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d8 for each slot level above 1st."
@@ -1976,7 +1911,6 @@
         "concentration":  true,
         "description":  "The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn’t provoke opportunity attacks. When you move within 5 feet of a creature or an object that isn’t being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.",
         "classes":  [
-                        "Ranger",
                         "Sorcerer",
                         "Wizard"
                     ],
