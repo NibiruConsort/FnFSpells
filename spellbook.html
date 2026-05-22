@@ -460,6 +460,7 @@
     </div>
     <div class="modal-tags" id="m-tags"></div>
     <div class="spell-upcast" id="m-higher" style="display:none"><span class="spell-upcast-label" id="m-higher-label"></span> <span id="m-higher-text"></span></div>
+    <div class="spell-upcast" id="m-improvements" style="display:none"><span class="spell-upcast-label">Spell Improvements.</span> <span id="m-improvements-text"></span></div>
     <div class="modal-features" id="m-features" style="display:none"></div>
   </div>
 </div>
@@ -475,7 +476,7 @@ const ritualFilters = { charLevels: new Set() };
 const knownRituals = new Set();
 let modalRitual = null;
 
-fetch('spells.json')
+fetch('spells.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     SPELLS = data;
@@ -489,7 +490,7 @@ fetch('spells.json')
   })
   .catch(err => console.error('Failed to load spells.json:', err));
 
-fetch('rituals.json')
+fetch('rituals.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     RITUALS = data;
@@ -514,6 +515,7 @@ let mouseX = 0, mouseY = 0;
 document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
 
 function levelOrder(l) { if(l==='Level 0')return 0; const m=l.match(/\d+/); return m?parseInt(m[0]):99; }
+function formatDesc(text) { return (text||'').replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>'); }
 
 // ── VIEW MODE ──
 function setViewMode(mode) {
@@ -677,7 +679,7 @@ let tooltipHideTimer = null;
 
 function showTooltip(spell) {
   clearTimeout(tooltipHideTimer);
-  document.getElementById('tt-desc').textContent     = spell.description;
+  document.getElementById('tt-desc').innerHTML       = formatDesc(spell.description);
   document.getElementById('tt-cast').textContent     = spell.castTime;
   document.getElementById('tt-range').textContent    = spell.range;
   document.getElementById('tt-duration').textContent = spell.duration;
@@ -775,7 +777,7 @@ function renderExpanded(list, container) {
         </div>
         ${actionBtnHTML(known)}
       </div>
-      <div class="card-desc">${spell.description}</div>
+      <div class="card-desc">${formatDesc(spell.description)}</div>
       <div class="card-meta">
         <div class="meta-item"><span class="meta-key">Cast Time</span><span class="meta-val">${spell.castTime}</span></div>
         <div class="meta-item"><span class="meta-key">Range</span><span class="meta-val">${spell.range}</span></div>
@@ -786,7 +788,8 @@ function renderExpanded(list, container) {
         ${spell.classes.map(c=>`<span class="tag class">${c}</span>`).join('')}
         ${spell.concentration ? '<span class="tag conc">Concentration</span>' : ''}
       </div>
-      ${spell.atHigherLevels ? `<div class="spell-upcast"><span class="spell-upcast-label">${spell.level === 'Level 0' ? 'Level 0 Improvements.' : 'At Higher Levels.'}</span> ${spell.atHigherLevels}</div>` : ''}`;
+      ${spell.atHigherLevels ? `<div class="spell-upcast"><span class="spell-upcast-label">At Higher Levels.</span> ${spell.atHigherLevels}</div>` : ''}
+      ${spell.spellImprovements ? `<div class="spell-upcast"><span class="spell-upcast-label">Spell Improvements.</span> ${spell.spellImprovements}</div>` : ''}`;
     card.querySelector('.card-action-btn').addEventListener('click', e=>toggleKnown(spell.name,e));
     ['.card-desc','.card-meta','.card-tags','.card-name'].forEach(sel=>
       card.querySelector(sel).addEventListener('click',()=>openModal(spell)));
@@ -853,7 +856,7 @@ function openModal(spell) {
   document.getElementById('m-level').textContent    = spell.level;
   document.getElementById('m-name').textContent     = spell.name;
   document.getElementById('m-school').textContent   = spell.school;
-  document.getElementById('m-desc').innerHTML        = spell.description;
+  document.getElementById('m-desc').innerHTML        = formatDesc(spell.description);
   document.getElementById('m-cast').textContent     = spell.castTime;
   document.getElementById('m-range').textContent    = spell.range;
   document.getElementById('m-duration').textContent = spell.duration;
@@ -864,11 +867,18 @@ function openModal(spell) {
   syncModalBtn();
   const higherDiv = document.getElementById('m-higher');
   if (spell.atHigherLevels) {
-    document.getElementById('m-higher-label').textContent = spell.level === 'Level 0' ? 'Level 0 Improvements.' : 'At Higher Levels.';
+    document.getElementById('m-higher-label').textContent = 'At Higher Levels.';
     document.getElementById('m-higher-text').innerHTML = spell.atHigherLevels;
     higherDiv.style.display = '';
   } else {
     higherDiv.style.display = 'none';
+  }
+  const improvementsDiv = document.getElementById('m-improvements');
+  if (spell.spellImprovements) {
+    document.getElementById('m-improvements-text').innerHTML = spell.spellImprovements;
+    improvementsDiv.style.display = '';
+  } else {
+    improvementsDiv.style.display = 'none';
   }
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1026,6 +1036,7 @@ function openRitualModal(ritual) {
   document.getElementById('m-grid').style.display = 'none';
   document.getElementById('m-tags').style.display = 'none';
   document.getElementById('m-higher').style.display = 'none';
+  document.getElementById('m-improvements').style.display = 'none';
   document.getElementById('modal-known-btn').style.display = '';
   syncRitualModalBtn();
   const featuresDiv = document.getElementById('m-features');
