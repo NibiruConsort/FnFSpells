@@ -489,7 +489,7 @@
         "range":  "Touch",
         "duration":  "Concentration, up to 1 hour",
         "concentration":  true,
-        "description":  "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains the effect until the spell ends.\n\n• Bear’s Endurance. The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.\n• Bull’s Strength. The target has advantage on Strength checks, and their carrying capacity doubles.\n• Cat’s Grace. The target has advantage on Dexterity checks. It also doesn’t take damage from falling 20 feet or less if it isn’t incapacitated.\n• Eagle’s Splendor. The target has advantage on Charisma checks.\n• Fox’s Cunning. The target has advantage on Intelligence checks.\n• Owl’s Wisdom. The target has advantage on Wisdom checks.",
+        "description":  "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains the effect until the spell ends.\n\n• Bear’s Endurance. The target has advantage on Constitution checks. It also gains 2d6 barrier, which is lost when the spell ends.\n• Bull’s Strength. The target has advantage on Strength checks, and their carrying capacity doubles.\n• Cat’s Grace. The target has advantage on Dexterity checks. It also doesn’t take damage from falling 20 feet or less if it isn’t incapacitated.\n• Eagle’s Splendor. The target has advantage on Charisma checks.\n• Fox’s Cunning. The target has advantage on Intelligence checks.\n• Owl’s Wisdom. The target has advantage on Wisdom checks.",
         "classes":  [
                         "Bard",
                         "Priest",
@@ -587,7 +587,8 @@
                         "Sorcerer",
                         "Wizard"
                     ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd."
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd.",
+        "spellImprovements":  "Increase the damage this spell deals by 1d6 when you reach level 5, level 11, and level 17."
     },
     {
         "name":  "Rope Trick",
@@ -668,12 +669,12 @@
         "range":  "Self",
         "duration":  "Until your next short rest",
         "concentration":  false,
-        "description":  "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration.",
+        "description":  "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 barrier for the duration.",
         "classes":  [
                         "Sorcerer",
                         "Wizard"
                     ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st."
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional barrier for each slot level above 1st."
     },
     {
         "name":  "Inflict Wounds",
@@ -1269,11 +1270,11 @@
         "range":  "Self",
         "duration":  "Until your next short rest",
         "concentration":  false,
-        "description":  "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.",
+        "description":  "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 barrier for the duration. If a creature hits you with a melee attack while you have this barrier, the creature takes 5 cold damage.",
         "classes":  [
                         "Warlock"
                     ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot"
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, both the barrier and the cold damage increase by 5 for each slot"
     },
     {
         "name":  "Mage Armor",
@@ -1516,7 +1517,7 @@
         "range":  "Touch",
         "duration":  "Concentration, up to 1 minute",
         "concentration":  true,
-        "description":  "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points from this spell.",
+        "description":  "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains barrier equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining barrier from this spell.",
         "classes":  [
                         "Bard",
                         "Paladin"
@@ -1893,7 +1894,7 @@
         "range":  "60 feet",
         "duration":  "Concentration, up to 1 hour",
         "concentration":  true,
-        "description":  "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking 6d4 psychic damage on a failed save, or half as much damage on a successful one. On a failed save, you also always know the target\u0027s location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can’t become hidden from you, and if it’s invisible, it gains no benefit from that condition against you.",
+        "description":  "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking 8d4 psychic damage on a failed save, or half as much damage on a successful one. On a failed save, you also always know the target\u0027s location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can’t become hidden from you, and if it’s invisible, it gains no benefit from that condition against you.",
         "classes":  [
                         "Sorcerer",
                         "Warlock",
@@ -1924,13 +1925,13 @@
         "range":  "Self (30-foot radius)",
         "duration":  "Concentration, up to 1 minute",
         "concentration":  true,
-        "description":  "Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. When you cast this spell and as a bonus action you can cause one creature in the aura (including you) to gain 2d6 temporary hit points.",
+        "description":  "Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. When you cast this spell and as a bonus action you can cause one creature in the aura (including you) to gain 2d6 barrier for 10 minutes.",
         "classes":  [
                         "Priest",
                         "Shaman",
                         "Paladin"
                     ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, increase the amount of temporary hit points by 1d6."
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, increase the amount of barrier by 1d6."
     },
     {
         "name":  "Beacon of Hope",
@@ -2082,7 +2083,8 @@
                         "Sorcerer",
                         "Warlock"
                     ],
-        "atHigherLevels":  "When you cast this spell at higher levels it deals an additional 2d8 damage for each spell level above 3rd."
+        "atHigherLevels":  "When you cast this spell at higher levels it deals an additional 2d8 damage for each spell level above 3rd.",
+        "spellImprovements":  "Increase the damage this spell deals by 1d8 when you reach level 11 and level 17."
     },
     {
         "name":  "Gaseous Form",
@@ -2109,7 +2111,7 @@
         "range":  "self",
         "duration":  "2 rounds",
         "concentration":  false,
-        "description":  "When you cast this spell take [2d10 + your spellcasting modifier] necrotic damage. You gain an amount of temporary hit points equal to the damage you took times 3 until the spell ends.\n\nWhen you lose these temporary hit points you may have the bones shatter and explode outward forcing each creature within 15 ft of you to make a dexterity saving throw. On a failed save they take 3d8 slashing damage and half as much on a success.\n\nOn your next turn you can end this spell as a bonus action, otherwise the spell ends at the start of the turn after.",
+        "description":  "When you cast this spell take [2d10 + your spellcasting modifier] necrotic damage. You gain an amount of barrier equal to [the damage you took times 3] until the spell ends.\n\nWhen you lose this barrier you may have the bones shatter and explode outward forcing each creature within 15 ft of you to make a dexterity saving throw. On a failed save they take 3d8 slashing damage and half as much on a success.\n\nOn your next turn you can end this spell as a bonus action, otherwise the spell ends at the start of the turn after.",
         "classes":  [
                         "Sorcerer",
                         "Warlock",
@@ -2149,7 +2151,8 @@
                         "Paladin",
                         "Wizard"
                     ],
-        "atHigherLevels":  "When you cast this spell at higher levels increase the damage dealt by 1d10 for each level above 3rd."
+        "atHigherLevels":  "When you cast this spell at higher levels increase the damage dealt by 1d10 for each level above 3rd.",
+        "spellImprovements":  "Increase the damage this spell deals by 1d10 when you reach level 11 and level 17."
     },
     {
         "name":  "Tidal Wave",
@@ -2196,7 +2199,8 @@
                         "Shaman",
                         "Wizard"
                     ],
-        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage by 1d10 for each level above 3rd."
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage by 1d10 for each level above 3rd.",
+        "spellImprovements":  "Increase the damage this spell deals by 1d10 when you reach level 11 and level 17."
     },
     {
         "name":  "Thunder Step",
@@ -2616,7 +2620,7 @@
     {
         "name":  "ph_defensiveBurst",
         "level":  "Level 4",
-        "school":  "Evocation",
+        "school":  "Abjuration",
         "castTime":  "1 Reaction to a creature making an attack roll against you",
         "range":  "10 feet",
         "duration":  "3 Rounds",
@@ -2722,5 +2726,101 @@
                         "Wizard"
                     ],
         "atHigherLevels":  "When you cast this spell at higher levels increase its impact by 1d6 and lightning damage by 1d8 for each spell level above 4th."
+    },
+    {
+        "name":  "Blessings of the Seasons",
+        "level":  "Level 4",
+        "school":  "Transmutation",
+        "castTime":  "1 bonus action",
+        "range":  "30 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "When you cast this spell, choose a season. You may immediately use that season's ability.\n\nOn future turns you can use your bonus action to use the ability of the next season. Seasons must be used in order; if you do not use a season on your turn it is skipped.\n\n• Blessing of Winter - Target another creature within range. Their next weapon attack deals an additional 2d6 cold damage and applies 4 levels of slow. This effect lasts until the start of your next turn.\n• Blessing of Spring - Target a creature within range. They heal 6d4 hit points.\n• Blessing of Summer - Make a ranged spell attack against a creature within range. On a hit the creature takes 5d6 fire damage.\n• Blessing of Autumn - Target another creature within range. They restore a spell slot of level 2 or lower.",
+        "classes":  [
+                        "Paladin",
+                        "Priest"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the cold damage by 1d6, the healing by 2d4, the fire damage by 2d6, and the level of the restored spell slot by 1 for each level above 4th."
+    },
+    {
+        "name":  "Giant Ballistae",
+        "level":  "Level 4",
+        "school":  "Conjuration",
+        "castTime":  "1 action",
+        "range":  "90 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Summon a spectral bow that floats above your head. When you cast this spell make a ranged spell attack roll against a creature within range. On a hit it deals 8d10 piercing damage. After this attack the bow is no longer loaded.\n\nYou can reload the bow as an action for the duration of the spell.\n\nOnce the bow is loaded you can repeat the spell attack as an action for the duration of the spell.",
+        "classes":  [
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level it deals an additional 2d10 damage for each level above 4th.",
+        "spellImprovements":  "Increase the damage this spell deals by 1d10 when you reach level 11 and level 17."
+    },
+    {
+        "name":  "Gnosia's Mechanical Hands",
+        "level":  "Level 4",
+        "school":  "Transmutation",
+        "castTime":  "1 Action",
+        "range":  "120 feet",
+        "duration":  "Concentration, up to 1 hour",
+        "concentration":  true,
+        "description":  "Summon a phantasmal draconic claw at 2 points within the spell's range.\n\nAs a bonus action for the duration of the spell you can move each hand up to 45 feet from its current position to a point you can see.\n\nAt the end of each turn choose a hand to slow time with and a hand to speed up time. Each creature within 10 feet of the slowing hand takes 1d6 necrotic damage and gains 2 levels of slowed. Each creature within 10 feet of the speeding hand restores 1d6 hp and gains 15 feet of movement speed until the end of its next turn.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the range of each hand's effect by 5 feet and the damage by 1d6 for every 2 spell levels above 4th."
+    },
+    {
+        "name":  "Restore",
+        "level":  "Level 4",
+        "school":  "Abjuration",
+        "castTime":  "1 action",
+        "range":  "15 feet",
+        "duration":  "Variable",
+        "concentration":  false,
+        "description":  "Target a creature within range. They restore 5d6 hit points. You may choose a status effect on that creature to end.\n\nIf you removed a status effect with multiple levels, heal the creature for 2d6 at the start of that many of that creature's turns. Otherwise, heal it for 2d6 at the start of its next turn.",
+        "classes":  [
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the initial heal by 2d6 for each spell level above 4th."
+    },
+    {
+        "name":  "ph_protect",
+        "level":  "Level 4",
+        "school":  "Abjuration",
+        "castTime":  "1 action",
+        "range":  "Touch",
+        "duration":  "Until your next short rest",
+        "concentration":  false,
+        "description":  "Target a creature within range. They gain [25 + your level] barrier for the duration of the spell. For as long as that creature has this barrier they have advantage on Strength saving throws, Strength ability checks, and Constitution saving throws.",
+        "classes":  [
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the amount of barrier gained by 10."
+    },
+    {
+        "name":  "ph_mirage",
+        "level":  "Level 4",
+        "school":  "Illusion",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Create an illusion of safety in the shape of a cube up to 20 feet in width centered on a point you can see within range, and project some kind of terrible danger in a 60 foot radius from that point.\n\nEach creature within 60 feet of that point must make a Wisdom saving throw or be charmed by you for the duration of the spell. Each creature charmed in this way must use their movement on their turn walking towards the illusion of safety. Creatures will avoid obvious danger such as spikes or lava but not attacks of opportunity. Once inside the illusion, charmed creatures can move freely within it but have disadvantage on attacks made against creatures outside the illusion.",
+        "classes":  [
+                        "Bard",
+                        "Shaman",
+                        "Wizard"
+                    ]
     }
 ]
