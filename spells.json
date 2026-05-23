@@ -311,25 +311,11 @@
         "concentration":  false,
         "description":  "Choose one object weighing 1 to 5 pounds within range that isn’t being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take 3d8 bludgeoning damage.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 pounds, and the damage increases by 1d8, for each slot level above 1st."
-    },
-    {
-        "name":  "Create or Destroy Water",
-        "level":  "Level 1",
-        "school":  "Conjuration",
-        "castTime":  "1 action",
-        "range":  "30 ft",
-        "duration":  "Instantaneous",
-        "concentration":  false,
-        "description":  "You either create or destroy water.\n\nCreate Water. You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area.\n\nDestroy Water. You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range.",
-        "classes":  [
-                        "Priest",
-                        "Shaman"
-                    ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st."
     },
     {
         "name":  "Expeditious Retreat",
@@ -387,7 +373,8 @@
         "concentration":  true,
         "description":  "You move like the wind. For the duration, your movement doesn’t provoke opportunity attacks. Once before the spell ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
         "classes":  [
-                        "Bard"
+                        "Bard",
+                        "Sorcerer"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, increase the amount of force damage dealt by 1d8 for every spell level above first."
     },
@@ -432,22 +419,6 @@
                         "Ranger"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd."
-    },
-    {
-        "name":  "Darkvision",
-        "level":  "Level 2",
-        "school":  "Transmutation",
-        "castTime":  "1 action",
-        "range":  "Touch",
-        "duration":  "Until you take a long rest",
-        "concentration":  false,
-        "description":  "You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.",
-        "classes":  [
-                        "Shaman",
-                        "Sorcerer",
-                        "Warlock",
-                        "Wizard"
-                    ]
     },
     {
         "name":  "Dragon\u0027s Breath",
@@ -591,34 +562,6 @@
         "spellImprovements":  "Increase the damage this spell deals by 1d6 when you reach level 5, level 11, and level 17."
     },
     {
-        "name":  "Rope Trick",
-        "level":  "Level 2",
-        "school":  "Transmutation",
-        "castTime":  "1 action",
-        "range":  "Touch",
-        "duration":  "1 hour",
-        "concentration":  true,
-        "description":  "You touch a length of rope that is up to 60 feet long. One end of the rope then rises into the air until the whole rope hangs perpendicular to the ground. At the upper end of the rope, an invisible entrance opens to an extradimensional space that lasts until the spell ends. The extradimensional space can be reached by climbing to the top of the rope. The space can hold as many as eight Medium or smaller creatures. The rope can be pulled into the space, making the rope disappear from view outside the space. Attacks and spells can’t cross through the entrance into or out of the extradimensional space, but those inside can see out of it as if through a 3-foot-by-5-foot window centered on the rope. Anything inside the extradimensional space drops out when the spell ends.",
-        "classes":  [
-                        "Wizard"
-                    ]
-    },
-    {
-        "name":  "Skywrite",
-        "level":  "Level 2",
-        "school":  "Transmutation",
-        "castTime":  "1 action",
-        "range":  "Touch",
-        "duration":  "Concentration, up to 1 day",
-        "concentration":  true,
-        "description":  "You cause up to ten words to form in a part of the sky you can see. The words appear to be made of cloud and remain in place for the spell’s duration. The words dissipate when the spell ends. A strong wind can disperse the clouds and end the spell early.",
-        "classes":  [
-                        "Bard",
-                        "Shaman",
-                        "Wizard"
-                    ]
-    },
-    {
         "name":  "Spider Climb",
         "level":  "Level 2",
         "school":  "Transmutation",
@@ -656,6 +599,7 @@
         "concentration":  true,
         "description":  "You awaken the sense of mortality in one creature you can see within range. A construct or an undead is immune to this effect. The target must succeed on a Wisdom saving throw or become frightened of you until the spell ends. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
         "classes":  [
+                        "Priest",
                         "Warlock",
                         "Wizard"
                     ],
@@ -736,7 +680,7 @@
                         "Sorcerer",
                         "Wizard"
                     ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd, and the number of Hit Dice that can be spent and added to the healing roll increases by one for each slot above 2nd."
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd."
     },
     {
         "name":  "Color Spray",
@@ -931,6 +875,7 @@
         "description":  "You cause a tremor in the ground in a 10-foot radius. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes 1d6 bludgeoning damage and is knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Shaman",
                         "Sorcerer",
                         "Wizard"
@@ -948,6 +893,7 @@
         "description":  "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can’t benefit from being invisible.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Shaman"
                     ]
     },
@@ -1363,19 +1309,6 @@
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, a target’s hit points increase by an additional 5 for each slot level above 2nd."
     },
     {
-        "name":  "Arcane Lock",
-        "level":  "Level 2",
-        "school":  "Abjuration",
-        "castTime":  "1 action",
-        "range":  "Touch",
-        "duration":  "Until dispelled",
-        "concentration":  false,
-        "description":  "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting Knock on the object suppresses Arcane Lock for 10 minutes. While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
-        "classes":  [
-                        "Wizard"
-                    ]
-    },
-    {
         "name":  "Lesser Restoration",
         "level":  "Level 2",
         "school":  "Abjuration",
@@ -1404,36 +1337,6 @@
                         "Priest",
                         "Paladin"
                     ]
-    },
-    {
-        "name":  "Thought Shield",
-        "level":  "Level 2",
-        "school":  "Abjuration",
-        "castTime":  "1 action",
-        "range":  "Touch",
-        "duration":  "Until your next long rest",
-        "concentration":  false,
-        "description":  "You weave a clouding veil over the mind of one creature you touch. For the duration, the target’s mind can’t be read or detected, creatures can’t telepathically communicate with the target unless the target allows it, and the target has advantage on saving throws against any effect that would determine whether it is telling the truth.",
-        "classes":  [
-                        "Sorcerer",
-                        "Warlock",
-                        "Wizard"
-                    ]
-    },
-    {
-        "name":  "Animal Friendship",
-        "level":  "Level 1",
-        "school":  "Enchantment",
-        "castTime":  "1 action",
-        "range":  "30 feet",
-        "duration":  "Until your next long rest",
-        "concentration":  false,
-        "description":  "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast’s Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell’s duration. If you or one of your companions harms the target, the spell ends.",
-        "classes":  [
-                        "Bard",
-                        "Shaman"
-                    ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st."
     },
     {
         "name":  "Bane",
@@ -1519,6 +1422,7 @@
         "concentration":  true,
         "description":  "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains barrier equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining barrier from this spell.",
         "classes":  [
+                        "Priest",
                         "Bard",
                         "Paladin"
                     ],
@@ -1549,6 +1453,7 @@
         "description":  "You magically impede the triggering creature. The triggering creature must reroll the d20 and use the lower roll. Then if the creature succeeds anyways they gain 1 level of staggered.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -1636,6 +1541,7 @@
         "concentration":  true,
         "description":  "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
         "classes":  [
+                        "Priest",
                         "Shaman",
                         "Sorcerer",
                         "Wizard"
@@ -1652,6 +1558,7 @@
         "concentration":  false,
         "description":  "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration. When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ]
@@ -1768,7 +1675,7 @@
         "castTime":  "1 action",
         "range":  "40 feet",
         "duration":  "Concentration, up to 1 minute",
-        "concentration":  false,
+        "concentration":  true,
         "description":  "Target creature makes a dexterity save. On a failed save the target takes 2d4 acid damage, gains 1 level of Corroded for the spell\u0027s duration, and at the start of your turn as long as you have a free hand the creature gains an additional level of Corroded for the spell’s duration. On a successful save the creature takes no damage and the spell ends. \n\nThe spell ends if you are ever 40 feet away from the target or you lose line of sight of the target. ",
         "classes":  [
                         "Shaman",
@@ -2228,7 +2135,6 @@
         "concentration":  true,
         "description":  "You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creatureâ€™s speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage. On a successful save, the creature takes half as much damage.",
         "classes":  [
-                        "Priest",
                         "Paladin"
                     ],
         "atHigherLevels":  "When you cast this spell at higher levels, increase the damage by 1d8 for each level above 3rd."
@@ -2465,6 +2371,7 @@
         "description":  "Each enemy creature within 60 feet of you that can see you must make a dexterity saving throw. On a failure they take 5d8 lightning damage and half as much on a success.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Shaman",
                         "Sorcerer",
                         "Wizard"
@@ -2498,6 +2405,7 @@
         "concentration":  false,
         "description":  "Choose a creature within the spell\u0027s range. That creature must make a constitution saving throw, taking 8d10 damage on a failure or half as much on a success.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Warlock",
                         "Wizard"
@@ -2612,6 +2520,7 @@
         "description":  "Roll [2d4 + 2] and note the total. Force a creature within range to make a dexterity saving throw and take 1 level of bleeding on a failure, then repeat this an amount of times equal to the noted total.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -2628,6 +2537,7 @@
         "description":  "Each creature within range must make a constitution saving throw. On a failure they take 3d12 thunder damage and are moved back 10 feet, on a success they take half as much damage. Then if the triggering attack is no longer within range it misses, if the triggering attack was a ranged attack it misses.\n\nFor the duration of the spell you can repeat this effect as a reaction.",
         "classes":  [
                         "Bard",
+                        "Priest",
                         "Shaman",
                         "Sorcerer",
                         "Wizard"
@@ -2643,6 +2553,7 @@
         "concentration":  false,
         "description":  "Choose a direction, each creature in a 200 foot line must make a dexterity saving throw, taking 7d10 piercing damage on a failure or half as much on a success, then reduce the damage dealt to the next creature in the line by 1d10. The spell\u0027s line is stopped by 20 consecutive feet of wood, 10 consecutive feet of stone, 5 feet of metal or 1 foot of lead.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -2658,6 +2569,7 @@
         "concentration":  false,
         "description":  "Choose a point within range, each creature within 30 feet of that point must make a constitution saving throw, taking 6d12 poison damage on a failure or half as much on a success.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
