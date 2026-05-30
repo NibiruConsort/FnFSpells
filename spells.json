@@ -2734,5 +2734,63 @@
                         "Shaman",
                         "Wizard"
                     ]
+    },
+    {
+        "name":  "Power Word: Pain",
+        "level":  "Level 4",
+        "school":  "Illusion",
+        "castTime":  "1 action",
+        "range":  "120 feet",
+        "duration":  "3 rounds",
+        "concentration":  false,
+        "description":  "This spell does not require somatic components.\n\nTarget a creature within range. They must make both a Wisdom and a Constitution saving throw against your spell save DC.\n\n• 2 successes: Nothing happens.\n• 1 success: The target takes 12d4 psychic damage and has Confusion for the spell's duration.\n• 0 successes: The target takes 16d4 psychic damage and has Stunned for the spell's duration.",
+        "classes":  [
+                        "Priest"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels it deals an additional 4d4 damage for each spell level above 4th."
+    },
+    {
+        "name":  "ph_foxFire",
+        "level":  "Level 4",
+        "school":  "Evocation",
+        "castTime":  "1 bonus action",
+        "range":  "Self",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Create three bright blue flames which hover around your head. For each flame you have +1 AC and deal 3 fire damage to each creature within 5 feet at the end of your turn.\n\nDuring this spell's duration you can consume a flame to use one of the following abilities:\n\n• Cauterize - As a bonus action restore 2d6 health to a creature within 5 feet of you and deal 2d6 fire damage to all other creatures within 5 feet of the target.\n• Temper - As a reaction to failing a concentration saving throw you can instead succeed and gain 8 barrier for the duration of the spell.\n• Propel - As a bonus action you move up to 60 feet in a straight line, ignoring attacks of opportunity and dealing 1d6 fire damage to each creature you passed within 5 feet of.\n• Ignite - As an action make a ranged spell attack against a creature within 60 feet of you. On a hit that creature gains 4 levels of burning, or 2 levels on a miss.\n\nThe spell ends if you run out of flames.",
+        "classes":  [
+                        "Sorcerer"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the fire damage dealt by abilities by 1d6, the healing by 1d6, the barrier gained by Temper by 3, and the levels of burning applied by Ignite on a hit by 1 for every spell level above 4th. Increase the number of flames created and the levels of burning Ignite applies on a miss by 1 for every 2 spell levels above 4th."
+    },
+    {
+        "name":  "Overgrowth",
+        "level":  "Level 4",
+        "school":  "Transmutation",
+        "castTime":  "1 Action",
+        "range":  "45 feet",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Choose a point within range. Thick vines and other plants grow on all terrain within 15 feet of that point, making it difficult terrain.\n\nAny allied creature that gains health while in this terrain may instead gain that much barrier until they finish a short rest. Each creature within this terrain when you cast the spell restores 3d8 health.\n\nAt the end of each of your turns you may have the vines grow an additional 5 feet from the initial point.",
+        "classes":  [
+                        "Shaman"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the initial healing by 1d8 and the spell's initial area by 5 feet for each spell level above 4th."
+    },
+    {
+        "name":  "Dust to Dust",
+        "level":  "Level 1",
+        "school":  "Necromancy",
+        "castTime":  "1 action",
+        "range":  "20 feet",
+        "duration":  "10 minutes",
+        "concentration":  false,
+        "description":  "Target a creature within range. They make a Constitution saving throw. On a failure the creature takes 1d6 necrotic damage at the end of its turn until the spell ends.\n\nThis spell ends early if you cast it again or if the creature is ever more than 200 feet away from you.",
+        "classes":  [
+                        "Priest",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage dealt by 1d6 for each spell level above 1st."
     }
 ]
