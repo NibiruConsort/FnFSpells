@@ -89,28 +89,11 @@
         "concentration":  true,
         "description":  "Choose a target that you can see within range. Until this power ends you have advantage on your next attack roll against that creature.",
         "classes":  [
-                        "Paladin",
                         "Bard",
                         "Warlock",
                         "Wizard"
                     ],
         "spellImprovements":  "You can advantage on 1 additional attack when you reach 5th level."
-    },
-    {
-        "name":  "Friends",
-        "level":  "Level 0",
-        "school":  "Enchantment",
-        "castTime":  "1 Action",
-        "range":  "Touch",
-        "duration":  "1 Minute",
-        "concentration":  true,
-        "description":  "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn\u0027t hostile toward you.\n\nWhen the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM\u0027s discretion), depending on the nature of your interaction with it.",
-        "classes":  [
-                        "Bard",
-                        "Sorcerer",
-                        "Warlock",
-                        "Wizard"
-                    ]
     },
     {
         "name":  "Mind Sliver",
@@ -181,6 +164,7 @@
         "concentration":  false,
         "description":  "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 2d4 fire damage. A flammable object hit by this spell ignites if it isn’t being worn or carried.",
         "classes":  [
+                        "Priest",
                         "Sorcerer",
                         "Wizard"
                     ],
@@ -2792,5 +2776,68 @@
                         "Wizard"
                     ],
         "atHigherLevels":  "When you cast this spell at higher levels, increase the damage dealt by 1d6 for each spell level above 1st."
+    },
+    {
+        "name":  "Rescue",
+        "level":  "Level 3",
+        "school":  "Transmutation",
+        "castTime":  "1 Bonus Action",
+        "range":  "90 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Restore [2d8 + your level] health to a target creature within range. You may then teleport the creature to an unoccupied space within 5 feet of you.",
+        "classes":  [
+                        "Bard",
+                        "Paladin",
+                        "Priest",
+                        "Shaman"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the healing by 1d8 and the spell's range by 10 feet for each spell level above 3rd."
+    },
+    {
+        "name":  "Haste",
+        "level":  "Level 3",
+        "school":  "Transmutation",
+        "castTime":  "1 Action",
+        "range":  "30 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Target a creature within range. It takes an extra turn immediately after its next turn.",
+        "classes":  [
+                        "Bard",
+                        "Shaman",
+                        "Sorcerer"
+                    ]
+    },
+    {
+        "name":  "ph_greaterWarding",
+        "level":  "Level 3",
+        "school":  "Abjuration",
+        "castTime":  "1 Action",
+        "range":  "Self",
+        "duration":  "10 minutes",
+        "concentration":  false,
+        "description":  "Each space within 15 feet of you becomes warded with glowing sigils. For the spell's duration, the first time a creature attempts to enter one of these spaces it costs an additional 10 feet of movement. After a creature moves into the space the sigils disappear and that space is no longer affected.\n\nWhenever a creature removes sigils from a space, you are mentally aware and know which space it was. (This movement cost does not scale with difficult terrain.)",
+        "classes":  [
+                        "Priest",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the range by 5 feet for each level above 3rd. At 4th level the duration increases to until your next short rest; at 5th level it increases to until your next long rest."
+    },
+    {
+        "name":  "Major Image",
+        "level":  "Level 3",
+        "school":  "Illusion",
+        "castTime":  "1 action",
+        "range":  "120 feet",
+        "duration":  "Concentration, up to 10 minutes",
+        "concentration":  true,
+        "description":  "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 20-foot cube. The image appears at a spot that you can see within range and lasts for the duration. It seems completely real, including sounds, smells, and temperature appropriate to the thing depicted. You can't create sufficient heat or cold to cause damage, a sound loud enough to deal thunder damage or deafen a creature, or a smell that might sicken a creature.\n\nAs long as you are within range of the illusion, you can use your action to cause the image to move to any other spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Similarly, you can cause the illusion to make different sounds at different times, even making it carry on a conversation.\n\nPhysical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.",
+        "classes":  [
+                        "Bard",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ]
     }
 ]
