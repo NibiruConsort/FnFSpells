@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "name":  "Blade Ward",
         "level":  "Level 0",
@@ -746,22 +746,6 @@
                     ]
     },
     {
-        "name":  "Shadow Blade",
-        "level":  "Level 2",
-        "school":  "Illusion",
-        "castTime":  "1 bonus action",
-        "range":  "Self",
-        "duration":  "Concentration, up to 1 minute",
-        "concentration":  false,
-        "description":  "You weave together threads of shadow to create a sword of solidified gloom in your hand. This magic sword lasts until the spell ends. It counts as a simple melee weapon with which you are proficient. It deals 2d8 psychic damage on a hit and has the finesse, light, and thrown properties (range 20/60). In addition, when you use the sword to attack a target that is in dim light or darkness, you make the attack roll with advantage. If you drop the weapon or throw it, it dissipates at the end of the turn. Thereafter, while the spell persists, you can use a bonus action to cause the sword to reappear in your hand.",
-        "classes":  [
-                        "Sorcerer",
-                        "Warlock",
-                        "Wizard"
-                    ],
-        "atHigherLevels":  "At Higher Levels. When you cast this spell using a 3rd- or 4th-level spell slot, the damage increases to 3d8. When you cast it using a 5th- or 6th-level spell slot, the damage increases to 4d8. When you cast it using a spell slot of 7th level or higher, the damage increases to 5d8."
-    },
-    {
         "name":  "Silence",
         "level":  "Level 2",
         "school":  "Illusion",
@@ -1300,13 +1284,14 @@
         "range":  "Touch",
         "duration":  "Instantaneous",
         "concentration":  false,
-        "description":  "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
+        "description":  "You touch a creature and can end either one disease, one status effect, one magical effect, or heal that creature for 3d8 health. If the creature is afflicted by a disease or magical effect that cannot be cured by a this spell, they gain the half the spell's healing and the effect is suppressed for 1 hour",
         "classes":  [
                         "Bard",
                         "Priest",
                         "Shaman",
                         "Paladin"
-                    ]
+                    ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the healing by 1d8 for each spell level above 2nd"
     },
     {
         "name":  "Warding Bond",
@@ -1320,7 +1305,8 @@
         "classes":  [
                         "Priest",
                         "Paladin"
-                    ]
+                    ],
+        "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
     },
     {
         "name":  "Bane",
