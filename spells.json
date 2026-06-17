@@ -400,7 +400,7 @@
         "concentration":  false,
         "description":  "You plant four pieces of nonmagical ammunition – arrows or crossbow bolts – in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 1d6 piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains. When you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
         "classes":  [
-                        "Ranger"
+                        "Bard"
                     ],
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd."
     },
@@ -868,7 +868,7 @@
     {
         "name":  "Guiding Bolt",
         "level":  "Level 1",
-        "school":  "Evocation",
+        "school":  "Divination",
         "castTime":  "1 action",
         "range":  "120 feet",
         "duration":  "1 round",
@@ -1574,20 +1574,6 @@
         "description":  "This spell creates a circular, horizontal plane of force, 3 feet in diameter and 1 inch thick, that floats 3 feet above the ground in an unoccupied space of your choice that you can see within range. The disk remains for the duration, and can hold up to 500 pounds. If more weight is placed on it, the spell ends, and everything on the disk falls to the ground. The disk is immobile while you are within 20 feet of it. If you move more than 20 feet away from it, the disk follows you so that it remains within 20 feet of you. It can move across uneven terrain, up or down stairs, slopes, and the like, but it can’t cross an elevation change of 10 feet or more. For example, the disk can’t move across a 10-foot-deep pit, nor could it leave such a pit if it were created at the bottom. If you move more than 100 feet from the disk (typically because it can’t move around an obstacle to follow you), the spell ends.",
         "classes":  [
                         "Wizard"
-                    ]
-    },
-    {
-        "name":  "Speak with Animals",
-        "level":  "Level 1",
-        "school":  "Divination",
-        "castTime":  "1 action",
-        "range":  "Self",
-        "duration":  "10 minutes",
-        "concentration":  false,
-        "description":  "You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the DM’s discretion.",
-        "classes":  [
-                        "Bard",
-                        "Shaman"
                     ]
     },
     {
@@ -2825,5 +2811,128 @@
                         "Warlock",
                         "Wizard"
                     ]
+    },
+    {
+        "name":  "Gift of Foresight",
+        "level":  "Level 1",
+        "school":  "Divination",
+        "castTime":  "Instantly, only when you roll initiative",
+        "range":  "Self",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Increase your initiative by 1d4. You may immediately move up to 10 feet.",
+        "classes":  [
+                        "Paladin",
+                        "Priest",
+                        "Shaman",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "Corruption",
+        "level":  "Level 5",
+        "school":  "Necromancy",
+        "castTime":  "1 Action",
+        "range":  "100 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Target a creature within range. They must make a Constitution saving throw. On a success they take 3d10 necrotic damage and the spell ends. On a failure they gain 3 levels of decayed at the start of each of their turns until the spell ends.",
+        "classes":  [
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the necrotic damage by 1d10 and the levels of decayed applied by 1 for each level above 5th."
+    },
+    {
+        "name":  "ph_cloudkill",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 Action",
+        "range":  "Self",
+        "duration":  "Concentration, up to 10 minutes",
+        "concentration":  true,
+        "description":  "Create a 20-foot radius sphere of green fog that emanates from your body. This fog fully obscures vision and any creature other than you that ends its turn in the fog must make a Constitution saving throw, taking 5d12 poison damage or half as much on a success.\n\nWherever you end your turn while within the fog you may have it either move 10 feet in a direction or expand by 5 feet.",
+        "classes":  [
+                        "Sorcerer",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the damage dealt by 2d12 for each spell level above 5th."
+    },
+    {
+        "name":  "Sunbeam",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Choose a point within range. Create a 10-foot diameter, 1000-foot tall cylinder of sunlight centered on that point. Creatures in this cylinder must make a Constitution saving throw, taking 7d6 fire damage and 4d8 radiant damage on a failure or half as much on a success.",
+        "classes":  [
+                        "Priest",
+                        "Shaman",
+                        "Sorcerer"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the fire damage by 1d6 and the radiant damage by 2d8 for each level above 5th."
+    },
+    {
+        "name":  "The Winds of Udkar",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "Self (60-foot cone)",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "All creatures within a 60-foot cone in front of you must make a Constitution saving throw. On a failure they are pushed backwards 10 feet, gain 2 levels of slowed, and take 8d6 cold damage. On a success they take half as much damage and are pushed backwards 5 feet.\n\nAny creature within 5 feet of you, or that takes up more than one space of the spell's effect, has disadvantage on the saving throw.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage dealt by 3d6 for each spell level above 5th."
+    },
+    {
+        "name":  "Dominate Mind",
+        "level":  "Level 5",
+        "school":  "Enchantment",
+        "castTime":  "1 Action",
+        "range":  "45 feet",
+        "duration":  "Concentration, up to 10 minutes",
+        "concentration":  true,
+        "description":  "Target a creature within range. They make an Intelligence saving throw. On a failure the creature is charmed by you for the duration of the spell.\n\nFor as long as the creature is charmed this way, it will follow simple commands you give it on your turn. The creature will not follow these commands if they would cause it to harm itself or directly harm one of its allies. You can also use your action on your turns to directly control the creature, gaining perfect control of it during its turn.\n\nWhenever the creature takes damage it may repeat the Intelligence saving throw to end this effect. Each time the saving throw is repeated, reduce the DC by 1.",
+        "classes":  [
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, after a creature fails the save the first time, increase the starting DC to end the effect by 1 for each spell level above 5th. At 6th level increase the duration to 10 minutes, until your next short rest at 7th level, until your next long rest at 8th level, and until you lose concentration at 9th level."
+    },
+    {
+        "name":  "Bless Weapon",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 bonus action",
+        "range":  "Touch",
+        "duration":  "Until you finish a short rest",
+        "concentration":  false,
+        "description":  "Target a weapon. It deals an additional 2d6 radiant damage on a hit for the duration of the spell. If the weapon was already magical it only deals an additional 1d6 radiant damage.\n\nAs a bonus action you can end the spell early. If you do, the weapon emits a brilliant flash of divine light. Each creature other than its wielder within 15 feet of the weapon must make a Constitution saving throw, taking 4d8 radiant damage and becoming blinded and unable to make attacks of opportunity until the start of your next turn on a failure, or half as much damage on a success.",
+        "classes":  [
+                        "Priest"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels increase the final burst of damage by 2d8 damage for each spell level above 5th and increase the on-hit damage by 1d6 for every 2 spell levels above 5th."
+    },
+    {
+        "name":  "Omnislash",
+        "level":  "Level 5",
+        "school":  "Conjuration",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "1 round",
+        "concentration":  false,
+        "description":  "When you cast this spell you disappear, becoming untargetable and immune to damage. Immediately end your turn.\n\nAt the start of your next turn choose up to 6 creatures within range. Make a melee spell attack against each of those creatures. On a hit deal 5d10 damage to the target. Then choose one of your targets and reappear in an adjacent unoccupied space.",
+        "classes":  [
+                        "Bard",
+                        "Sorcerer"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, deal an additional 2d10 damage for each level above 5th."
     }
 ]
