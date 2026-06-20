@@ -2934,5 +2934,113 @@
                         "Sorcerer"
                     ],
         "atHigherLevels":  "When you cast this spell at a higher level, deal an additional 2d10 damage for each level above 5th."
+    },
+    {
+        "name":  "ph_electro",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 reaction, which you take in response to a creature making a melee attack against you, or 1 bonus action",
+        "range":  "Self",
+        "duration":  "2 rounds",
+        "concentration":  false,
+        "description":  "You gain 10 barrier. For the duration of the spell you gain the following effects:\n\n• You have a flying speed equal to double your movement speed.\n• Anytime a creature attempts to make a melee attack against you they must first make a Dexterity saving throw. On a failure they gain 5 levels of shocked and take 4d8 lightning damage, or half as much on a success. If a creature becomes shocked this way they become stunned and lose their attack.\n• As an action you can make a melee spell attack against a creature within 5 feet of you. On a hit the creature takes 4d8 lightning damage and gains 4 levels of shocked.\n• When this spell ends you may have each creature within 15 feet of you make a Dexterity saving throw, taking 4d8 lightning damage on a failure or half as much on a success.\n\nThis spell ends at the start of your turn after your next turn.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the lightning damage dealt by 2d8 for each spell level above 5th."
+    },
+    {
+        "name":  "Telekinesis",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 bonus action",
+        "range":  "60 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "For the duration of the spell you gain the following abilities:\n\n• You can hold and move objects as though you were standing anywhere within the spell's range and your Strength score was equal to your spellcasting attack bonus times 5. You cannot benefit from any of your proficiencies while using objects in this way.\n• As an action choose an object that is not nailed down and weighs 100 pounds or less within the spell's range. Make a ranged spell attack against a creature within range to fling the object at them. On a hit deal 4d12 impact damage to the target and apply 3 levels of staggered.\n• As an action choose a point within the spell's range. Each creature within 10 feet of that point must make a Constitution saving throw, taking 4d8 force damage and gaining 1 level of staggered on a failure or half as much damage on a success.\n• As an action target a creature within range. They must make a Strength saving throw. On a failure they gain 4 levels of slowed and have the effects of staggered doubled until the end of their turn.",
+        "classes":  [
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the thrown item damage by 2d12 and the area of effect damage by 2d8 for each level above 5th.",
+        "spellImprovements":  "Increase this spell's thrown item damage by 1d12 and area of effect damage by 1d8 when you reach level 11."
+    },
+    {
+        "name":  "ph_IVdrip",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Target a creature within range. They gain 1d4 barrier for the duration of the spell and restore 1 health at the start of your turn and the target's turn until this spell ends.",
+        "classes":  [
+                        "Priest",
+                        "Shaman"
+                    ]
+    },
+    {
+        "name":  "Nevek'Jeth's Maw",
+        "level":  "Level 5",
+        "school":  "Conjuration",
+        "castTime":  "1 Action",
+        "range":  "30 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Open a portal to a great Kraken's Maw at a target point within range. The ground within 20 feet of that point becomes difficult terrain.\n\nCreatures touching the center of this area at the start of their turn take 3d12 impact damage. If a creature dies to this damage their corpse is swallowed by the maw.\n\nAny creatures standing in that area when you cast the spell must make a Strength saving throw, becoming grappled on a failure. Creatures grappled by this spell can repeat this save at the start of their turns to end the grapple.\n\nCreatures grappled by this spell take 4d8 slashing damage and are pulled 5 feet closer to the center of the area at the start of their turns.\n\nWhile you are concentrating on this spell you can use your bonus action to force a creature within its area to make a Strength saving throw or be grappled.",
+        "classes":  [
+                        "Shaman",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the impact damage by 1d12 and the slashing damage by 1d8 for each spell level above 5th."
+    },
+    {
+        "name":  "ph_doubleCast",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "Self",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Empower yourself with the teachings of the mad evoker. While you are concentrating on this spell, when you cast a spell that is at least 2 levels lower than this one and has a casting time of 1 action or 1 bonus action, until the end of your turn you can cast it again without consuming a spell slot and with no cast time.",
+        "classes":  [
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "The King's Curse",
+        "level":  "Level 5",
+        "school":  "Enchantment",
+        "castTime":  "1 Action",
+        "range":  "120 feet",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Target a creature within range and claim their soul for ph_satan. For the duration of the spell, the target creature suffers from all the curses listed below.\n\nIf the creature dies while this spell is active, their soul is claimed and you are rewarded with a temporary 3rd level spell slot until the end of your next long rest. A creature that died while under this spell's effect cannot be resurrected except by a spell of 9th level or higher.\n\n(if you try to farm rewards ph_satan will personally come for your ass bruh)\n\n• Curse of the Hunted - Whenever an ally lands a weapon attack roll or spell attack roll against this creature it takes an extra 1d4 damage of the attack's type. This effect occurs only once per turn.\n• Curse of Weakness - The creature has -1d4 on the first saving throw or ability check it makes each turn.\n• Curse of Cowardice - The creature has -1d6 on the first attack roll it makes each turn.\n• Curse of Doom - After 1d3 turns the creature takes 3d8 fire damage.",
+        "classes":  [
+                        "Warlock"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the level of the granted spell slot by 1 and the fire damage by 3d8 for each spell level above 5th."
+    },
+    {
+        "name":  "Pillars of Light",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "120 feet",
+        "duration":  "Varies",
+        "concentration":  false,
+        "description":  "Choose 8 spaces to create pillars of blinding light in. When you cast this spell each creature in one of these spaces must make a Constitution saving throw, taking 7d8 radiant damage and being blinded for 1 round on a failure or half as much damage on a success.\n\nThen choose whether or not to concentrate on this spell. If you do not, the pillars disappear and the spell ends. If you do, the pillars last for up to 1 minute.\n\nAny pillars next to each other merge into a wall. Standing behind a pillar provides full cover; standing inside a pillar does not.\n\nWhile concentrating on this spell, you can use your bonus action to dismiss any number of pillars.\n\nAny creature that starts its turn inside a pillar or moves into one for the first time on their turn must make a Constitution saving throw, taking 3d8 radiant damage on a failure or half as much on a success. A creature can only take this damage once per turn.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the initial damage by 2d8 and the repeating damage by 1d8 for each spell level above 5th."
     }
 ]
