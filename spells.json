@@ -3042,5 +3042,35 @@
                         "Wizard"
                     ],
         "atHigherLevels":  "When you cast this spell at higher levels, increase the initial damage by 2d8 and the repeating damage by 1d8 for each spell level above 5th."
+    },
+    {
+        "name":  "ph_worldOnFire",
+        "level":  "Level 5",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Each creature you can see in a 500-foot cone in front of you must make a Dexterity saving throw, taking 4d6 fire damage on a failure or half as much on a success. Then each creature adjacent to at least one of those creatures repeats the saving throw.\n\nFor the duration of the spell, at the start of each of your turns, you may target up to 1d3 creatures within range to make a Dexterity saving throw, gaining 3 levels of burning on a failure.",
+        "classes":  [
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage by 2d6 and the levels of burning applied by 1 for each spell level above 5th."
+    },
+    {
+        "name":  "ph_quake",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 reaction, which you take in response to rolling initiative, or 1 action",
+        "range":  "1 mile",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Each enemy creature within the spell's range must make a Strength saving throw. On a failure they are knocked prone, gain 5 levels of staggered, and gain 5 levels of exposed.\n\nYou may remove any non-magical difficult terrain within the spell's range.",
+        "classes":  [
+                        "Shaman"
+                    ]
     }
 ]
