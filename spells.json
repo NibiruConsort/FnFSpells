@@ -1277,7 +1277,7 @@
         "atHigherLevels":  "At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, a target’s hit points increase by an additional 5 for each slot level above 2nd."
     },
     {
-        "name":  "Lesser Restoration",
+        "name":  "ph_lesserRestoration",
         "level":  "Level 2",
         "school":  "Abjuration",
         "castTime":  "1 action",
@@ -2860,22 +2860,6 @@
         "atHigherLevels":  "When you cast this spell at a higher level, increase the damage dealt by 2d12 for each spell level above 5th."
     },
     {
-        "name":  "Sunbeam",
-        "level":  "Level 5",
-        "school":  "Evocation",
-        "castTime":  "1 Action",
-        "range":  "60 feet",
-        "duration":  "Instantaneous",
-        "concentration":  false,
-        "description":  "Choose a point within range. Create a 10-foot diameter, 1000-foot tall cylinder of sunlight centered on that point. Creatures in this cylinder must make a Constitution saving throw, taking 7d6 fire damage and 4d8 radiant damage on a failure or half as much on a success.",
-        "classes":  [
-                        "Priest",
-                        "Shaman",
-                        "Sorcerer"
-                    ],
-        "atHigherLevels":  "When you cast this spell at higher levels, increase the fire damage by 1d6 and the radiant damage by 2d8 for each level above 5th."
-    },
-    {
         "name":  "The Winds of Udkar",
         "level":  "Level 5",
         "school":  "Evocation",
@@ -3071,6 +3055,70 @@
         "description":  "Each enemy creature within the spell's range must make a Strength saving throw. On a failure they are knocked prone, gain 5 levels of staggered, and gain 5 levels of exposed.\n\nYou may remove any non-magical difficult terrain within the spell's range.",
         "classes":  [
                         "Shaman"
+                    ]
+    },
+    {
+        "name":  "Vultyra's Many Eyes",
+        "level":  "Level 5",
+        "school":  "Divination",
+        "castTime":  "1 bouns action",
+        "range":  "200 feet",
+        "duration":  "Until your next long rest or you cast this spell again",
+        "concentration":  false,
+        "description":  "Summon up to 8 invisible arcane eyes at any points within range. You have truesight within a 15-foot radius of each eye. Enemies that start their turn or move within 15 feet of an eye for the first time on their turn gain 2 levels of exposed.\n\nIf you cast this spell every day for a month at the same location and chosen points, the spell becomes permanent. If the spell is permanent it is disabled when you cast this again. You can only have one permanent casting of this spell.",
+        "classes":  [
+                        "Paladin",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the number of eyes summoned by 2 and the levels of exposed applied by 1 for each spell level above 5th."
+    },
+    {
+        "name":  "Telepathic Bond",
+        "level":  "Level 5",
+        "school":  "Divination",
+        "castTime":  "1 Action",
+        "range":  "15 feet",
+        "duration":  "Until your next short rest",
+        "concentration":  false,
+        "description":  "Choose any willing creatures within the spell's range. For the duration of the spell those creatures can communicate telepathically with each other for as long as they are on the same plane. Each creature gains the following benefits for the duration:\n\n• Coordinated Attack - After a friendly bonded creature hits another creature with an attack roll, you have advantage on your next attack against that creature.\n• ph_quickWarning - As a reaction to another bonded creature being targeted by an attack roll, you can reduce that attack's to-hit roll by 1d6.\n• At the start of your turn you may swap initiative places with another willing bonded creature.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Sorcerer",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "ph_rewind",
+        "level":  "Level 2",
+        "school":  "Conjuration",
+        "castTime":  "1 bonus action",
+        "range":  "Self",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Mark your current location and hp total.\n\nAs a bonus action, or as a reaction to taking damage, for the duration of the spell you can end this spell and teleport back to the marked location. If the triggering damage was from an attack roll, it misses. If you are teleported out of range of the effect that would have damaged you, you do not take damage. Gain barrier until the start of your next turn equal to the difference between your marked hp and your current hp.\n\nThis spell ends early if you are ever on a different plane than your marked location.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "Infect",
+        "level":  "Level 5",
+        "school":  "Transmutation",
+        "castTime":  "1 action",
+        "range":  "Touch",
+        "duration":  "7 days",
+        "concentration":  false,
+        "description":  "Make a melee spell attack. On a hit choose 2 of the following effects; the creature is inflicted with them for the duration of the spell. At the end of the creature's turn it makes a Constitution saving throw. After it has succeeded on this save twice the spell ends.\n\n• Flesh Rot - The creature has a minimum of 3 levels of decayed for the spell's duration.\n• ph_poison - The creature has a minimum of 3 levels of poisoned for the spell's duration.\n• ph_frailty - The creature has disadvantage on Constitution saving throws. It must succeed on saves against this spell 3 times for it to end.\n• Bursting Pustules - If the creature dies while affected by this spell, each creature other than you within 15 feet must make a Constitution saving throw or be affected by the disease. The spell still ends 7 days after you initially cast it.\n• Mind Fire - The creature has disadvantage on spell attacks, mental ability checks, and mental saving throws, and takes 1d4 psychic damage at the end of each of their turns.\n• Seizure - The creature has disadvantage on weapon attacks, Strength and Dexterity ability checks and saving throws, and goes prone at the end of each of their turns.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
                     ]
     }
 ]
