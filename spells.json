@@ -2955,7 +2955,7 @@
     {
         "name":  "ph_IVdrip",
         "level":  "Level 5",
-        "school":  "Transmutation",
+        "school":  "Abjuration",
         "castTime":  "1 Action",
         "range":  "60 feet",
         "duration":  "Concentration, up to 1 minute",
@@ -3092,7 +3092,7 @@
     {
         "name":  "ph_rewind",
         "level":  "Level 2",
-        "school":  "Conjuration",
+        "school":  "Transmutation",
         "castTime":  "1 bonus action",
         "range":  "Self",
         "duration":  "1 minute",
@@ -3120,5 +3120,143 @@
                         "Sorcerer",
                         "Wizard"
                     ]
+    },
+    {
+        "name":  "ph_arise",
+        "level":  "Level 5",
+        "school":  "Enchantment",
+        "castTime":  "1 reaction, in response to being reduced to 0 hit points",
+        "range":  "Self",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Restore half of your maximum health. End all diseases, status effects, and magical effects on yourself.\n\nChoose one type of saving throw to have advantage on until the end of combat.\n\nUntil the end of combat, double the range of your Aura abilities.",
+        "classes":  [
+                        "Paladin"
+                    ]
+    },
+    {
+        "name":  "ph_psychicStatic",
+        "level":  "Level 5",
+        "school":  "Enchantment",
+        "castTime":  "1 Action",
+        "range":  "60 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Each creature of your choice within range must make a Constitution saving throw. On a failure they take 16d4 psychic damage and subtract 1d4 from all attack rolls, ability checks, and saving throws for the next minute. On a success they take half as much damage.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage dealt by 4d4 for each level above 5th."
+    },
+    {
+        "name":  "Drain",
+        "level":  "Level 5",
+        "school":  "Necromancy",
+        "castTime":  "1 Action",
+        "range":  "90 feet",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Target a point within range. Each creature within 20 feet of that point must make a Constitution saving throw, gaining 3 levels of decayed on a failure or half as many on a success. (round down)\n\nFor the duration of the spell, whenever a creature within the spell's range takes damage from decayed, you gain barrier equal to half the damage dealt.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the levels of decayed applied by 1 for each spell level above 5th."
+    },
+    {
+        "name":  "Cloud of Knives",
+        "level":  "Level 1",
+        "school":  "Conjuration",
+        "castTime":  "1 action",
+        "range":  "45 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Choose a space within range. Create a storm of quick-moving blades in that space. Any creature that starts its turn touching the knives or moves into the knives' space on their turn must make a Dexterity saving throw, taking 2d8 damage on a failure or half as much on a success.\n\nAs an action for the spell's duration you may move the storm to another space you can see within 30 feet of its current location.",
+        "classes":  [
+                        "Priest",
+                        "Warlock",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the damage by 1d8 for each spell level above 1st."
+    },
+    {
+        "name":  "Misty Step",
+        "level":  "Level 1",
+        "school":  "Conjuration",
+        "castTime":  "1 bonus action",
+        "range":  "30 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Teleport to an unoccupied space you can see within range.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "ph_magicLine",
+        "level":  "Level 2",
+        "school":  "Abjuration",
+        "castTime":  "1 Action",
+        "range":  "70 feet",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Create a line up to 20 feet long, entirely within the spell's range and on a surface you can see. For the spell's duration an invisible wall projects from the line, 30 feet tall and 5 feet wide.\n\nCreatures cannot move through this wall. A creature standing on the line when the wall is created may move to either side or remain where they are. Ranged attacks, line of sight, and other magical effects can pass through this wall as though it were not there.\n\nThe wall has 18 HP and the spell ends if it runs out. The spell also ends if you cast it again.",
+        "classes":  [
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at a higher level, increase the wall's HP by 9 for each spell level above 2nd."
+    },
+    {
+        "name":  "ph_threeSnakeMonte",
+        "level":  "Level 2",
+        "school":  "Conjuration",
+        "castTime":  "1 bonus action",
+        "range":  "45 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "While you are concentrating on this spell, you cannot make weapon attacks or cast other spells.\n\nChoose 3 points within range to create charmed-snake-in-baskets at.\n\nFor the duration of the spell you may use your action to command one of these snakes to attack a creature within 10 feet of it. Make a melee spell attack against the target; on a hit it takes 3d6 poison damage. This attack counts as a melee weapon attack for your Arcane Chord feature.\n\nWhen a creature moves while within 10 feet of one of your snakes you may use your reaction to have that snake attack the creature.",
+        "classes":  [
+                        "Bard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the range by 5 feet and the damage by 1d6 for each spell level above 2nd.",
+        "spellImprovements":  "When you cast this spell while you are level 5 or higher, increase the damage by 1d6."
+    },
+    {
+        "name":  "ph_livingLightning",
+        "level":  "Level 2",
+        "school":  "Evocation",
+        "castTime":  "1 Action",
+        "range":  "30 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Target a creature within range. They make a Dexterity saving throw, taking 1d8 lightning damage on a failure or half as much on a success.\n\nIf all the damage dice rolled were even, or all the dice were odd, repeat this effect with an additional 1d8 damage against a different creature within 30 feet of the original target.",
+        "classes":  [
+                        "Sorcerer"
+                    ]
+    },
+    {
+        "name":  "ph_soulDestruction",
+        "level":  "Level 4",
+        "school":  "Evocation",
+        "castTime":  "1 bonus action",
+        "range":  "Self",
+        "duration":  "1 minute",
+        "concentration":  false,
+        "description":  "Deal 3d6 radiant damage to yourself. The next spell you cast within 1 minute is upcast by 5 levels.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Sorcerer",
+                        "Warlock"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, reduce the damage taken by 1d6 for each spell level above 4th."
     }
 ]
