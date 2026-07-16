@@ -3272,5 +3272,81 @@
                         "Wizard"
                     ],
         "atHigherLevels":  "When you cast this spell at a higher level, it gains 1 additional charge for each spell level above 2nd."
+    },
+    {
+        "name":  "Conjure Elemental",
+        "level":  "Level 5",
+        "school":  "Conjuration",
+        "castTime":  "1 action",
+        "range":  "10 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Choose to summon a Water, Earth, Fire, or Air elemental in an unoccupied space within range. This creature takes its turn immediately after yours and is controlled by you.\n\n<div style=\"border:1px solid rgba(128,128,128,0.4);border-radius:4px;padding:8px;margin:0.5em 0\"><strong>Elemental — Large Elemental</strong><br><br>AC: 10 + spell level &nbsp;·&nbsp; HP: 18 × spell level &nbsp;·&nbsp; Speed: 25 ft<br>STR 18 &nbsp;&nbsp; DEX 12 &nbsp;&nbsp; CON 16 &nbsp;&nbsp; INT 12 &nbsp;&nbsp; WIS 12 &nbsp;&nbsp; CHA 8</div>\n\n<strong>Elemental Infusion.</strong> The elemental gains a passive benefit and deals a unique damage type based on the chosen element.\n\n<table style=\"border-collapse:collapse;width:100%;margin:0.5em 0\"><tr style=\"background:rgba(0,0,0,0.15)\"><th style=\"text-align:left;padding:4px 8px\">Element</th><th style=\"text-align:left;padding:4px 8px\">Passive</th><th style=\"text-align:left;padding:4px 8px\">Elemental Burst</th></tr><tr><td style=\"padding:4px 8px;vertical-align:top\">Air</td><td style=\"padding:4px 8px\">Gain 10 feet of movement and a fly speed equal to this creature's speed.</td><td style=\"padding:4px 8px\">Deals force damage and pushes the target back up to 10 feet.</td></tr><tr style=\"background:rgba(0,0,0,0.07)\"><td style=\"padding:4px 8px;vertical-align:top\">Earth</td><td style=\"padding:4px 8px\">Increase this creature's AC by 2. The first time you would lose concentration on this spell, you can instead have this creature lose half of its maximum health.</td><td style=\"padding:4px 8px\">Deals impact damage, applies 1 level of staggered, and does not have disadvantage due to an enemy in melee range.</td></tr><tr><td style=\"padding:4px 8px;vertical-align:top\">Fire</td><td style=\"padding:4px 8px\">This creature has +1 to hit on weapon attacks and they deal an additional 1d6 fire damage.</td><td style=\"padding:4px 8px\">Deals fire damage and applies 1 level of burning on a hit.</td></tr><tr style=\"background:rgba(0,0,0,0.07)\"><td style=\"padding:4px 8px;vertical-align:top\">Water</td><td style=\"padding:4px 8px\">This creature has +1 to its grapple DC and can move at full speed while grappling. Creatures grappled by the elemental are silenced and take 1d6 cold damage at the end of the elemental's turn.</td><td style=\"padding:4px 8px\">Deals cold damage and applies 1 level of slowed on a hit.</td></tr></table>\n\n<strong>Actions</strong>\n\n<strong>Multiattack.</strong> This creature makes 1 Slam attack and 1 Elemental Burst attack, or 1 Slam attack and 1 Grapple attack.\n\n<strong>Slam.</strong> +spell attack modifier to hit, 2d6 + your spellcasting modifier damage.\n\n<strong>Elemental Burst.</strong> +spell attack modifier to hit (60 ft range), 1d4 + your spellcasting modifier damage.\n\n<strong>Grapple.</strong> Target a creature within 5 feet. They make an Acrobatics or Athletics check against your spell save DC and are grappled on a failure. A creature can use their action on future turns to repeat this check and end the grapple.",
+        "classes":  [
+                        "Bard",
+                        "Sorcerer",
+                        "Wizard"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, the elemental can make one additional Slam attack each turn for each spell level above 5th."
+    },
+    {
+        "name":  "Create Giant Insect",
+        "level":  "Level 5",
+        "school":  "Conjuration",
+        "castTime":  "1 action",
+        "range":  "5 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Choose to summon a scorpion, spider, or mantis in an unoccupied space within range. This creature takes its turn immediately after yours and is controlled by you.\n\n<div style=\"border:1px solid rgba(128,128,128,0.4);border-radius:4px;padding:8px;margin:0.5em 0\"><strong>Giant Insect — Large Beast</strong><br><br>AC: 10 + spell level &nbsp;·&nbsp; HP: 15 × spell level &nbsp;·&nbsp; Speed: 35 ft<br>STR 16 &nbsp;&nbsp; DEX 18 &nbsp;&nbsp; CON 12 &nbsp;&nbsp; INT 4 &nbsp;&nbsp; WIS 6 &nbsp;&nbsp; CHA 2</div>\n\n<strong>Venomous Tail (Scorpion Only).</strong> This creature's weapon attacks apply 1 level of poisoned.\n\n<strong>Reactions</strong>\n\n<strong>Ambush (Mantis Only).</strong> This creature can make an opportunity attack as a reaction to a creature moving within 5 feet of it.\n\n<strong>Actions</strong>\n\n<strong>Multiattack.</strong> This creature makes 2 Claw attacks each turn.\n\n<strong>Claw.</strong> +spell attack modifier to hit, 1d4 + spell level slashing damage.\n\n<strong>Web (Spider Only).</strong> This creature chooses a point within range. The ground within 20 feet of that point becomes difficult terrain for all creatures except this one. This creature cannot be opportunity attacked while standing in its web, and has advantage on the first attack it makes each turn while standing in its web.",
+        "classes":  [
+                        "Shaman",
+                        "Sorcerer",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "Summon Wailing Spirit",
+        "level":  "Level 5",
+        "school":  "Necromancy",
+        "castTime":  "1 action",
+        "range":  "30 feet",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "Choose an unoccupied space within range to summon an undead spirit in. The spirit acts immediately after your turn.\n\n<div style=\"border:1px solid rgba(128,128,128,0.4);border-radius:4px;padding:8px;margin:0.5em 0\"><strong>Banshee — Medium Undead</strong><br><br>AC: 8 + spell level &nbsp;·&nbsp; HP: 10 × spell level &nbsp;·&nbsp; Speed: 40 ft, 15 ft flying<br>STR 6 &nbsp;&nbsp; DEX 8 &nbsp;&nbsp; CON 14 &nbsp;&nbsp; INT 14 &nbsp;&nbsp; WIS 18 &nbsp;&nbsp; CHA 14</div>\n\n<strong>Dreadful Melody.</strong> Whenever a creature starts its turn or moves within 10 feet of the banshee for the first time on their turn, they take 2d6 psychic damage.\n\n<strong>Incorporeal Form.</strong> This creature can move through solid objects. If it ends its turn inside an object or creature it takes 1d10 force damage and is shunted to the nearest unoccupied space. This creature cannot move through lead or iron.\n\n<strong>Reactions</strong>\n\n<strong>ph_fade.</strong> As a reaction to being hit by a weapon attack, this creature can reduce the attack roll by 1d6.\n\n<strong>Devour Essence.</strong> As a reaction to a creature the banshee is grappling dying, the banshee may restore 30 health and restore half as much health to this spell's caster.\n\n<strong>Actions</strong>\n\n<strong>Dreadful Howl.</strong> Each creature of the banshee's choice within 60 feet must make a Constitution saving throw against your spell save DC. On a failure each creature takes 4d8 damage, or half as much on a success.\n\n<strong>Death Grip.</strong> Target a creature within 5 feet. They must make a Strength or Dexterity saving throw against your spell save DC. On a failure the creature becomes grappled. If the creature was already grappled it instead takes 4d10 necrotic damage and has disadvantage on its next skill check or saving throw.",
+        "classes":  [
+                        "Priest",
+                        "Warlock",
+                        "Wizard"
+                    ]
+    },
+    {
+        "name":  "Reverberating Hymn",
+        "level":  "Level 5",
+        "school":  "Enchantment",
+        "castTime":  "1 action",
+        "range":  "120 feet",
+        "duration":  "Instantaneous",
+        "concentration":  false,
+        "description":  "Make a ranged spell attack against a target creature within range. On a hit the creature takes 9d12 thunder damage. You may then repeat this attack against a target you have not yet attacked with this spell, dealing 3d12 less damage than the previous hit. You may keep repeating this until the damage would be 0 or less.",
+        "classes":  [
+                        "Bard",
+                        "Priest"
+                    ],
+        "atHigherLevels":  "When you cast this spell at higher levels, increase the initial damage by 2d12 for each level above 5th."
+    },
+    {
+        "name":  "Path to Victory",
+        "level":  "Level 6",
+        "school":  "Divination",
+        "castTime":  "1 action",
+        "range":  "Touch",
+        "duration":  "Concentration, up to 1 minute",
+        "concentration":  true,
+        "description":  "You touch a creature and they are able to see how their actions impact the near future. They gain the following traits for the duration of the spell:\n\n• Whenever this creature would make a skill check, ability check, or attack roll, they roll an additional d20 and may replace one of the other d20s with that roll.\n• Whenever this creature rolls for damage they may reroll one of the dice rolled.\n• This creature has advantage on all saving throws.\n• This creature cannot be targeted by attacks of opportunity.\n• As a reaction to being hit by an attack roll, this creature can move 5 feet and cause the attack to miss.",
+        "classes":  [
+                        "Bard",
+                        "Priest",
+                        "Wizard"
+                    ]
     }
 ]
