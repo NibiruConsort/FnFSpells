@@ -2025,7 +2025,7 @@
         "range": "120 feet",
         "duration": "Instantaneous",
         "concentration": false,
-        "description": "Create a 30 foot long 10 foot wide 10 foot tall line starting anywhere within the spells range, a tidal wave rushes through that space forcing each creature within to make a constitution saving throw against your spell save. On a failure they take 3d12 impact damage and take 2 levels of staggered, on a success they take half as much damage and 1 level of staggered.",
+        "description": "Create a 40 foot long 15 foot wide 15 foot tall line starting anywhere within the spells range, a tidal wave rushes through that space forcing each creature within to make a constitution saving throw against your spell save. On a failure they take 3d12 impact damage and take 2 levels of staggered, on a success they take half as much damage and 1 level of staggered.",
         "classes": [
             "Shaman",
             "Sorcerer",
