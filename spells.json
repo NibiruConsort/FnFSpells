@@ -2789,7 +2789,7 @@
         "range": "Self",
         "duration": "10 minutes",
         "concentration": false,
-        "description": "Each space within 15 feet of you becomes warded with glowing sigils. For the spell's duration, the first time a creature attempts to enter one of these spaces it costs an additional 10 feet of movement. After a creature moves into the space the sigils disappear and that space is no longer affected.\n\nWhenever a creature removes sigils from a space, you are mentally aware and know which space it was. (This movement cost does not scale with difficult terrain.)",
+        "description": "Each space within 15 feet of you becomes warded with glowing sigils. For the spell's duration, the first time a creature other than you attempts to enter one of these spaces it costs an additional 10 feet of movement. After a creature other than you moves into the space the sigils disappear and that space is no longer affected.\n\nWhenever a creature removes sigils from a space, you are mentally aware and know which space it was. (This movement cost does not scale with difficult terrain.)",
         "classes": [
             "Priest",
             "Wizard"
