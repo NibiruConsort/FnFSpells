@@ -1446,7 +1446,7 @@
         "atHigherLevels": "At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st."
     },
     {
-        "name": "Adsorb Elements",
+        "name": "Absorb Elements",
         "level": "Level 1",
         "school": "Abjuration",
         "castTime": "1 reaction, which you take when you take damage",
@@ -3348,5 +3348,117 @@
             "Priest",
             "Wizard"
         ]
+    },
+    {
+        "name": "Freedom of Movement",
+        "level": "Level 4",
+        "school": "Transmutation",
+        "castTime": "1 Bonus Action",
+        "range": "Self",
+        "duration": "Until your next short rest",
+        "concentration": false,
+        "description": "Increase your movement speed by 5 feet.\n\nYour movement speed cannot be reduced by spells, magical effects, or status effects. Difficult terrain does not affect you.\n\nDuring your turn you can spend 5 feet of movement to escape non-magical restraints, end the grappled condition on yourself or end the restrained condition on yourself, or gain advantage on your next saving throw to end one of the above conditions including magical effects.",
+        "classes": [
+            "Bard",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Wizard"
+        ],
+        "atHigherLevels": "When you cast this spell at 6th level or higher, increase its duration to the end of your next short rest. If you cast it with a spell slot of 8th level or higher increase its duration to the end of your next long rest."
+    },
+    {
+        "name": "Abyssal Calling",
+        "level": "Level 4",
+        "school": "Conjuration",
+        "castTime": "1 Action",
+        "range": "90 feet",
+        "duration": "Instantaneous",
+        "concentration": false,
+        "description": "Choose 3 spaces within range to erupt in brimstone and ash. Each creature within 5 feet of an eruption makes a Dexterity saving throw taking 2d6 fire damage on a failure or half as much on a success. Then create an imp in each of the closest unoccupied space to each eruption. The imps act immediately after your turn. On their turn imps attack the creature nearest to them and attempt to move to safety. After an imp has attacked 3 times it disappears into smoke.\n\nThe imps use the following statblock:\n\n<div class=\"statblock\"><div class=\"sb-header\"><div class=\"sb-name\">Sulfur Imp</div><div class=\"sb-type\">Small Demon</div></div><div class=\"sb-body\"><div class=\"sb-core\"><div class=\"sb-row\"><span class=\"sb-label\">AC</span> 8</div><div class=\"sb-row\"><span class=\"sb-label\">HP</span> 15</div><div class=\"sb-row\"><span class=\"sb-label\">Speed</span> 15 ft.</div></div><div class=\"sb-scores\"><div class=\"sb-score\"><div class=\"sb-score-label\">STR</div><div class=\"sb-score-val\">8 (−1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">DEX</div><div class=\"sb-score-val\">8 (−1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CON</div><div class=\"sb-score-val\">8 (−1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">INT</div><div class=\"sb-score-val\">12 (+1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">WIS</div><div class=\"sb-score-val\">8 (−1)</div></div><div class=\"sb-score\"><div class=\"sb-score-label\">CHA</div><div class=\"sb-score-val\">14 (+2)</div></div></div><div class=\"sb-divider\"></div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Infernal Nature.</span> This creature is immune to fire damage.</div><div class=\"sb-divider\"></div><div class=\"sb-actions-header\">Actions</div><div class=\"sb-trait\"><span class=\"sb-trait-name\">Felbolt.</span> <em>Ranged Attack:</em> +[spell attack modifier] to hit, range 60 ft., one target. <em>Hit:</em> 1d6 + [spellcasting modifier] fire damage.</div></div></div>",
+        "classes": [
+            "Warlock"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels you may create 1 additional eruption for each spell level above 4th."
+    },
+    {
+        "name": "Low Probability Event",
+        "level": "Level 4",
+        "school": "Divination",
+        "castTime": "1 Action",
+        "range": "Any point that you can see",
+        "duration": "Instantaneous",
+        "concentration": false,
+        "description": "Each creature within a 15 foot radius takes damage from a technically possible event appropriate for where they are. Make a saving throw of a type chosen by the DM and they take 4d10 damage and have an appropriate effect from the table below applied to them. On a successful save they take half damage.\n\n<table style=\"width:100%;border-collapse:collapse;font-size:0.9em\"><thead><tr><th style=\"border:1px solid #888;padding:4px 8px;text-align:left\">Environmental</th><th style=\"border:1px solid #888;padding:4px 8px;text-align:left\">Saving Throw</th><th style=\"border:1px solid #888;padding:4px 8px;text-align:left\">Damage Type</th><th style=\"border:1px solid #888;padding:4px 8px;text-align:left\">Condition</th></tr></thead><tbody><tr><td style=\"border:1px solid #888;padding:4px 8px\">Falling Decor</td><td style=\"border:1px solid #888;padding:4px 8px\">Dexterity</td><td style=\"border:1px solid #888;padding:4px 8px\">Impact</td><td style=\"border:1px solid #888;padding:4px 8px\">2 levels of staggered</td></tr><tr><td style=\"border:1px solid #888;padding:4px 8px\">Weapon Misfire</td><td style=\"border:1px solid #888;padding:4px 8px\">Strength</td><td style=\"border:1px solid #888;padding:4px 8px\">The damage the creature's weapon deals</td><td style=\"border:1px solid #888;padding:4px 8px\">The creature's next weapon attack is made with disadvantage</td></tr><tr><td style=\"border:1px solid #888;padding:4px 8px\">Big Red Barrel</td><td style=\"border:1px solid #888;padding:4px 8px\">Strength</td><td style=\"border:1px solid #888;padding:4px 8px\">Thunder</td><td style=\"border:1px solid #888;padding:4px 8px\">Knocked prone</td></tr><tr><td style=\"border:1px solid #888;padding:4px 8px\">Booby Trap</td><td style=\"border:1px solid #888;padding:4px 8px\">Dexterity</td><td style=\"border:1px solid #888;padding:4px 8px\">Slashing</td><td style=\"border:1px solid #888;padding:4px 8px\">1 level of bleeding</td></tr><tr><td style=\"border:1px solid #888;padding:4px 8px\">Environmental Toxins</td><td style=\"border:1px solid #888;padding:4px 8px\">Constitution</td><td style=\"border:1px solid #888;padding:4px 8px\">Poison</td><td style=\"border:1px solid #888;padding:4px 8px\">1 level of poisoned</td></tr><tr><td style=\"border:1px solid #888;padding:4px 8px\">Stormy</td><td style=\"border:1px solid #888;padding:4px 8px\">Constitution</td><td style=\"border:1px solid #888;padding:4px 8px\">Lightning</td><td style=\"border:1px solid #888;padding:4px 8px\">2 levels of shocked</td></tr></tbody></table>\n\nThe DM may instead choose an alternate effect than one listed above but should use the table above as a baseline.",
+        "classes": [
+            "Sorcerer",
+            "Wizard"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the damage dealt by 1d10 for each level above 4th."
+    },
+    {
+        "name": "Deliver from Harm",
+        "level": "Level 5",
+        "school": "Abjuration",
+        "castTime": "1 Action",
+        "range": "30 feet",
+        "duration": "1 round",
+        "concentration": false,
+        "description": "Choose a creature or corpse within range. If possible the corpse is raised from death, if not the spell slot is restored. The target then restores 2d8 hit points. The target also gains the following effects until the end of your next turn: 20 barrier, advantage on saving throws, and attack rolls made against this creature have disadvantage.",
+        "classes": [
+            "Bard",
+            "Paladin",
+            "Priest",
+            "Wizard"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the health restored by 1d8 and the barrier gained by 10 for each spell level above 5th."
+    },
+    {
+        "name": "ph_tongue",
+        "level": "Level 5",
+        "school": "Transmutation",
+        "castTime": "1 Bonus Action",
+        "range": "60 feet",
+        "duration": "3 rounds",
+        "concentration": false,
+        "description": "Choose a space within range. If that space does not have a creature in it you can use a magical tongue to grab on and move to that space. If that space does have a creature in it make a melee spell attack against that creature. On a hit they take 6d4 acid damage and:\n\n• If they are smaller than you, you may pull them to an unoccupied space next to you.\n• If they are your size, you may move to an unoccupied space next to them or pull them to an unoccupied space next to you.\n• If they are larger than you, you may move to an unoccupied space next to them.\n\nYou can repeat this effect as a bonus action for the spell's duration.",
+        "classes": [
+            "Shaman",
+            "Sorcerer",
+            "Warlock",
+            "Wizard"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the damage dealt by 3d4 for each spell level above 5th."
+    },
+    {
+        "name": "Rust",
+        "level": "Level 6",
+        "school": "Necromancy",
+        "castTime": "1 Action",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "concentration": false,
+        "description": "Target creature must make a Constitution saving throw, taking 20d4 acid damage and gaining 4 levels of corroded on a failure, or half as much damage on a success. If the creature failed their saving throw they gain an amount of slowed equal to their corroded at the start of their turn and lose one level of corroded at the end of their turn until they no longer have any corroded from this spell. Constructs gain an additional level of corroded on a failure.",
+        "classes": [
+            "Priest",
+            "Sorcerer",
+            "Warlock",
+            "Wizard"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the damage by 4d4 and the amount of corroded applied by 1 for each spell level above 6th."
+    },
+    {
+        "name": "Allegro",
+        "level": "Level 6",
+        "school": "Transmutation",
+        "castTime": "1 Action",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "concentration": false,
+        "description": "Move up to 90 feet in any direction. If you end this movement within range of a creature you may make a melee weapon attack with advantage against that creature. The attack deals an additional 7d12 impact damage on a hit.",
+        "classes": [
+            "Bard"
+        ],
+        "atHigherLevels": "When you cast this spell at higher levels, increase the damage by 3d12 for each spell level above 6th."
     }
 ]
